@@ -1,7 +1,7 @@
 {
-  "name": "restaurant-page",
+  "name": "robertarning",
   "version": "1.0.0",
-  "description": "A training page on theodinproject.com",
+  "description": "A personal portfolio website",
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "github.com/ideen-los/restaurant-page"
+    "url": "github.com/ideen-los/robertarning"
   },
   "author": "ideen-los",
   "license": "ISC",
@@ -29,5 +29,9 @@
     "style-loader": "^3.3.4",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "glob": "^10.4.1",
+    "rimraf": "^5.0.7"
   }
 }

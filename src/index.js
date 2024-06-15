@@ -1,3 +1,11 @@
 import './style.scss';
 
-console.log('Everything seems to be working fine.'); // comment
+async function loadProjects() {
+    const response = await fetch('/all-projects');
+    const projects = await response.json();
+  
+    console.log(projects); 
+    // logs [{ name: 'Joker'}, { name: 'Batman' }]
+  }
+  
+  loadProjects();
