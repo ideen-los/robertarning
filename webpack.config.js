@@ -1,22 +1,28 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  mode: "development",
-  entry: "./src/index.js",
-  devtool: "inline-source-map",
+  mode: 'development',
+  entry: './src/index.js',
+  devtool: 'inline-source-map',
   devServer: {
-    static: "./dist",
+    static: './dist',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Test",
-      template: "./src/template.html",
+      title: 'Test',
+      template: './src/template.html',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './data/all-projects.json', to: 'data/all-projects.json' },
+      ],
     }),
   ],
   output: {
-    filename: "main.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'main.js',
+    path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
   module: {
@@ -25,23 +31,23 @@ module.exports = {
         // Rule for SCSS files
         test: /\.scss$/,
         use: [
-          "style-loader", // Injects CSS into the DOM
-          "css-loader", // Turns CSS into commonjs
-          "sass-loader", // Turns SCSS into CSS
+          'style-loader', // Injects CSS into the DOM
+          'css-loader', // Turns CSS into commonjs
+          'sass-loader', // Turns SCSS into CSS
         ],
       },
       {
         // Rule for CSS files
         test: /\.css$/,
         use: [
-          "style-loader", // Injects CSS into the DOM
-          "css-loader", // Turns CSS into commonjs
+          'style-loader', // Injects CSS into the DOM
+          'css-loader', // Turns CSS into commonjs
         ],
       },
       {
         // Rule for image files
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: 'asset/resource',
       },
     ],
   },

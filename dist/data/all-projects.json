@@ -1,0 +1,40 @@
+{
+  "portfolio": [
+    {
+      "projectName": "Modern Living Room",
+      "id": 1,
+      "elements": [
+        {
+          "type": "text",
+          "content": "A minimalist living room design with earthy tones."
+        },
+        {
+          "type": "image",
+          "content": "url_to_living_room_image.jpg"
+        },
+        {
+          "type": "image",
+          "content": "url_to_another_room_image.jpg"
+        }
+      ]
+    },
+    {
+      "projectName": "Tech Office Space",
+      "id": 2,
+      "elements": [
+        {
+          "type": "image",
+          "content": "url_to_office_space_image.jpg"
+        },
+        {
+          "type": "text",
+          "content": "An office space designed for tech enthusiasts."
+        },
+        {
+          "type": "image",
+          "content": "url_to_second_office_image.jpg"
+        }
+      ]
+    }
+  ]
+}
