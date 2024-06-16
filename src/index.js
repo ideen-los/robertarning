@@ -1,17 +1,14 @@
 import './style.scss';
+import { loadProjects } from './data';
+import { createProjectsOverview } from './projectsOverview';
 
-async function loadProjects() {
-  try {
-    const response = await fetch('/data/all-projects.json');
-    if (!response.ok) {
-      // Check if the HTTP status code is in the 200-299 range
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    const projects = await response.json();
-    console.log(projects);
-  } catch (error) {
-    console.error('Failed to load projects:', error);
+const displayProjects = async function displayProjects() {
+  const projects = await loadProjects();
+
+  if (projects) {
+    const projectsOverviewHTML = createProjectsOverview(projects);
+    document.getElementById('content').innerHTML = projectsOverviewHTML;
   }
-}
+};
 
-loadProjects();
+displayProjects();
