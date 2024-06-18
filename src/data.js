@@ -1,50 +1,47 @@
-import {
-  getProjectsFromStorage,
-  isSessionStorageAvailable,
-  saveProjectsToStorage,
-} from './sessionStorage';
+import { isSessionStorageAvailable } from './sessionStorage';
 
 /* 
-Loads a JSON file with all projects from the server and saves
-it to sessionStorage if available. If the browser tab hasn't been
-closed yet, the data will be loaded from the users sessionStorage.
+Loads a JSON file with all data from the server and saves it
+to sessionStorage if available, so the data is cached for further use.
 */
-export async function loadProjects() {
+export async function loadData() {
   console.log('Initializing...');
-  let projects;
+  let data;
 
-  // Get projects from sessionStorage if available
+  // Get data from sessionStorage if available
   if (isSessionStorageAvailable) {
     console.log('sessionStorage available...');
-    const storedProjects = JSON.parse(sessionStorage.getItem('projects'));
-    if (storedProjects) {
+    const storedData = JSON.parse(sessionStorage.getItem('data'));
+
+    if (storedData) {
       console.log('Loaded projects from sessionStorage');
-      projects = storedProjects;
-      console.log(projects);
-      return projects;
+      data = storedData;
+      console.log(data);
+      return data;
+    } else {
+      console.error('Invalid or corrupted data in sessionStorage.');
     }
   }
 
-  // If projects are not available in sessionStorage, fetch the data from server
+  // If data is not available in sessionStorage, fetch the data from server
   try {
     console.log('Getting data...');
-    const response = await fetch('/data/all-projects.json');
+    const response = await fetch('/data/data.json');
     if (!response.ok) {
       // Check if the HTTP status code is in the 200-299 range
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
-    const data = await response.json();
-    projects = data.portfolio;
-    console.log(projects);
+    data = await response.json();
+    console.log(data);
 
     // Save fetched data to sessionStorage
     if (isSessionStorageAvailable) {
-      sessionStorage.setItem('projects', JSON.stringify(data));
-      console.log('Saved projects to sessionStorage');
+      sessionStorage.setItem('data', JSON.stringify(data));
+      console.log('Saved data to sessionStorage');
     }
-    return projects;
+    return data;
   } catch (error) {
-    console.error('Failed to load projects:', error);
+    console.error('Failed to load data:', error);
     return null;
   }
 }

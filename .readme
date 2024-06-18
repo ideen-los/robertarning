@@ -1,0 +1,11 @@
+## Folder Structure
+
+/root
+├── src
+├── dist
+├── media # Media files go here. See Setup section.
+└── data
+
+## Setup
+
+Create a folder named `media` in the root directory of the project to store all media files used by the app. If you have a backup or external source for these media files, restore them into this folder.

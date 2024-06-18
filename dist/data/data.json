@@ -1,0 +1,76 @@
+{
+  "portfolio": [
+    {
+      "projectName": "REMIX",
+      "id": 1,
+      "description": "Design, UX und Entwicklung eines Portals für Wissenschaftsvermittlung auf der Drupal-Webseite der Universitätsbibliothek Mainz.",
+      "image": "media/remix/overview-remix.jpg",
+      "live-site": "https://ub.uni-mainz.de/remix",
+      "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
+      "elements": [
+        {
+          "type": "media",
+          "content": "link-to-video.mp4"
+        },
+        {
+          "type": "media",
+          "content": "link-to-image.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>REMIX ist eine innovative Plattform, auf der sich eine Vielfalt von Geschichten, Interviews und virtuellen Ausstellungen findet, inspiriert durch Forschungs- und Lehraktivitäten an der Universität Mainz.</p><p>Ich war verantwortlich für die Konzeption und Gestaltung von Interface, Benutzerführung und -erfahrung sowie die Implementierung der Plattform innerhalb des Content-Management-Systems Drupal.</p>"
+        },
+        {
+          "type": "media-two-column",
+          "content": ["link-to-video.mp4", "link-to-image.jpg"]
+        },
+        {
+          "type": "media",
+          "content": "link-to-video.mp4"
+        }
+      ]
+    },
+    {
+      "projectName": "marena",
+      "id": 2,
+      "description": "UI/UX Design für eine Progressive Web App zur Unterstützung und Begleitung von Personen nach einem Reha-Aufenthalt.",
+      "image": "media/marena/overview-marena.jpg",
+      "live-site": "",
+      "skills": ["UI/UX Design", "Prototyping", "Figma"],
+      "elements": [
+        {
+          "type": "media",
+          "content": "link-to-video.mp4"
+        },
+        {
+          "type": "media",
+          "content": "link-to-image.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>Die Progressive Web App marena begleitet Menschen  bei der Wiedereingliederung in den Arbeitsmarkt nach einem längeren Reha-Aufenthalt.</p><p>Das gesamte Interface, das sich am CD der Unimedizin Mainz und am Design System von Vue.js orientiert, sowie die Nutzererfahrung wurden von mir konzipiert. Das Design und die Nutzerpfade optimierte ich iterativ durch den Einsatz interaktiver Mockups.</p>"
+        },
+        {
+          "type": "media-two-column",
+          "content": ["link-to-video.mp4", "link-to-image.jpg"]
+        },
+        {
+          "type": "media",
+          "content": "link-to-image.jpg"
+        },
+        {
+          "type": "media",
+          "content": "link-to-image.jpg"
+        },
+        {
+          "type": "media-two-column",
+          "content": ["link-to-video.mp4", "link-to-image.jpg"]
+        },
+        {
+          "type": "media-two-column",
+          "content": ["link-to-image.jpg", "link-to-video.mp4"]
+        }
+      ]
+    }
+  ]
+}

@@ -7,6 +7,7 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
+    historyApiFallback: true, // defaults to index.html when a 404 error occurs
     static: './dist',
   },
   plugins: [
@@ -16,7 +17,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        { from: './data/all-projects.json', to: 'data/all-projects.json' },
+        { from: './data/data.json', to: 'data/data.json' },
+        { from: './media', to: 'media' },
       ],
     }),
   ],

@@ -1,12 +1,13 @@
 import './style.scss';
-import { loadProjects } from './data';
+import { loadData } from './data';
 import { createProjectsOverview } from './projectsOverview';
 
 const displayProjects = async function displayProjects() {
-  const projects = await loadProjects();
+  const data = await loadData();
 
-  if (projects) {
-    const projectsOverviewHTML = createProjectsOverview(projects);
+  if (data) {
+    console.log('Displaying projects...');
+    const projectsOverviewHTML = createProjectsOverview(data.portfolio);
     document.getElementById('content').innerHTML = projectsOverviewHTML;
   }
 };
