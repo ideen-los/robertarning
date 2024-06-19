@@ -1,11 +1,95 @@
+// Colors
+:root {
+  --primary-color: #0d0d0d;
+}
+
+// The logo + navigation
 header {
   display: flex;
   justify-content: center;
 }
 
+// General styles for the content
 #content {
+  max-width: 1700px;
+  padding-top: 3rem;
+
+  h3,
+  p {
+    margin: 0;
+    padding: 0;
+
+    line-height: 140%;
+    font-size: 34px;
+  }
+
+  h3 {
+    margin: 20px 0 0;
+  }
+
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+
+  img,
+  video {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  video {
+    -webkit-appearance: none;
+  }
+}
+
+// Project overview
+.projects-overview {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding-top: 3rem;
+  gap: 100px;
+
+  article {
+    p {
+      max-width: 864px;
+    }
+  }
+}
+
+// Single project page
+.single-project {
+  .skills-and-tools {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+
+    border-top: 2px solid var(--primary-color);
+
+    ul {
+      display: flex;
+      gap: 5px;
+      padding: 0;
+      list-style: none;
+
+      .skill-tag {
+        padding: 15px 25px;
+        border: 2px solid var(--primary-color);
+        border-radius: 50px;
+      }
+    }
+  }
+
+  .media-elements {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
 }

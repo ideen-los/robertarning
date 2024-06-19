@@ -4,7 +4,7 @@ import { isSessionStorageAvailable } from './sessionStorage';
 Loads a JSON file with all data from the server and saves it
 to sessionStorage if available, so the data is cached for further use.
 */
-export async function loadData() {
+export const loadData = async function () {
   console.log('Initializing...');
   let data;
 
@@ -18,8 +18,6 @@ export async function loadData() {
       data = storedData;
       console.log(data);
       return data;
-    } else {
-      console.error('Invalid or corrupted data in sessionStorage.');
     }
   }
 
@@ -44,4 +42,4 @@ export async function loadData() {
     console.error('Failed to load data:', error);
     return null;
   }
-}
+};
