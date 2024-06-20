@@ -1,9 +1,17 @@
-import { route } from './router';
-import { showSingleProject } from './singleProject';
+import { route, router } from './router';
 
-// Generates the HTML code for a project overview page.
-// The function iterates over an array of project objects and
-// generates HTML code for the properties of those objects.
+/*
+Encodes the "projectName" value to safely include it in the URL path 
+*/
+export const encodeProjectName = function (name) {
+  return encodeURIComponent(name).toLowerCase();
+};
+
+/*
+Generates the HTML code for a project overview page.
+The function iterates over an array of project objects and
+generates HTML code for the properties of those objects.
+*/
 export const createProjectsOverview = function (projects) {
   // Check whether project data is available
   if (!projects) {
@@ -15,9 +23,9 @@ export const createProjectsOverview = function (projects) {
   const overviewHTML = projects
     .map((project) => {
       // Encode the "projectName" value to safely include it in the URL path
-      let encodedProjectName = encodeURIComponent(project.projectName).toLowerCase();
+      const urlSaveProjectName = encodeProjectName(project.projectName);
 
-      return `<a href="/${encodedProjectName}" id="${project.id}">
+      return `<a href="/${urlSaveProjectName}" id="${project.id}">
       <article>
       <figure>
       <img src="${project.image}" alt="${project.projectName}">
@@ -33,7 +41,7 @@ export const createProjectsOverview = function (projects) {
 };
 
 /*
-Looks for a project that matches a given ID within an array of projects.
+Looks for a project that matches a given ID within an array of project objects.
 The ID is a property of every project object in the array.
 */
 const findProjectById = function (projectArray, id) {
@@ -43,9 +51,10 @@ const findProjectById = function (projectArray, id) {
 };
 
 /*
-Adds a click event to the project teaser on the project overview page.
+Adds a click event to the project teasers on the project overview page.
 The event tries to match the id of the clicked teaser with a project's ID
-from a given [projects] array.
+from a given [projects] array, inserts that project name in the url and lods
+the router to handle the loading of the content.
 */
 export const handleClickOnProjectTeasers = function (projects) {
   const allProjectTeaser = document.querySelectorAll('.projects-overview a');
@@ -53,12 +62,14 @@ export const handleClickOnProjectTeasers = function (projects) {
   allProjectTeaser.forEach((teaser) =>
     teaser.addEventListener('click', (e) => {
       e.preventDefault();
+      const projectId = e.currentTarget.id;
+      const projectData = findProjectById(projects, projectId);
+      const urlSaveProjectName = encodeProjectName(projectData.projectName);
 
-      // Get the data of the project that is clicked on
-      const singleProjectHTML = showSingleProject(findProjectById(projects, e.currentTarget.id));
+      history.pushState({}, '', `/${urlSaveProjectName}`); // Update the URL
 
-      // Populate the content with the projects data
-      document.getElementById('content').innerHTML = singleProjectHTML;
+      // Call the router
+      router();
 
       // Set scroll position to the top of the browser window
       window.scroll(0, 0);

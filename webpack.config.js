@@ -7,12 +7,14 @@ module.exports = {
   entry: './src/index.js',
   devtool: 'inline-source-map',
   devServer: {
-    historyApiFallback: true, // defaults to index.html when a 404 error occurs
-    static: './dist',
+    historyApiFallback: true,
+    static: {
+      directory: path.join(__dirname, 'dist'),
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Test',
+      title: 'Robert Arning',
       template: './src/template.html',
     }),
     new CopyPlugin({
@@ -23,6 +25,7 @@ module.exports = {
     }),
   ],
   output: {
+    publicPath: '/',
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,

@@ -23,6 +23,10 @@ export const showSingleProject = function (project) {
           return `<div class="${element.type}">
             <img src="${element.content}">
             </div>`;
+        case 'text':
+          return `<div class="${element.type}">
+            <p>${element.content}</p>
+            </div>`;
         case 'two-column':
           // If the element type is "two-column" we need to iterate over the element's
           // "content" property which holds an array of media objects "image" or "video"
