@@ -37,7 +37,7 @@ export const createProjectsOverview = function (projects) {
     })
     .join('');
 
-  return `<div class="projects-overview">${overviewHTML}</div>`;
+  return `<h1 class="site-title">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div>`;
 };
 
 /*

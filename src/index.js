@@ -15,7 +15,12 @@ const displayProjects = async function () {
 };
 
 route('/', displayProjects); // This needs to be called before router()
-
-document.addEventListener('DOMContentLoaded', () => {
-  router(); // This should ideally find the registered route
+route('/about', () => {
+  const aboutContent = `
+    <h1>About Us</h1>
+    <p>Welcome to our project overview application. Here you can find information about our projects and more.</p>
+  `;
+  document.getElementById('content').innerHTML = aboutContent;
 });
+
+document.addEventListener('DOMContentLoaded', router);

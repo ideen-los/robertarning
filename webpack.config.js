@@ -20,6 +20,7 @@ module.exports = {
     new CopyPlugin({
       patterns: [
         { from: './data/data.json', to: 'data/data.json' },
+        { from: './src/img/ra-logo.svg', to: 'img/ra-logo.svg' },
         { from: './media', to: 'media' },
       ],
     }),
@@ -53,6 +54,18 @@ module.exports = {
         // Rule for image files
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
       },
     ],
   },
