@@ -1,3 +1,4 @@
+import { pushURLAndCallRouter } from './helperFunctions';
 import { route, router } from './router';
 
 /*
@@ -66,13 +67,7 @@ export const handleClickOnProjectTeasers = function (projects) {
       const projectData = findProjectById(projects, projectId);
       const urlSaveProjectName = encodeProjectName(projectData.projectName);
 
-      history.pushState({}, '', `/${urlSaveProjectName}`); // Update the URL
-
-      // Call the router
-      router();
-
-      // Set scroll position to the top of the browser window
-      window.scroll(0, 0);
+      pushURLAndCallRouter(urlSaveProjectName);
     })
   );
 };

@@ -47,26 +47,32 @@ $default-max-bp: 1700px;
 :root {
   --primary-color: #0d0d0d;
 
+  --logo-width: #{fluid(100px, 149px)};
+
   --font-size-nav: #{fluid(20px, 28px)};
   --font-size-text: #{fluid(22px, 34px)};
   --font-size-h1: #{fluid(80px, 170px)};
   --font-size-h2: #{fluid(40px, 90px)};
+  --font-size-skills-and-tools: #{fluid(20px, 24px)};
   --font-size-skill-tag: #{fluid(16px, 18px)};
+  --font-size-visit-live-site: #{fluid(16px, 18px)};
 
   --font-weight-text: 500;
   --font-weight-h1: 370;
+  --font-weight-h2: 470;
+  --font-weight-nav: 500;
 
   --flex-gap-nav: #{fluid(30px, 70px)};
 
   --single-project-text-width: #{fluid(600px, 900px)};
-  --single-project-skills-tag-padding1: #{fluid(10px, 15px)};
-  --single-project-skills-tag-padding2: #{fluid(20px, 25px)};
+  --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
+  --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
 }
 
 // General styles for the website
 body {
   font-family: 'Inter', sans-serif;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 
 a {
@@ -92,7 +98,7 @@ h2 {
   margin: 0 0 20px;
 
   font-size: var(--font-size-h2);
-  font-weight: 470;
+  font-weight: var(--font-weight-h2);
   line-height: 100%;
 }
 
@@ -107,6 +113,7 @@ p {
 
 h3 {
   margin: 20px 0 0;
+  font-weight: var(--font-weight-nav);
 }
 
 p + p {
@@ -134,8 +141,12 @@ header {
   max-width: 1700px;
   margin: 20px 0 0;
 
+  img {
+    max-width: var(--logo-width);
+  }
+
   nav {
-    font-weight: 500;
+    font-weight: var(--font-weight-nav);
 
     ul {
       display: flex;
@@ -176,6 +187,21 @@ header {
 
 // Single project page
 .single-project {
+  .project-title-and-link {
+    display: flex;
+    align-items: baseline;
+    gap: 30px;
+
+    a {
+      display: flex;
+      gap: 8px;
+      font-size: var(--font-size-visit-live-site);
+    }
+
+    img {
+      max-width: 18px;
+    }
+  }
   .skills-and-tools {
     display: flex;
     align-items: center;
@@ -196,13 +222,13 @@ header {
       list-style: none;
 
       span {
-        margin-right: 20px;
-        font-size: var(--font-size-text);
+        margin-right: 5px;
+        font-size: var(--font-size-skills-and-tools);
         font-weight: var(--font-weight-text);
       }
 
       .skill-tag {
-        flex-shrink: 0;
+        /* flex-shrink: 0; */
         padding: var(--single-project-skills-tag-padding1) var(--single-project-skills-tag-padding2);
 
         font-size: var(--font-size-skill-tag);
@@ -218,7 +244,7 @@ header {
     padding: 100px 0;
 
     p {
-      width: var(--single-project-text-width);
+      max-width: var(--single-project-text-width);
     }
   }
 

@@ -1,6 +1,10 @@
 import { loadData } from './data';
 import { setContent } from './helperFunctions';
-import { encodeProjectName } from './projectsOverview';
+import {
+  createProjectsOverview,
+  encodeProjectName,
+  handleClickOnProjectTeasers,
+} from './projectsOverview';
 import { showSingleProject } from './singleProject';
 
 export const defaultHandler = async (path) => {
@@ -15,6 +19,17 @@ export const defaultHandler = async (path) => {
     /* document.getElementById('content').innerHTML = showSingleProject(project); */
   } else {
     // No project found, display a generic 404 page
-    document.getElementById('content').innerHTML = '<h1>404 Not Found</h1>';
+    setContent('content', '<h1>404 Not Found</h1>');
+  }
+};
+
+export const displayProjects = async function () {
+  const data = await loadData();
+
+  if (data) {
+    console.log('Displaying projects...');
+    const projectsOverviewHTML = createProjectsOverview(data.projects);
+    document.getElementById('content').innerHTML = projectsOverviewHTML;
+    handleClickOnProjectTeasers(data.projects);
   }
 };
