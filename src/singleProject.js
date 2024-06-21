@@ -53,5 +53,5 @@ export const showSingleProject = function (project) {
     })
     .join('');
 
-  return `<div id="${project.id}" class="single-project"><h2>${project.projectName}</h2><section class="skills-and-tools"><span>Skills/Tools:</span><ul>${singleProjectSkills}</ul></section><section class="media-elements">${singleProjectElements}</section></div>`;
+  return `<div id="${project.id}" class="single-project"><h2>${project.projectName}</h2><section class="skills-and-tools"><ul><span>Skills/Tools:</span>${singleProjectSkills}</ul></section><section class="media-elements">${singleProjectElements}</section></div>`;
 };
