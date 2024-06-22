@@ -1,3 +1,4 @@
+import { addAnimationClasses } from './helperFunctions';
 import { defaultHandler } from './routeHandlers';
 
 const routes = {};

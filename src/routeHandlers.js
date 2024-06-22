@@ -1,5 +1,5 @@
 import { loadData } from './data';
-import { setContent } from './helperFunctions';
+import { addAnimationClasses, setContent } from './helperFunctions';
 import {
   createProjectsOverview,
   encodeProjectName,
@@ -16,7 +16,6 @@ export const defaultHandler = async (path) => {
 
   if (project) {
     setContent('content', showSingleProject(project));
-    /* document.getElementById('content').innerHTML = showSingleProject(project); */
   } else {
     // No project found, display a generic 404 page
     setContent('content', '<h1>404 Not Found</h1>');
@@ -31,5 +30,8 @@ export const displayProjects = async function () {
     const projectsOverviewHTML = createProjectsOverview(data.projects);
     document.getElementById('content').innerHTML = projectsOverviewHTML;
     handleClickOnProjectTeasers(data.projects);
+    /* requestAnimationFrame(() => {
+      addAnimationClasses();
+    }); */
   }
 };

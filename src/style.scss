@@ -168,6 +168,23 @@ header {
 
   max-width: 1700px;
   margin: 70px 0 0;
+
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.8s ease-out 0.1s, transform 0.8s ease-out 0.1s;
+    transform: translateY(8px);
+  }
+
+  .fade-in-deferred {
+    opacity: 0;
+    transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
+    transform: translateY(8px) scale(1.02);
+  }
+
+  .visible {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0) scale(1);
+  }
 }
 
 // Project overview

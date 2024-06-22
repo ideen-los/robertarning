@@ -1,9 +1,8 @@
 import './style.scss';
-import { loadData } from './data';
-import { createProjectsOverview, handleClickOnProjectTeasers } from './projectsOverview';
 import { route, router } from './router';
 import { displayProjects } from './routeHandlers';
 import { handleMenuLinks } from './menu';
+import { addAnimationClasses } from './helperFunctions';
 
 route('/', displayProjects); // This needs to be called before router()
 route('/profil', () => {
@@ -17,4 +16,8 @@ route('/profil', () => {
 document.addEventListener('DOMContentLoaded', function () {
   router();
   handleMenuLinks();
+});
+
+requestAnimationFrame(() => {
+  addAnimationClasses();
 });

@@ -27,7 +27,7 @@ export const createProjectsOverview = function (projects) {
       const urlSaveProjectName = encodeProjectName(project.projectName);
 
       return `<a href="/${urlSaveProjectName}" id="${project.id}">
-      <article>
+      <article class="fade-in-deferred">
       <figure>
       <img src="${project.image}" alt="${project.projectName}">
       </figure>
@@ -38,7 +38,7 @@ export const createProjectsOverview = function (projects) {
     })
     .join('');
 
-  return `<h1 class="site-title">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div>`;
+  return `<h1 class="site-title fade-in">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div>`;
 };
 
 /*
