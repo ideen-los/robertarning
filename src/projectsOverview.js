@@ -1,5 +1,4 @@
 import { pushURLAndCallRouter } from './helperFunctions';
-import { route, router } from './router';
 
 /*
 Encodes the "projectName" value to safely include it in the URL path 
@@ -27,7 +26,7 @@ export const createProjectsOverview = function (projects) {
       const urlSaveProjectName = encodeProjectName(project.projectName);
 
       return `<a href="/${urlSaveProjectName}" id="${project.id}">
-      <article class="fade-in-deferred">
+      <article>
       <figure>
       <img src="${project.image}" alt="${project.projectName}">
       </figure>
@@ -38,7 +37,7 @@ export const createProjectsOverview = function (projects) {
     })
     .join('');
 
-  return `<h1 class="site-title fade-in">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div>`;
+  return `<div class="homepage"><h1 class="site-title">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div></div>`;
 };
 
 /*

@@ -108,5 +108,27 @@
         }
       ]
     }
-  ]
+  ],
+  "profile": {
+    "title": "Profil",
+    "elements": [
+      {
+        "type": "text",
+        "content": "<p>Als UI/UX Developer vereine ich technisches Know-how in HTML, CSS und Grundlagen in JavaScript mit einem starken Sinn für Design. Mein Ziel ist es, digitale Oberflächen zu gestalten, die jeder intuitiv nutzen kann.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+      },
+      {
+        "type": "two-column",
+        "content": [
+          {
+            "type": "text",
+            "content": "<h3>Design</h3><p>UI/UX Design<br>Prototyping</p><h3>Software</h3><p>Figma<br>Adobe XD<br>Adobe Photoshop<br>Adobe Illustrator</p><h3>CMS</h3><p>Drupal<br>WordPress</p>"
+          },
+          {
+            "type": "text",
+            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON)</p><h3>Tools</h3><p>Git<br>NPM<br>Lando<br>Webpack<br>Gulp</p>"
+          }
+        ]
+      }
+    ]
+  }
 }

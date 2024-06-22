@@ -1,5 +1,7 @@
 import { loadData } from './data';
-import { addAnimationClasses, setContent } from './helperFunctions';
+import { setContent } from './helperFunctions';
+import { showMoreProjects } from './moreProjects';
+import { createProfile } from './profile';
 import {
   createProjectsOverview,
   encodeProjectName,
@@ -15,23 +17,36 @@ export const defaultHandler = async (path) => {
   );
 
   if (project) {
-    setContent('content', showSingleProject(project));
+    try {
+      const HTMLContent = await showSingleProject(project);
+      setContent('content', HTMLContent);
+    } catch (error) {
+      console.error('Failed to load project details:', error);
+      setContent('content', '<h1>Error Loading Project</h1>');
+    }
   } else {
     // No project found, display a generic 404 page
     setContent('content', '<h1>404 Not Found</h1>');
   }
 };
 
-export const displayProjects = async function () {
+export const displayProjectOverview = async function () {
   const data = await loadData();
 
   if (data) {
     console.log('Displaying projects...');
     const projectsOverviewHTML = createProjectsOverview(data.projects);
-    document.getElementById('content').innerHTML = projectsOverviewHTML;
+    setContent('content', projectsOverviewHTML);
     handleClickOnProjectTeasers(data.projects);
-    /* requestAnimationFrame(() => {
-      addAnimationClasses();
-    }); */
+  }
+};
+
+export const displayProfile = async function () {
+  const data = await loadData();
+
+  if (data) {
+    console.log('Displaying profile...');
+    const profileHTML = createProfile(data.profile);
+    setContent('content', profileHTML);
   }
 };

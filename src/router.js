@@ -1,4 +1,4 @@
-import { addAnimationClasses } from './helperFunctions';
+import { addAnimationClassesOnPageLoad, handleAnimationOnPageTransition } from './helperFunctions';
 import { defaultHandler } from './routeHandlers';
 
 const routes = {};
@@ -12,6 +12,9 @@ export const router = function () {
   // First, check for static routes
   if (routes[urlPath]) {
     routes[urlPath]();
+    requestAnimationFrame(() => {
+      handleAnimationOnPageTransition();
+    });
   } else {
     // If no static route matches, try dynamic project loading
     defaultHandler(urlPath);

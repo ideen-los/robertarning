@@ -11,7 +11,7 @@
 
 // Font size calculation wit clamp()
 $default-min-bp: 320px;
-$default-max-bp: 1700px;
+$default-max-bp: 1900px;
 
 @function round($number, $decimals: 0) {
   $n: 1;
@@ -57,10 +57,11 @@ $default-max-bp: 1700px;
   --font-size-skill-tag: #{fluid(16px, 18px)};
   --font-size-visit-live-site: #{fluid(16px, 18px)};
 
-  --font-weight-text: 500;
+  --font-weight-text: 440;
+  --font-weight-project-description: 350;
   --font-weight-h1: 370;
-  --font-weight-h2: 470;
-  --font-weight-nav: 500;
+  --font-weight-h2: 500;
+  --font-weight-h3: 500;
 
   --flex-gap-nav: #{fluid(30px, 70px)};
 
@@ -87,7 +88,7 @@ h2 {
 
 h1 {
   max-width: 700px;
-  margin: 0;
+  margin: 0 0 80px -9px;
 
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-h1);
@@ -113,7 +114,7 @@ p {
 
 h3 {
   margin: 20px 0 0;
-  font-weight: var(--font-weight-nav);
+  font-weight: var(--font-weight-h3);
 }
 
 p + p {
@@ -132,6 +133,17 @@ video {
   max-width: 100%;
 }
 
+.transition-in {
+  opacity: 0;
+  transform: translate3d(0, 10px, 0);
+}
+
+.transition-visible {
+  opacity: 1; /* Fully visible */
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s;
+}
+
 // The logo + navigation
 header {
   display: flex;
@@ -146,7 +158,7 @@ header {
   }
 
   nav {
-    font-weight: var(--font-weight-nav);
+    font-weight: var(--font-weight-text);
 
     ul {
       display: flex;
@@ -164,26 +176,34 @@ header {
 #content {
   display: flex;
   flex-direction: column;
-  gap: 80px;
 
   max-width: 1700px;
   margin: 70px 0 0;
+  padding: 0 0 100px;
+}
 
+// Homepage
+.homepage {
   .fade-in {
     opacity: 0;
-    transition: opacity 0.8s ease-out 0.1s, transform 0.8s ease-out 0.1s;
-    transform: translateY(8px);
+    transform: translate3d(0, -10px, 0);
   }
 
   .fade-in-deferred {
     opacity: 0;
-    transition: opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s;
-    transform: translateY(8px) scale(1.02);
+    transform: translate3d(0, 5px, 0) scale(1.03);
   }
 
   .visible {
     opacity: 1; /* Fully visible */
-    transform: translateY(0) scale(1);
+    transform: translate3d(0, 0, 0);
+    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
+  }
+
+  .visible-deferred {
+    opacity: 1; /* Fully visible */
+    transform: translate3d(0, 0, 0) scale(1);
+    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
   }
 }
 
@@ -198,6 +218,7 @@ header {
   article {
     p {
       max-width: 864px;
+      font-weight: var(--font-weight-project-description);
     }
   }
 }
@@ -275,5 +296,26 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+  }
+}
+
+// Profile page
+.profile-page {
+  .text {
+    p {
+      max-width: var(--single-project-text-width);
+    }
+
+    &:first-of-type {
+      margin: 0 0 100px;
+    }
+  }
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    p {
+      font-weight: var(--font-weight-project-description);
+    }
   }
 }
