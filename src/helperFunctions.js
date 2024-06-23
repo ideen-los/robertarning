@@ -11,38 +11,85 @@ export const pushURLAndCallRouter = function (URLpath) {
   history.pushState({}, '', `/${URLpath}`);
   // Call the router
   router();
-  // Set scroll position to the top of the browser window
-  window.scroll(0, 0);
 };
 
 export const addAnimationClassesOnPageLoad = function () {
-  const elements = document.querySelectorAll('h1');
-  const elementsDeferred = document.querySelectorAll(
+  const element = document.querySelector('h1');
+  const elementDeferred = document.querySelector(
     '.projects-overview > a:first-of-type article img'
   );
 
-  elements.forEach((el) => {
-    el.classList.add('fade-in');
+  if (element) {
+    element.classList.add('fade-in');
     requestAnimationFrame(() => {
-      el.classList.add('visible');
+      element.classList.add('visible');
     });
-  });
+  }
 
-  elementsDeferred.forEach((el) => {
-    el.classList.add('fade-in-deferred');
+  if (elementDeferred) {
+    elementDeferred.classList.add('fade-in-deferred');
     requestAnimationFrame(() => {
-      el.classList.add('visible-deferred');
+      elementDeferred.classList.add('visible-deferred');
     });
-  });
+  }
 };
 
 export const handleAnimationOnPageTransition = function () {
-  const elements = document.querySelectorAll('h1');
+  const siteTitle = document.querySelector('h1');
+  const projectTitleAndLink = document.querySelector('.single-project .project-title-and-link');
+  const projectSkillsAndTools = document.querySelector('.single-project .skills-and-tools');
+  const projectSkillsAndToolsList = document.querySelector('.single-project .skills-and-tools ul');
+  const projectFirstMediaElement = document.querySelector(
+    '.single-project .media-elements > div:first-child video'
+  );
 
-  elements.forEach((el) => {
-    el.classList.add('transition-in');
+  console.log(projectSkillsAndToolsList);
+
+  if (siteTitle) {
+    siteTitle.classList.add('transition-in');
     requestAnimationFrame(() => {
-      el.classList.add('transition-visible');
+      siteTitle.classList.add('transition-visible');
     });
-  });
+  }
+
+  if (projectFirstMediaElement) {
+    if (projectTitleAndLink) {
+      projectTitleAndLink.classList.add('transition-in');
+    }
+
+    if (projectSkillsAndTools) {
+      projectSkillsAndTools.classList.add('transition-in-opacity');
+    }
+
+    if (projectSkillsAndToolsList) {
+      projectSkillsAndToolsList.classList.add('transition-in');
+    }
+
+    projectFirstMediaElement.classList.add('transition-in');
+
+    // Waits for the first element to load before attaching the animation triggers
+    projectFirstMediaElement.addEventListener('canplay', function () {
+      if (projectTitleAndLink) {
+        requestAnimationFrame(() => {
+          projectTitleAndLink.classList.add('transition-visible');
+        });
+      }
+
+      if (projectSkillsAndTools) {
+        requestAnimationFrame(() => {
+          projectSkillsAndTools.classList.add('transition-visible');
+        });
+      }
+
+      if (projectSkillsAndToolsList) {
+        requestAnimationFrame(() => {
+          projectSkillsAndToolsList.classList.add('transition-visible-delayed');
+        });
+      }
+
+      requestAnimationFrame(() => {
+        projectFirstMediaElement.classList.add('transition-visible-delayed-more');
+      });
+    });
+  }
 };

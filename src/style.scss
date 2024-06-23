@@ -138,10 +138,26 @@ video {
   transform: translate3d(0, 10px, 0);
 }
 
+.transition-in-opacity {
+  opacity: 0;
+}
+
 .transition-visible {
   opacity: 1; /* Fully visible */
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.6s ease-out 0.1s, transform 0.6s ease-out 0.1s;
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.transition-visible-delayed {
+  opacity: 1; /* Fully visible */
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.5s ease-out 0.25s, transform 0.5s ease-out 0.25s;
+}
+
+.transition-visible-delayed-more {
+  opacity: 1; /* Fully visible */
+  transform: translate3d(0, 0, 0);
+  transition: opacity 0.5s ease-out 0.4s, transform 0.5s ease-out 0.4s;
 }
 
 // The logo + navigation
@@ -151,7 +167,7 @@ header {
   justify-content: space-between;
 
   max-width: 1700px;
-  margin: 20px 0 0;
+  margin: 20px auto 0;
 
   img {
     max-width: var(--logo-width);
@@ -178,7 +194,7 @@ header {
   flex-direction: column;
 
   max-width: 1700px;
-  margin: 70px 0 0;
+  margin: 70px auto 0;
   padding: 0 0 100px;
 }
 
@@ -266,7 +282,6 @@ header {
       }
 
       .skill-tag {
-        /* flex-shrink: 0; */
         padding: var(--single-project-skills-tag-padding1) var(--single-project-skills-tag-padding2);
 
         font-size: var(--font-size-skill-tag);
