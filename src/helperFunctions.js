@@ -13,6 +13,22 @@ export const pushURLAndCallRouter = function (URLpath) {
   router();
 };
 
+export const setupPage = function () {
+  requestAnimationFrame(() => {
+    handleAnimationOnPageTransition();
+  });
+  // Set scroll position to the top of the browser window
+  window.scroll(0, 0);
+};
+
+/*
+Encodes the "projectName" value to safely include it in the URL path 
+*/
+export const convertToURLSaveName = function (name) {
+  // Replace spaces with hyphens, then encode URI components, and finally convert to lowercase
+  return encodeURIComponent(name.replace(/\s+/g, '-')).toLowerCase();
+};
+
 export const addAnimationClassesOnPageLoad = function () {
   const element = document.querySelector('h1');
   const elementDeferred = document.querySelector(

@@ -107,6 +107,36 @@
           ]
         }
       ]
+    },
+    {
+      "projectName": "AMA-Lounge Audioplayer",
+      "id": 3,
+      "description": "Design und Entwicklung eines intuitiven Interfaces für den Audioplayer des Archivs für die Musik Afrikas (AMA) an der Universitätsbibliothek Mainz.",
+      "image": "media/ama-player/overview-ama-player.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "PowerPoint"],
+      "elements": [
+        {
+          "type": "video",
+          "content": "media/ama-player/ama-player-video.mp4"
+        },
+        {
+          "type": "image",
+          "content": "media/ama-player/ama-player-photo.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>Für das „Archiv für die Musik Afrikas“ habe ich einen Audioplayer entwickelt, der es Besuchern ermöglicht, ausgewählte Stücke mit dem traditionellen Musikinstrument Kora zu erleben - bequem vom Sofa aus, in einer entspannten Atmosphäre.</p><p>Das Design ist klar und effektiv. Es bietet eine intuitive Navigation mit einem einfachen Zugang zu den wichtigsten Steuerelementen (Play/Pause, Vor/Zurück), die über Tippen auf SHOW CONTROLS ein- und ausgeblendet werden können. Angesichts der kurzen Vorlaufzeit bis zum Projektstart entschieden wir uns aus Gründen der Flexibilität für PowerPoint als pragmatische Lösung zur Visualisierung des Players.</p>"
+        },
+        {
+          "type": "image",
+          "content": "media/ama-player/ama-player-start.jpg"
+        },
+        {
+          "type": "image",
+          "content": "media/ama-player/ama-player-track.jpg"
+        }
+      ]
     }
   ],
   "profile": {

@@ -1,5 +1,7 @@
+import { loadData } from './data';
+import { convertToURLSaveName, setContent } from './helperFunctions';
 import externalLinkIcon from './img/external-link.svg';
-import { showMoreProjects } from './moreProjects';
+import { handleMoreProjectsLinks, showMoreProjects } from './moreProjects';
 
 export const showSingleProject = async function (project) {
   // Check whether project data is available
@@ -85,5 +87,28 @@ const generateProjectMediaElements = function (project) {
     return projectElements;
   } else {
     return '';
+  }
+};
+
+export const loadSingleProject = async function (path) {
+  const projectName = path.split('/')[1]; // Assuming paths like "/projectName"
+  const data = await loadData();
+  // Find the project object that matches the projectName in the URL
+  const project = data.projects.find(
+    (project) => convertToURLSaveName(project.projectName) === projectName
+  );
+
+  if (project) {
+    try {
+      const HTMLContent = await showSingleProject(project);
+      setContent('content', HTMLContent);
+      /* handleMoreProjectsLinks(project); */
+    } catch (error) {
+      console.error('Failed to load project details:', error);
+      setContent('content', '<h1>Error Loading Project</h1>');
+    }
+  } else {
+    // No project found, display a generic 404 page
+    setContent('content', '<h1>404 Not Found</h1>');
   }
 };

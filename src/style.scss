@@ -57,11 +57,9 @@ $default-max-bp: 1900px;
   --font-size-skill-tag: #{fluid(16px, 18px)};
   --font-size-visit-live-site: #{fluid(16px, 18px)};
 
-  --font-weight-text: 440;
-  --font-weight-project-description: 350;
-  --font-weight-h1: 370;
-  --font-weight-h2: 500;
-  --font-weight-h3: 500;
+  --font-weight-regular: 440;
+  --font-weight-thin: 350;
+  --font-weight-medium: 500;
 
   --flex-gap-nav: #{fluid(30px, 70px)};
 
@@ -93,7 +91,7 @@ h1 {
   margin: 0 0 80px -9px;
 
   font-size: var(--font-size-h1);
-  font-weight: var(--font-weight-h1);
+  font-weight: var(--font-weight-thin);
   line-height: 90%;
 }
 
@@ -101,7 +99,7 @@ h2 {
   margin: 0 0 20px;
 
   font-size: var(--font-size-h2);
-  font-weight: var(--font-weight-h2);
+  font-weight: var(--font-weight-medium);
   line-height: 100%;
 }
 
@@ -116,7 +114,7 @@ p {
 
 h3 {
   margin: 20px 0 0;
-  font-weight: var(--font-weight-h3);
+  font-weight: var(--font-weight-medium);
 }
 
 p + p {
@@ -176,7 +174,7 @@ header {
   }
 
   nav {
-    font-weight: var(--font-weight-text);
+    font-weight: var(--font-weight-regular);
 
     ul {
       display: flex;
@@ -236,7 +234,7 @@ header {
   article {
     p {
       max-width: 864px;
-      font-weight: var(--font-weight-project-description);
+      font-weight: var(--font-weight-thin);
     }
   }
 }
@@ -258,6 +256,7 @@ header {
       max-width: 18px;
     }
   }
+
   .skills-and-tools {
     display: flex;
     align-items: center;
@@ -280,7 +279,7 @@ header {
       span {
         margin-right: 5px;
         font-size: var(--font-size-skills-and-tools);
-        font-weight: var(--font-weight-text);
+        font-weight: var(--font-weight-regular);
       }
 
       .skill-tag {
@@ -314,6 +313,33 @@ header {
     grid-template-columns: 1fr 1fr;
     gap: 10px;
   }
+
+  .more-projects {
+    h2 {
+      font-weight: var(--font-weight-regular);
+      margin: 100px 0;
+      text-align: center;
+    }
+    .more-projects-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+
+      height: 100%;
+      max-height: 570px;
+      width: 100%;
+      aspect-ratio: 170/57;
+
+      div {
+        width: 100%;
+        height: 100%;
+
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+  }
 }
 
 // Profile page
@@ -333,7 +359,7 @@ header {
 
     p {
       max-width: var(--profile-skill-list-text-width);
-      font-weight: var(--font-weight-project-description);
+      font-weight: var(--font-weight-thin);
     }
   }
 }

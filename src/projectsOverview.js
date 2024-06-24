@@ -1,11 +1,5 @@
-import { pushURLAndCallRouter } from './helperFunctions';
-
-/*
-Encodes the "projectName" value to safely include it in the URL path 
-*/
-export const encodeProjectName = function (name) {
-  return encodeURIComponent(name).toLowerCase();
-};
+import { loadData } from './data';
+import { convertToURLSaveName, pushURLAndCallRouter, setContent } from './helperFunctions';
 
 /*
 Generates the HTML code for a project overview page.
@@ -23,7 +17,7 @@ export const createProjectsOverview = function (projects) {
   const overviewHTML = projects
     .map((project) => {
       // Encode the "projectName" value to safely include it in the URL path
-      const urlSaveProjectName = encodeProjectName(project.projectName);
+      const urlSaveProjectName = convertToURLSaveName(project.projectName);
 
       return `<a href="/${urlSaveProjectName}" id="${project.id}">
       <article>
@@ -64,9 +58,20 @@ export const handleClickOnProjectTeasers = function (projects) {
       e.preventDefault();
       const projectId = e.currentTarget.id;
       const projectData = findProjectById(projects, projectId);
-      const urlSaveProjectName = encodeProjectName(projectData.projectName);
+      const urlSaveProjectName = convertToURLSaveName(projectData.projectName);
 
       pushURLAndCallRouter(urlSaveProjectName);
     })
   );
+};
+
+export const displayProjectOverview = async function () {
+  const data = await loadData();
+
+  if (data) {
+    console.log('Displaying projects...');
+    const projectsOverviewHTML = createProjectsOverview(data.projects);
+    setContent('content', projectsOverviewHTML);
+    handleClickOnProjectTeasers(data.projects);
+  }
 };

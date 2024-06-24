@@ -1,3 +1,6 @@
+import { loadData } from './data';
+import { setContent } from './helperFunctions';
+
 export const createProfile = function (profileData) {
   // Check whether profile data is available
   if (!profileData) {
@@ -37,4 +40,14 @@ export const createProfile = function (profileData) {
     .join('');
 
   return `<div class="profile-page"><h1>${profileData.title}</h1>${profileElements}</div>`;
+};
+
+export const displayProfile = async function () {
+  const data = await loadData();
+
+  if (data) {
+    console.log('Displaying profile...');
+    const profileHTML = createProfile(data.profile);
+    setContent('content', profileHTML);
+  }
 };

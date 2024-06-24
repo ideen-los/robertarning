@@ -32,7 +32,7 @@ module.exports = {
   ],
   output: {
     publicPath: '/',
-    filename: 'main.js',
+    filename: '[name].[contenthash].js', // Ensures unique filenames
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
