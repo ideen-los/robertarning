@@ -12,6 +12,11 @@ module.exports = {
       directory: path.join(__dirname, 'dist'),
     },
   },
+  optimization: {
+    splitChunks: {
+      chunks: 'all', // Enables splitting of all chunks
+    },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Robert Arning',
@@ -57,15 +62,10 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-            },
-          },
-        ],
+        type: 'asset/resource', // This specifies how the asset should be handled
+        generator: {
+          filename: 'fonts/[name][ext]', // Defines the output file name pattern
+        },
       },
     ],
   },
