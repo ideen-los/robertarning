@@ -126,7 +126,7 @@
         },
         {
           "type": "text",
-          "content": "<p>Für das „Archiv für die Musik Afrikas“ habe ich einen Audioplayer entwickelt, der es Besuchern ermöglicht, ausgewählte Stücke mit dem traditionellen Musikinstrument Kora zu erleben - bequem vom Sofa aus, in einer entspannten Atmosphäre.</p><p>Das Design ist klar und effektiv. Es bietet eine intuitive Navigation mit einem einfachen Zugang zu den wichtigsten Steuerelementen (Play/Pause, Vor/Zurück), die über Tippen auf SHOW CONTROLS ein- und ausgeblendet werden können. Angesichts der kurzen Vorlaufzeit bis zum Projektstart entschieden wir uns aus Gründen der Flexibilität für PowerPoint als pragmatische Lösung zur Visualisierung des Players.</p>"
+          "content": "<p>Für das „Archiv für die Musik Afrikas“ habe ich einen Audioplayer entwickelt, der es Besuchern ermöglicht, ausgewählte Stücke mit dem traditionellen Musikinstrument Kora zu erleben - bequem vom Sofa aus, in einer entspannten Atmosphäre.</p><p>Das Design ist klar und effektiv. Es bietet eine intuitive Navigation mit einem einfachen Zugang zu den wichtigsten Steuerelementen, die über Tippen auf SHOW CONTROLS ein- und ausgeblendet werden können. Angesichts der kurzen Vorlaufzeit bis zum Projektstart entschieden wir uns aus Gründen der Flexibilität für PowerPoint als pragmatische Lösung zur Visualisierung des Players.</p>"
         },
         {
           "type": "image",
@@ -135,6 +135,118 @@
         {
           "type": "image",
           "content": "media/ama-player/ama-player-track.jpg"
+        }
+      ]
+    },
+    {
+      "projectName": "Universitätsbibliothek Mainz",
+      "id": 4,
+      "description": "Optimierung der Webseite der Universitätsbibliothek Mainz durch Weiterentwicklung, Polishing und Animation bestehender Interface-Elemente.",
+      "image": "media/ub/overview-ub.jpg",
+      "live_site": "https://ub.uni-mainz.de",
+      "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
+      "elements": [
+        {
+          "type": "image",
+          "content": "media/ub/ub-start.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>Die Webseite der Universitätsbibliothek Mainz, insbesondere die Startseite, optimierte ich hinsichtlich Nutzererfahrung und Interfacedesign.</p><p>Da das aktuelle Design insgesamt als passend und effektiv erachtet wurde, beschränkten sich meine Aufgaben auf Polishing und dezente Weiterentwicklung von Animationen und Interfacekomponenten.</p>"
+        },
+        {
+          "type": "video",
+          "version": "new",
+          "content": "media/ub/video-ub-nav-animation-redesign.mp4"
+        },
+        {
+          "type": "video",
+          "version": "old",
+          "content": "media/ub/video-ub-nav-animation-original.mp4"
+        },
+        {
+          "type": "comment",
+          "content": "Polishing der Menü Scroll-Animation"
+        },
+        {
+          "type": "image",
+          "version": "new",
+          "content": "media/ub/ub-nav-new.jpg"
+        },
+        {
+          "type": "image",
+          "version": "old",
+          "content": "media/ub/ub-nav-old.jpg"
+        },
+        {
+          "type": "comment",
+          "content": "Redesign der Hauptnavigation"
+        },
+        {
+          "type": "two-column",
+          "content": [
+            {
+              "type": "video",
+              "version": "new",
+              "content": "media/ub/video-ub-mobile-nav-redesign.mp4"
+            },
+            {
+              "type": "video",
+              "version": "old",
+              "content": "media/ub/video-ub-mobile-nav-original.mp4"
+            }
+          ]
+        },
+        {
+          "type": "comment",
+          "content": "Animation der mobilen Navigation"
+        },
+        {
+          "type": "image",
+          "version": "new",
+          "content": "media/ub/ub-searchbox-new.jpg"
+        },
+        {
+          "type": "image",
+          "version": "old",
+          "content": "media/ub/ub-searchbox-old.jpg"
+        },
+        {
+          "type": "comment",
+          "content": "Polishing der Suchbox"
+        },
+        {
+          "type": "two-column",
+          "content": [
+            {
+              "type": "video",
+              "version": "new",
+              "content": "media/ub/video-ub-accordion-redesign.mp4"
+            },
+            {
+              "type": "video",
+              "version": "old",
+              "content": "media/ub/video-ub-accordion-original.mp4"
+            }
+          ]
+        },
+        {
+          "type": "comment",
+          "content": "Redesign der Akkordions"
+        },
+        {
+          "type": "image",
+          "version": "new",
+          "content": "media/ub/ub-standorte-new.jpg"
+        },
+        {
+          "type": "image",
+          "version": "old",
+          "content": "media/ub/ub-standorte-old.jpg"
+        },
+        {
+          "type": "comment",
+          "content": "Restrukturierung der Standort-Seite und Implementierung einer Filterfunktion"
         }
       ]
     }

@@ -46,6 +46,9 @@ $default-max-bp: 1900px;
 // Custom properties
 :root {
   --primary-color: #0d0d0d;
+  --color-white: #ffffff;
+  --color-green: #22b06c;
+  --color-grey: #a5a5a5;
 
   --logo-width: #{fluid(100px, 149px)};
 
@@ -56,10 +59,12 @@ $default-max-bp: 1900px;
   --font-size-skills-and-tools: #{fluid(20px, 24px)};
   --font-size-skill-tag: #{fluid(16px, 18px)};
   --font-size-visit-live-site: #{fluid(16px, 18px)};
+  --font-size-version: #{fluid(14px, 20px)};
 
   --font-weight-regular: 440;
   --font-weight-thin: 350;
   --font-weight-medium: 500;
+  --font-weight-semibold: 550;
 
   --flex-gap-nav: #{fluid(30px, 70px)};
 
@@ -291,6 +296,45 @@ header {
         border: 2px solid var(--primary-color);
         border-radius: 50px;
       }
+    }
+  }
+
+  .new,
+  .old {
+    position: relative;
+    border: 4px solid var(--color-green);
+
+    &:before {
+      content: 'Neues Design';
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      padding: 7px 16px 7px 13px;
+
+      font-size: var(--font-size-version);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-white);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+
+      background-color: var(--color-green);
+    }
+  }
+
+  .old {
+    border-color: var(--color-grey);
+
+    &:before {
+      content: 'Altes Design';
+      background-color: var(--color-grey);
+    }
+  }
+
+  .comment {
+    p {
+      font-size: var(--font-size-skills-and-tools);
+      padding: 0 0 100px;
     }
   }
 

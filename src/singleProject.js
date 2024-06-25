@@ -47,14 +47,20 @@ const generateProjectMediaElements = function (project) {
       .map((element) => {
         switch (element.type) {
           case 'video':
-            return `<div class="${element.type}">
-            <video src="${element.content}" autoplay muted loop>
+            return `<div class="${element.type} ${element.version || ''}">
+            <video autoplay muted loop>
+              <source src="${element.content}" type="video/mp4">
+            </video>
             </div>`;
           case 'image':
-            return `<div class="${element.type}">
+            return `<div class="${element.type} ${element.version || ''}">
             <img src="${element.content}">
             </div>`;
           case 'text':
+            return `<div class="${element.type}">
+            <p>${element.content}</p>
+            </div>`;
+          case 'comment':
             return `<div class="${element.type}">
             <p>${element.content}</p>
             </div>`;
@@ -64,11 +70,13 @@ const generateProjectMediaElements = function (project) {
             const twoColumnElements = element.content
               .map((media) => {
                 if (media.type === 'video') {
-                  return `<div class="${media.type}">
-                <video src="${media.content}" autoplay muted loop>
+                  return `<div class="${media.type} ${media.version || ''}">
+                <video autoplay muted loop>
+                  <source src="${media.content}" type="video/mp4">
+                </video>
                 </div>`;
                 } else if (media.type === 'image') {
-                  return `<div class="${media.type}">
+                  return `<div class="${media.type} ${element.version || ''}">
             <img src="${media.content}">
             </div>`;
                 } else {

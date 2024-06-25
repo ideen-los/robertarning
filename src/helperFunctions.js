@@ -52,14 +52,15 @@ export const addAnimationClassesOnPageLoad = function () {
 
 export const handleAnimationOnPageTransition = function () {
   const siteTitle = document.querySelector('h1');
+  const allMediaElements = document.querySelector('.single-project .media-elements');
   const projectTitleAndLink = document.querySelector('.single-project .project-title-and-link');
   const projectSkillsAndTools = document.querySelector('.single-project .skills-and-tools');
   const projectSkillsAndToolsList = document.querySelector('.single-project .skills-and-tools ul');
   const projectFirstMediaElement = document.querySelector(
-    '.single-project .media-elements > div:first-child video'
+    '.single-project .media-elements > div > *'
   );
 
-  console.log(projectSkillsAndToolsList);
+  console.log(projectFirstMediaElement);
 
   if (siteTitle) {
     siteTitle.classList.add('transition-in');
@@ -68,7 +69,7 @@ export const handleAnimationOnPageTransition = function () {
     });
   }
 
-  if (projectFirstMediaElement) {
+  if (allMediaElements && projectFirstMediaElement) {
     if (projectTitleAndLink) {
       projectTitleAndLink.classList.add('transition-in');
     }
@@ -83,8 +84,7 @@ export const handleAnimationOnPageTransition = function () {
 
     projectFirstMediaElement.classList.add('transition-in');
 
-    // Waits for the first element to load before attaching the animation triggers
-    projectFirstMediaElement.addEventListener('canplay', function () {
+    const addTransitionTriggers = function () {
       if (projectTitleAndLink) {
         requestAnimationFrame(() => {
           projectTitleAndLink.classList.add('transition-visible');
@@ -106,6 +106,21 @@ export const handleAnimationOnPageTransition = function () {
       requestAnimationFrame(() => {
         projectFirstMediaElement.classList.add('transition-visible-delayed-more');
       });
-    });
+    };
+
+    // Waits for the first element to load before attaching the animation triggers
+    if (projectFirstMediaElement.tagName === 'VIDEO') {
+      projectFirstMediaElement.addEventListener('canplay', function () {
+        addTransitionTriggers();
+        console.log('Video!');
+      });
+    } else if (projectFirstMediaElement.tagName === 'IMG') {
+      projectFirstMediaElement.addEventListener('load', function () {
+        requestAnimationFrame(() => {
+          addTransitionTriggers();
+          console.log('Image!');
+        });
+      });
+    }
   }
 };
