@@ -16,7 +16,7 @@ export const showSingleProject = async function (project) {
   const projectMediaElements = generateProjectMediaElements(project);
   const moreProjects = await showMoreProjects(project);
 
-  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><ul><span>Skills/Tools:</span>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}</div>`;
+  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><ul><span>Skills/   Tools:</span>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}</div>`;
 };
 
 const generateProjectLink = function (project) {
@@ -48,13 +48,13 @@ const generateProjectMediaElements = function (project) {
         switch (element.type) {
           case 'video':
             return `<div class="${element.type} ${element.version || ''}">
-            <video autoplay muted loop>
-              <source src="${element.content}" type="video/mp4">
+            <video class="media lazy-load" autoplay muted loop>
+              <source data-src="${element.content}" type="video/mp4">
             </video>
             </div>`;
           case 'image':
             return `<div class="${element.type} ${element.version || ''}">
-            <img src="${element.content}">
+            <img class="media lazy-load" data-src="${element.content}">
             </div>`;
           case 'text':
             return `<div class="${element.type}">
@@ -71,14 +71,14 @@ const generateProjectMediaElements = function (project) {
               .map((media) => {
                 if (media.type === 'video') {
                   return `<div class="${media.type} ${media.version || ''}">
-                <video autoplay muted loop>
-                  <source src="${media.content}" type="video/mp4">
-                </video>
-                </div>`;
+                  <video class="media lazy-load" autoplay muted loop>
+                    <source data-src="${media.content}" type="video/mp4">
+                  </video>
+                  </div>`;
                 } else if (media.type === 'image') {
                   return `<div class="${media.type} ${element.version || ''}">
-            <img src="${media.content}">
-            </div>`;
+                  <img class="media lazy-load" data-src="${media.content}">
+                  </div>`;
                 } else {
                   return `<p>Unsupported media format.</p>`;
                 }
@@ -110,7 +110,6 @@ export const loadSingleProject = async function (path) {
     try {
       const HTMLContent = await showSingleProject(project);
       setContent('content', HTMLContent);
-      /* handleMoreProjectsLinks(project); */
     } catch (error) {
       console.error('Failed to load project details:', error);
       setContent('content', '<h1>Error Loading Project</h1>');

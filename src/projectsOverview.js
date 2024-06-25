@@ -13,7 +13,10 @@ export const createProjectsOverview = function (projects) {
     return '';
   }
 
-  // Generate HTML code for the projects overview page
+  // Generate HTML code for the description text of the homepage title
+  const descriptionText = `<div class="description"><p>Ich bin Robert Arning, UI & UX Designer mit 10 Jahren Erfahrung und umfassender Expertise in HTML/CSS sowie soliden Grundkenntnissen in JavaScript.</p></div>`;
+
+  // Generate HTML code for displaying each project underneath each other
   const overviewHTML = projects
     .map((project) => {
       // Encode the "projectName" value to safely include it in the URL path
@@ -31,7 +34,7 @@ export const createProjectsOverview = function (projects) {
     })
     .join('');
 
-  return `<div class="homepage"><h1 class="site-title">UI/UX Developer</h1><div class="projects-overview">${overviewHTML}</div></div>`;
+  return `<div class="homepage"><h1 class="site-title">UI/UX Designer</h1>${descriptionText}<div class="projects-overview">${overviewHTML}</div></div>`;
 };
 
 /*
@@ -65,12 +68,18 @@ export const handleClickOnProjectTeasers = function (projects) {
   );
 };
 
+/* 
+Calls the function that generates the HTML for the Project Overview,
+sets its output to display in the #content div and activates the
+links that wrap each project.
+*/
 export const displayProjectOverview = async function () {
   const data = await loadData();
 
   if (data) {
     console.log('Displaying projects...');
     const projectsOverviewHTML = createProjectsOverview(data.projects);
+
     setContent('content', projectsOverviewHTML);
     handleClickOnProjectTeasers(data.projects);
   }

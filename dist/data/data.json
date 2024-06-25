@@ -18,7 +18,7 @@
         },
         {
           "type": "text",
-          "content": "<p>REMIX ist eine innovative Plattform, auf der sich eine Vielfalt von Geschichten, Interviews und virtuellen Ausstellungen findet, inspiriert durch Forschungs- und Lehraktivitäten an der Universität Mainz.</p><p>Ich war verantwortlich für die Konzeption und Gestaltung von Interface, Benutzerführung und -erfahrung sowie die Implementierung der Plattform innerhalb des Content-Management-Systems Drupal.</p>"
+          "content": "<p>REMIX ist eine innovative Plattform, auf der sich eine Vielfalt von Geschichten, Interviews und virtuellen Ausstellungen findet, inspiriert durch Forschungs- und Lehraktivitäten an der Universität Mainz.</p><p>Ich war verantwortlich für die Konzeption und Gestaltung von Interface, Benutzerführung und -&nbsp;erfahrung sowie die Etwicklung der Plattform innerhalb des CMS Drupal.</p>"
         },
         {
           "type": "two-column",
@@ -32,6 +32,10 @@
               "content": "media/remix/remix-cv-mobile.jpg"
             }
           ]
+        },
+        {
+          "type": "image",
+          "content": "media/remix/remix-screens-mobile.jpg"
         },
         {
           "type": "video",
@@ -155,6 +159,10 @@
           "content": "<p>Die Webseite der Universitätsbibliothek Mainz, insbesondere die Startseite, optimierte ich hinsichtlich Nutzererfahrung und Interfacedesign.</p><p>Da das aktuelle Design insgesamt als passend und effektiv erachtet wurde, beschränkten sich meine Aufgaben auf Polishing und dezente Weiterentwicklung von Animationen und Interfacekomponenten.</p>"
         },
         {
+          "type": "comment",
+          "content": "Polishing der Menü Scroll-Animation"
+        },
+        {
           "type": "video",
           "version": "new",
           "content": "media/ub/video-ub-nav-animation-redesign.mp4"
@@ -166,7 +174,7 @@
         },
         {
           "type": "comment",
-          "content": "Polishing der Menü Scroll-Animation"
+          "content": "Redesign der Hauptnavigation"
         },
         {
           "type": "image",
@@ -180,7 +188,7 @@
         },
         {
           "type": "comment",
-          "content": "Redesign der Hauptnavigation"
+          "content": "Animation der mobilen Navigation"
         },
         {
           "type": "two-column",
@@ -199,7 +207,7 @@
         },
         {
           "type": "comment",
-          "content": "Animation der mobilen Navigation"
+          "content": "Polishing der Suchbox"
         },
         {
           "type": "image",
@@ -213,7 +221,7 @@
         },
         {
           "type": "comment",
-          "content": "Polishing der Suchbox"
+          "content": "Redesign der Akkordeons"
         },
         {
           "type": "two-column",
@@ -232,7 +240,7 @@
         },
         {
           "type": "comment",
-          "content": "Redesign der Akkordions"
+          "content": "Restrukturierung der Standort-Seite und Implementierung einer Filterfunktion"
         },
         {
           "type": "image",
@@ -243,10 +251,6 @@
           "type": "image",
           "version": "old",
           "content": "media/ub/ub-standorte-old.jpg"
-        },
-        {
-          "type": "comment",
-          "content": "Restrukturierung der Standort-Seite und Implementierung einer Filterfunktion"
         }
       ]
     }

@@ -20,6 +20,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Robert Arning',
+      favicon: './src/img/favicon.ico',
       template: './src/template.html',
     }),
     new CopyPlugin({

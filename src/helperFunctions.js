@@ -1,11 +1,20 @@
 import { router } from './router';
 
+/* 
+Sets whatever content is passed as second parameter as innerHTML
+of the object with the id passed as first parameter.
+*/
 export const setContent = function (id, content) {
   const HTMLelement = document.getElementById(id);
 
   return (HTMLelement.innerHTML = content);
 };
 
+/* 
+Takes a path like "projectName" as parameter
+and sets this path as the new URL. Finally it
+calls the router() function.
+*/
 export const pushURLAndCallRouter = function (URLpath) {
   // Update the URL
   history.pushState({}, '', `/${URLpath}`);
@@ -13,7 +22,13 @@ export const pushURLAndCallRouter = function (URLpath) {
   router();
 };
 
+/* 
+1. Adds lazy loading to a page
+2. Adds animations to the project title 
+3. Sets the scroll position to the top of the page
+*/
 export const setupPage = function () {
+  initializeLazyLoading();
   requestAnimationFrame(() => {
     handleAnimationOnPageTransition();
   });
@@ -22,13 +37,16 @@ export const setupPage = function () {
 };
 
 /*
-Encodes the "projectName" value to safely include it in the URL path 
+Encodes the "projectName" value to safely include it in the URL path.
+Replace spaces with hyphens, then encode URI components, and finally convert to lowercase
 */
 export const convertToURLSaveName = function (name) {
-  // Replace spaces with hyphens, then encode URI components, and finally convert to lowercase
   return encodeURIComponent(name.replace(/\s+/g, '-')).toLowerCase();
 };
 
+/* 
+Adds animation to the  homepage's title and to the first image on page load.
+*/
 export const addAnimationClassesOnPageLoad = function () {
   const element = document.querySelector('h1');
   const elementDeferred = document.querySelector(
@@ -50,8 +68,13 @@ export const addAnimationClassesOnPageLoad = function () {
   }
 };
 
+/* 
+Adds animations to a page's title, the project name, the
+list of skills used and the wrapper for a project's elements.
+*/
 export const handleAnimationOnPageTransition = function () {
   const siteTitle = document.querySelector('h1');
+  const description = document.querySelector('.homepage .description');
   const allMediaElements = document.querySelector('.single-project .media-elements');
   const projectTitleAndLink = document.querySelector('.single-project .project-title-and-link');
   const projectSkillsAndTools = document.querySelector('.single-project .skills-and-tools');
@@ -123,4 +146,40 @@ export const handleAnimationOnPageTransition = function () {
       });
     }
   }
+};
+
+/* 
+Adds an InteractionObserver to the viewport that sets the src of a video
+or image to the value of the element's data-src, when it comes into view.
+This way images and videos are only loaded, when they are needed.
+*/
+export const initializeLazyLoading = function () {
+  const lazyMedia = document.querySelectorAll('.lazy-load');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const media = entry.target;
+
+        if (media.tagName === 'IMG') {
+          media.src = media.dataset.src;
+          media.onload = () => {
+            media.classList.add('media-loaded');
+          };
+        } else if (media.tagName === 'VIDEO') {
+          Array.from(media.children).forEach((source) => {
+            if (source.tagName === 'SOURCE') source.src = source.dataset.src;
+          });
+          media.load();
+          media.onloadeddata = () => {
+            media.classList.add('media-loaded');
+          };
+        }
+
+        observer.unobserve(media); // Stop observing once loaded
+      }
+    });
+  });
+
+  lazyMedia.forEach((media) => observer.observe(media));
 };

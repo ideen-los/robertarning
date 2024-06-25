@@ -10,7 +10,7 @@ route('/profil', () => import('./profile.js').then((module) => module.displayPro
 document.addEventListener('DOMContentLoaded', function () {
   router();
   handleMenuLinks();
-  requestAnimationFrame(() => {
+  /* requestAnimationFrame(() => {
     addAnimationClassesOnPageLoad();
-  });
+  }); */
 });
