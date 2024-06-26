@@ -1,6 +1,7 @@
 @use 'sass:math';
 
-// Font face
+/* FONT FACE
+=============================================================================================== */
 @font-face {
   font-family: 'Inter';
   font-style: normal;
@@ -43,7 +44,8 @@ $default-max-bp: 1900px;
   @return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
 }
 
-// Custom properties
+/* CUSTOM PROPERTIES
+=============================================================================================== */
 :root {
   --primary-color: #0d0d0d;
   --color-white: #ffffff;
@@ -62,7 +64,7 @@ $default-max-bp: 1900px;
   --font-size-version: #{fluid(14px, 20px)};
 
   --font-weight-regular: 400;
-  --font-weight-thin: 320;
+  --font-weight-thin: 300;
   --font-weight-medium: 500;
   --font-weight-semibold: 550;
 
@@ -75,7 +77,8 @@ $default-max-bp: 1900px;
   --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
 }
 
-// General styles for the website
+/* GENERAL STYLES
+=============================================================================================== */
 body {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.3px;
@@ -139,45 +142,55 @@ video {
   max-width: 100%;
 }
 
-/* Initial state of the media with opacity set to 0 */
+/* LAZY LOADING
+=============================================================================================== */
+// Initial state of media-items with opacity set to 0
 .media {
   opacity: 0;
   transition: opacity 0.5s ease-out;
 }
 
-/* Class to be added once the media is loaded */
+// Class to be added once the media is loaded
 .media-loaded {
   opacity: 1;
 }
 
+/* TRANSITIONS
+=============================================================================================== */
+// Initial state of site title before transition
 .transition-in {
   opacity: 0;
   transform: translate3d(0, 10px, 0);
 }
 
+// Initial state of skills-and-tools div before transition
 .transition-in-opacity {
   opacity: 0;
 }
 
+// Transition of site title
 .transition-visible {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity 0.5s ease-out 0.05s, transform 0.5s ease-out 0.05s;
 }
 
+// Transition of skills list on project pages
 .transition-visible-delayed {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity 0.5s ease-out 0.25s, transform 0.5s ease-out 0.25s;
 }
 
+// Transition of first media element on project pages
 .transition-visible-delayed-more {
-  opacity: 1; /* Fully visible */
+  opacity: 1;
   transform: translate3d(0, 0, 0);
   transition: opacity 0.5s ease-out 0.4s, transform 0.5s ease-out 0.4s;
 }
 
-// The logo + navigation
+/* LOGO + NAVIGATION
+=============================================================================================== */
 header {
   display: flex;
   align-items: flex-end;
@@ -206,20 +219,16 @@ header {
         padding: 8px 15px;
         border-radius: 8px;
 
-        &:hover {
-          opacity: 0.6;
-        }
-
         &:active {
           background-color: rgba(0, 0, 0, 0.05);
-          opacity: 1;
         }
       }
     }
   }
 }
 
-// General styles for the content
+/* GENERAL STYLES FOR #CONTENT
+=============================================================================================== */
 #content {
   display: flex;
   flex-direction: column;
@@ -229,7 +238,8 @@ header {
   padding: 0 0 100px;
 }
 
-// Homepage
+/* Homepage
+=============================================================================================== */
 .homepage {
   .description {
     margin: -20px 0 100px;
@@ -276,7 +286,8 @@ header {
   }
 }
 
-// Single project page
+/* SINGLE PROJECT PAGE
+=============================================================================================== */
 .single-project {
   .project-title-and-link {
     display: flex;
@@ -428,7 +439,8 @@ header {
   }
 }
 
-// Profile page
+/* PROFILE PAGE
+=============================================================================================== */
 .profile-page {
   .text {
     p {

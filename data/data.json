@@ -253,6 +253,71 @@
           "content": "media/ub/ub-standorte-old.jpg"
         }
       ]
+    },
+    {
+      "projectName": "Safak Tike",
+      "id": 6,
+      "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
+      "image": "media/stike/overview-stike.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
+      "elements": [
+        {
+          "type": "video",
+          "content": "media/stike/video-stike-startseite.mp4"
+        },
+        {
+          "type": "text",
+          "content": "<p>Safak Tike ist ein Fachmann im Bereich Vertrieb und Kommunikation.</p><p>Die statischen Webseite habe ich mit HTML, CSS und JavaScript umgesetzt. Sie ist darauf ausgelegt, Professionalität auszustrahlen und Benutzerfreundlichkeit auf allen Geräten sicherzustellen.</p>"
+        },
+        {
+          "type": "image",
+          "content": "media/stike/stike-screens.jpg"
+        },
+        {
+          "type": "video",
+          "content": "media/stike/video-stike-clickthrough.mp4"
+        }
+      ]
+    },
+    {
+      "projectName": "For all People",
+      "id": 7,
+      "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
+      "image": "media/forallpeople/overview-forallpeople.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "HTML", "CSS", "WordPress"],
+      "elements": [
+        {
+          "type": "image",
+          "content": "media/forallpeople/forallpeople-start.jpg"
+        },
+        {
+          "type": "image",
+          "content": "media/forallpeople/forallpeople-screens.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>For all People ist eine gemeinnützige Initiative, die es sich zur Aufgabe gemacht hat, Kindern und Jugendlichen die Welt der klassischen Musik näherzubringen.</p><p>Als Teil des Teams war ich für das Design und die Entwicklung eines simplen One-Pagers für WordPress verantwortlich. Bei der Gestaltung habe ich besonderen Wert gelegt auf ein asymmetrisches, grafisches, klares und spielerisches Design.</p>"
+        },
+        {
+          "type": "image",
+          "content": "media/forallpeople/forallpeople-subscribe.jpg"
+        },
+        {
+          "type": "two-column",
+          "content": [
+            {
+              "type": "image",
+              "content": "media/forallpeople/forallpeople-header-mobile.jpg"
+            },
+            {
+              "type": "image",
+              "content": "media/forallpeople/forallpeople-subscribe-mobile.jpg"
+            }
+          ]
+        }
+      ]
     }
   ],
   "profile": {

@@ -45,30 +45,6 @@ export const convertToURLSaveName = function (name) {
 };
 
 /* 
-Adds animation to the  homepage's title and to the first image on page load.
-*/
-export const addAnimationClassesOnPageLoad = function () {
-  const element = document.querySelector('h1');
-  const elementDeferred = document.querySelector(
-    '.projects-overview > a:first-of-type article img'
-  );
-
-  if (element) {
-    element.classList.add('fade-in');
-    requestAnimationFrame(() => {
-      element.classList.add('visible');
-    });
-  }
-
-  if (elementDeferred) {
-    elementDeferred.classList.add('fade-in-deferred');
-    requestAnimationFrame(() => {
-      elementDeferred.classList.add('visible-deferred');
-    });
-  }
-};
-
-/* 
 Adds animations to a page's title, the project name, the
 list of skills used and the wrapper for a project's elements.
 */
