@@ -19,7 +19,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Robert Arning',
+      title: 'Robert Arning – UI/UX Designer',
       favicon: './src/img/favicon.ico',
       template: './src/template.html',
     }),

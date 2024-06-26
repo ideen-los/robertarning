@@ -48,13 +48,17 @@ const generateProjectMediaElements = function (project) {
         switch (element.type) {
           case 'video':
             return `<div class="${element.type} ${element.version || ''}">
-            <video class="media lazy-load" autoplay muted loop>
-              <source data-src="${element.content}" type="video/mp4">
+            <video class="${element.above_fold ? '' : 'media lazy-load'}" autoplay muted loop>
+              <source ${
+                element.above_fold ? `src="${element.content}"` : `data-src="${element.content}"`
+              } type="video/mp4">
             </video>
             </div>`;
           case 'image':
             return `<div class="${element.type} ${element.version || ''}">
-            <img class="media lazy-load" data-src="${element.content}">
+            <img class="${element.above_fold ? '' : 'media lazy-load'}" ${
+              element.above_fold ? `src="${element.content}"` : `data-src="${element.content}"`
+            }">
             </div>`;
           case 'text':
             return `<div class="${element.type}">

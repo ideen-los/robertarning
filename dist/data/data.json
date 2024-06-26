@@ -10,7 +10,8 @@
       "elements": [
         {
           "type": "video",
-          "content": "media/remix/video-remix-startseite.mp4"
+          "content": "media/remix/video-remix-startseite.mp4",
+          "above_fold": "true"
         },
         {
           "type": "image",
@@ -53,7 +54,8 @@
       "elements": [
         {
           "type": "video",
-          "content": "media/marena/video-marena-mobile-full.mp4"
+          "content": "media/marena/video-marena-mobile-full.mp4",
+          "above_fold": "true"
         },
         {
           "type": "image",
@@ -122,7 +124,8 @@
       "elements": [
         {
           "type": "video",
-          "content": "media/ama-player/ama-player-video.mp4"
+          "content": "media/ama-player/ama-player-video.mp4",
+          "above_fold": "true"
         },
         {
           "type": "image",
@@ -152,7 +155,8 @@
       "elements": [
         {
           "type": "image",
-          "content": "media/ub/ub-start.jpg"
+          "content": "media/ub/ub-start.jpg",
+          "above_fold": "true"
         },
         {
           "type": "text",
@@ -264,7 +268,8 @@
       "elements": [
         {
           "type": "video",
-          "content": "media/stike/video-stike-startseite.mp4"
+          "content": "media/stike/video-stike-startseite.mp4",
+          "above_fold": "true"
         },
         {
           "type": "text",
@@ -290,7 +295,8 @@
       "elements": [
         {
           "type": "image",
-          "content": "media/forallpeople/forallpeople-start.jpg"
+          "content": "media/forallpeople/forallpeople-start.jpg",
+          "above_fold": "true"
         },
         {
           "type": "image",
@@ -325,7 +331,7 @@
     "elements": [
       {
         "type": "text",
-        "content": "<p>Als UI/UX Developer vereine ich technisches Know-how in HTML, CSS und Grundlagen in JavaScript mit einem starken Sinn für Design. Mein Ziel ist es, digitale Oberflächen zu gestalten, die jeder intuitiv nutzen kann.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+        "content": "<p>Ich beherrsche HTML/CSS und habe ein solides JavaScript-Grundwissen, kombiniert mit einem starken Sinn für Design. Meine Problemlösungskompetenz geht über die Gestaltung von Benutzeroberflächen hinaus. Mein Ziel ist es, Nutzerinteraktionen zu gestalten, die intuitiv sind – egal in welchem Kontext.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
       },
       {
         "type": "two-column",
