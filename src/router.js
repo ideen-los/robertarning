@@ -1,15 +1,29 @@
+/* 
+An object that contains the routes and the corresponding path handler function
+*/
 const routes = {};
 
-export const route = function (path, handlerFunc) {
-  routes[path] = handlerFunc;
+/* 
+Creates a key in the object { routes } with a specified path handler function as value
+*/
+export const route = function (path, handlerFunction) {
+  routes[path] = handlerFunction;
 };
 
+/* 
+1. Checks whether the current pathname has been registered as a key in the { routes } object.
+If it is, then it calls the path handler associated with registered key.
+
+2. If the current path is not a key in { routes }, tries to call a function that loads a single
+project based on the pathname. If no project with that name is found, the function returns a 
+404 page not found message.
+*/
 export const router = function () {
+  // Get the part after the "/" in the current URL or default to "/"
   const urlPath = window.location.pathname || '/';
 
   // First, check for static routes
   if (routes[urlPath]) {
-    // Execute the dynamically imported module function
     routes[urlPath]()
       .then((handler) => {
         handler();
