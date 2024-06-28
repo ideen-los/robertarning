@@ -10,8 +10,83 @@
   src: url('./fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype-variations');
 }
 
-// Font size calculation wit clamp()
-$default-min-bp: 320px;
+/* BREAKPOINTS
+=============================================================================================== */
+@mixin breakpoint-lg {
+  @media (max-width: 1424px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-MIN-lg {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md {
+  @media (max-width: 1199px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-MIN-md {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  @media (max-width: 991px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-MIN-sm {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xs {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-MIN-xs {
+  @media (min-width: 601px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xs-half {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-MIN-xs-half {
+  @media (min-width: 421px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xxs {
+  @media (max-width: 420px) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xxs-half {
+  @media (max-width: 376px) {
+    @content;
+  }
+}
+
+/* FONT SIZE CALCULATIONS WITH CLAMP()
+=============================================================================================== */
+$default-min-bp: 420px;
 $default-max-bp: 1900px;
 
 @function round($number, $decimals: 0) {
@@ -54,8 +129,18 @@ $default-max-bp: 1900px;
 
   --logo-width: #{fluid(100px, 149px)};
 
+  @include breakpoint-xxs() {
+    --logo-width: 30px;
+  }
+
   --font-size-nav: #{fluid(20px, 28px)};
   --font-size-text: #{fluid(22px, 34px)};
+
+  @include breakpoint-xxs() {
+    --font-size-nav: 18px;
+    --font-size-text: 20px;
+  }
+
   --font-size-h1: #{fluid(80px, 170px)};
   --font-size-h2: #{fluid(40px, 90px)};
   --font-size-skills-and-tools: #{fluid(20px, 24px)};
@@ -63,18 +148,40 @@ $default-max-bp: 1900px;
   --font-size-visit-live-site: #{fluid(16px, 18px)};
   --font-size-version: #{fluid(14px, 20px)};
 
+  @include breakpoint-xxs() {
+    --font-size-h1: 60px;
+    --font-size-h2: 30px;
+    --font-size-skills-and-tools: 15px;
+    --font-size-skill-tag: 14px;
+    --font-size-visit-live-site: 14px;
+  }
+
   --font-weight-regular: 400;
   --font-weight-thin: 300;
-  --font-weight-medium: 500;
+  --font-weight-medium: 510;
   --font-weight-semibold: 550;
 
-  --flex-gap-nav: #{fluid(20px, 50px)};
+  --flex-gap-nav: #{fluid(7px, 50px)};
+
+  --homepage-description-text-width: #{fluid(600px, 880px)};
+
+  --100px-to-50px: #{fluid(50px, 100px)};
+  --80px-to-40px: #{fluid(40px, 80px)};
+  --70px-to-35px: #{fluid(35px, 70px)};
+  --65px-to-45px: #{fluid(45px, 65px)};
+  --20px-to-12px: #{fluid(12px, 20px)};
+  --15px-to-10px: #{fluid(10px, 15px)};
 
   --profile-skill-list-text-width: #{fluid(500px, 600px)};
 
-  --single-project-text-width: #{fluid(600px, 900px)};
+  --single-project-text-width: #{fluid(460px, 800px)};
   --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
   --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
+
+  @include breakpoint-xxs() {
+    --single-project-skills-tag-padding1: 3px;
+    --single-project-skills-tag-padding2: 6px;
+  }
 }
 
 /* GENERAL STYLES
@@ -82,7 +189,12 @@ $default-max-bp: 1900px;
 body {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.3px;
-  padding: 0 20px;
+  margin: 0;
+  padding: 0 28px;
+
+  @include breakpoint-xs() {
+    padding: 0 20px;
+  }
 }
 
 a {
@@ -97,15 +209,19 @@ h2 {
 
 h1 {
   max-width: 700px;
-  margin: 0 0 80px -9px;
+  margin: 0 0 var(--70px-to-35px) -10px;
 
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-regular);
   line-height: 90%;
+
+  @include breakpoint-xxs() {
+    margin: 0 0 30px -5px;
+  }
 }
 
 h2 {
-  margin: 0 0 20px;
+  margin: 0 0 20px -2px;
 
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-medium);
@@ -140,6 +256,18 @@ video {
   display: block;
   width: 100%;
   max-width: 100%;
+}
+
+.hidden-xxs-half {
+  @include breakpoint-xxs-half() {
+    display: none;
+  }
+}
+.visible-xxs-half {
+  display: none;
+  @include breakpoint-xxs-half() {
+    display: block;
+  }
 }
 
 /* LAZY LOADING
@@ -186,7 +314,7 @@ video {
 .transition-visible-delayed-more {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.5s ease-out 0.4s, transform 0.5s ease-out 0.4s;
+  transition: opacity 0.5s ease-out 0.45s, transform 0.5s ease-out 0.45s;
 }
 
 /* LOGO + NAVIGATION
@@ -201,6 +329,11 @@ header {
 
   img {
     max-width: var(--logo-width);
+    min-width: 80px;
+
+    @include breakpoint-xxs-half() {
+      min-width: 31px;
+    }
   }
 
   nav {
@@ -210,14 +343,24 @@ header {
       display: flex;
       gap: var(--flex-gap-nav);
 
-      margin: 0;
+      margin: 0 0 -5px;
+      padding: 0 0 0 30px;
 
       list-style: none;
       font-size: var(--font-size-nav);
 
+      @include breakpoint-xxs() {
+        margin: 0 0 -2px;
+        padding: 0 0 0 10px;
+      }
+
       li a {
         padding: 8px 15px;
         border-radius: 8px;
+
+        @include breakpoint-xxs() {
+          padding: 4px 7px;
+        }
 
         &:active {
           background-color: rgba(0, 0, 0, 0.05);
@@ -234,7 +377,7 @@ header {
   flex-direction: column;
 
   max-width: 1700px;
-  margin: 70px auto 0;
+  margin: var(--80px-to-40px) auto 0;
   padding: 0 0 100px;
 }
 
@@ -242,39 +385,23 @@ header {
 =============================================================================================== */
 .homepage {
   .description {
-    margin: -20px 0 100px;
+    margin: 0 0 var(--70px-to-35px);
 
     p {
-      max-width: var(--single-project-text-width);
+      max-width: var(--homepage-description-text-width);
+
+      @include breakpoint-xxs() {
+        hyphens: auto;
+      }
     }
   }
-
-  /* .fade-in {
-    opacity: 0;
-    transform: translate3d(0, -10px, 0);
-  }
-
-  .fade-in-deferred {
-    opacity: 0;
-    transform: translate3d(0, 5px, 0) scale(1.03);
-  }
-
-  .visible {
-    transform: translate3d(0, 0, 0);
-    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
-  }
-
-  .visible-deferred {
-    transform: translate3d(0, 0, 0) scale(1);
-    transition: opacity 1s ease-out 0.2s, transform 1s ease-out 0.2s;
-  } */
 }
 
 // Project overview
 .projects-overview {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: var(--100px-to-50px);
 
   margin: 0;
 
@@ -283,6 +410,14 @@ header {
       max-width: var(--single-project-text-width);
       font-weight: var(--font-weight-thin);
     }
+    figure {
+      @include breakpoint-sm() {
+        margin: 0 -28px;
+      }
+      @include breakpoint-xs() {
+        margin: 0 -20px;
+      }
+    }
   }
 }
 
@@ -290,14 +425,28 @@ header {
 =============================================================================================== */
 .single-project {
   .project-title-and-link {
-    display: flex;
-    align-items: baseline;
-    gap: 30px;
+    h2 {
+      display: inline;
+      margin-right: 30px;
+      margin-bottom: 0;
+
+      @include breakpoint-xs-half() {
+        hyphens: auto;
+      }
+      @include breakpoint-xxs() {
+        margin-right: 20px;
+      }
+    }
 
     a {
-      display: flex;
+      display: inline-flex;
       gap: 8px;
       font-size: var(--font-size-visit-live-site);
+    }
+
+    span {
+      flex-shrink: 0;
+      margin: 6px 0 0;
     }
 
     img {
@@ -307,13 +456,24 @@ header {
 
   .skills-and-tools {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: flex-start;
-    gap: 20px;
+    gap: 5px;
 
-    margin: 0 0 25px;
-    padding: 10px 0;
+    margin: var(--15px-to-10px) 0 var(--65px-to-45px);
+    padding: var(--20px-to-12px) 0 0;
+
     border-top: 2px solid var(--primary-color);
+
+    @include breakpoint-xxs() {
+      margin: 11px 0 30px;
+    }
+
+    span {
+      margin-right: 5px;
+      font-size: var(--font-size-skills-and-tools);
+      font-weight: var(--font-weight-medium);
+    }
 
     ul {
       display: flex;
@@ -321,23 +481,22 @@ header {
       flex-wrap: wrap;
       align-items: center;
 
+      margin: 0;
       padding: 0;
       list-style: none;
-
-      span {
-        margin-right: 5px;
-        font-size: var(--font-size-skills-and-tools);
-        font-weight: var(--font-weight-regular);
-      }
 
       .skill-tag {
         padding: var(--single-project-skills-tag-padding1) var(--single-project-skills-tag-padding2);
 
         font-size: var(--font-size-skill-tag);
-        font-weight: 400;
+        font-weight: var(--font-weight-regular);
 
         border: 2px solid var(--primary-color);
         border-radius: 50px;
+
+        @include breakpoint-xxs() {
+          border-width: 1px;
+        }
       }
     }
   }
@@ -379,7 +538,7 @@ header {
   .comment {
     p {
       font-size: var(--font-size-skills-and-tools);
-      padding: 100px 0 0;
+      padding: var(--100px-to-50px) 0 0;
     }
   }
 
@@ -390,10 +549,14 @@ header {
   }
 
   .text {
-    padding: 100px 0;
+    padding: var(--100px-to-50px) 0;
 
     p {
       max-width: var(--single-project-text-width);
+
+      @include breakpoint-xxs() {
+        hyphens: auto;
+      }
     }
   }
 
@@ -402,6 +565,20 @@ header {
     display: flex;
     flex-direction: column;
     gap: 10px;
+
+    @include breakpoint-xxs() {
+      gap: 7.5px;
+    }
+  }
+
+  .video,
+  .image {
+    @include breakpoint-sm() {
+      margin: 0 -28px;
+    }
+    @include breakpoint-xs() {
+      margin: 0 -20px;
+    }
   }
 
   .two-column {
@@ -412,9 +589,16 @@ header {
 
   // Shows previous and next project
   .more-projects {
+    @include breakpoint-sm() {
+      margin: 0 -28px;
+    }
+    @include breakpoint-xxs() {
+      margin: 0 -20px;
+    }
+
     h2 {
       font-weight: var(--font-weight-regular);
-      margin: 100px 0;
+      margin: var(--100px-to-50px) 0;
       text-align: center;
     }
     .more-projects-wrapper {
@@ -426,6 +610,10 @@ header {
       max-height: 570px;
       width: 100%;
       aspect-ratio: 170/57;
+
+      @include breakpoint-xxs() {
+        gap: 7.5px;
+      }
 
       div {
         width: 100%;
@@ -444,16 +632,24 @@ header {
 .profile-page {
   .text {
     p {
-      max-width: var(--single-project-text-width);
-    }
-
-    &:first-of-type {
-      margin: 0 0 100px;
+      max-width: var(--homepage-description-text-width);
     }
   }
+
+  > .text:first-of-type {
+    margin: 0 0 var(--100px-to-50px);
+
+    p {
+      @include breakpoint-xxs() {
+        hyphens: auto;
+      }
+    }
+  }
+
   .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 15px;
 
     p {
       max-width: var(--profile-skill-list-text-width);

@@ -54,6 +54,9 @@ export const handleAnimationOnPageTransition = function () {
   const allMediaElements = document.querySelector('.single-project .media-elements');
   const projectTitleAndLink = document.querySelector('.single-project .project-title-and-link');
   const projectSkillsAndTools = document.querySelector('.single-project .skills-and-tools');
+  const projectSkillsAndToolsLabel = document.querySelector(
+    '.single-project .skills-and-tools span'
+  );
   const projectSkillsAndToolsList = document.querySelector('.single-project .skills-and-tools ul');
   const projectFirstMediaElement = document.querySelector(
     '.single-project .media-elements > div > *'
@@ -77,6 +80,10 @@ export const handleAnimationOnPageTransition = function () {
       projectSkillsAndTools.classList.add('transition-in-opacity');
     }
 
+    if (projectSkillsAndToolsLabel) {
+      projectSkillsAndToolsLabel.classList.add('transition-in');
+    }
+
     if (projectSkillsAndToolsList) {
       projectSkillsAndToolsList.classList.add('transition-in');
     }
@@ -93,6 +100,12 @@ export const handleAnimationOnPageTransition = function () {
       if (projectSkillsAndTools) {
         requestAnimationFrame(() => {
           projectSkillsAndTools.classList.add('transition-visible');
+        });
+      }
+
+      if (projectSkillsAndToolsLabel) {
+        requestAnimationFrame(() => {
+          projectSkillsAndToolsLabel.classList.add('transition-visible-delayed');
         });
       }
 

@@ -27,6 +27,7 @@ module.exports = {
       patterns: [
         { from: './data/data.json', to: 'data/data.json' },
         { from: './src/img/ra-logo.svg', to: 'img/ra-logo.svg' },
+        { from: './src/img/ra-logo-solo.svg', to: 'img/ra-logo-solo.svg' },
         { from: './media', to: 'media' },
       ],
     }),

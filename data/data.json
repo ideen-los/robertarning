@@ -259,11 +259,45 @@
       ]
     },
     {
+      "projectName": "Datenbank-Infosystem (DBIS)",
+      "id": 5,
+      "description": "Redesign des Portals für wissenschaftliche Datenbanken der Universitätsbibliothek Mainz.",
+      "image": "media/dbis/overview-dbis.jpg",
+      "live_site": "",
+      "skills": ["UI Design", "HTML", "CSS"],
+      "elements": [
+        {
+          "type": "image",
+          "content": "media/dbis/dbis-start.jpg",
+          "above_fold": "true"
+        },
+        {
+          "type": "text",
+          "content": "<p>DBIS ist ein Rechercheportal für wissenschaftliche Datenbanken im Bibliothekswesen. Bibliotheksangestellte verwenden das Toll täglich. Das Design stammte aus dem Beginn der 2000er.</p><p>Meine Aufgabe bestand darin, im Rahmen des existierenden HTML-Gerüsts auf Basis von CSS ein modernes und benutzerfreundliches Interface zu implementieren, das sich an die Gestaltung der Webseite der Universitätsbibliothek anlehnt.</p>"
+        },
+        {
+          "type": "image",
+          "content": "media/dbis/dbis-al-new.jpg",
+          "version": "new"
+        },
+        {
+          "type": "image",
+          "content": "media/dbis/dbis-al-old.jpg",
+          "version": "old"
+        },
+        {
+          "type": "image",
+          "content": "media/dbis/dbis-screens.jpg",
+          "version": "new"
+        }
+      ]
+    },
+    {
       "projectName": "Safak Tike",
       "id": 6,
       "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
       "image": "media/stike/overview-stike.jpg",
-      "live_site": "",
+      "live_site": "https://s-tike.de",
       "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
       "elements": [
         {
@@ -331,7 +365,7 @@
     "elements": [
       {
         "type": "text",
-        "content": "<p>Ich beherrsche HTML/CSS und habe ein solides JavaScript-Grundwissen, kombiniert mit einem starken Sinn für Design. Meine Problemlösungskompetenz geht über die Gestaltung von Benutzeroberflächen hinaus. Mein Ziel ist es, Nutzerinteraktionen zu gestalten, die intuitiv sind – egal in welchem Kontext.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+        "content": "<p>Ich habe einen starken Sinn für Design, solide JavaScript-Grundkenntnisse und umfassendes Wissen in HTML/CSS. Meine Fähigkeit im Problemlösen geht über die reine Gestaltung von Interfaces hinaus. Ich konzipiere Nutzerinteraktionen, die intuitiv sind – egal in welchem Kontext.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
       },
       {
         "type": "two-column",

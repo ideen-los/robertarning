@@ -16,7 +16,7 @@ export const showSingleProject = async function (project) {
   const projectMediaElements = generateProjectMediaElements(project);
   const moreProjects = await showMoreProjects(project);
 
-  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><ul><span>Skills/   Tools:</span>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}</div>`;
+  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><span>Skills:</span><ul>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}</div>`;
 };
 
 const generateProjectLink = function (project) {
@@ -62,7 +62,7 @@ const generateProjectMediaElements = function (project) {
             </div>`;
           case 'text':
             return `<div class="${element.type}">
-            <p>${element.content}</p>
+            ${element.content}
             </div>`;
           case 'comment':
             return `<div class="${element.type}">
