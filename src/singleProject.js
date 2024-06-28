@@ -113,16 +113,16 @@ export const loadSingleProject = async function (path) {
     try {
       const HTMLContent = await showSingleProject(project);
       setContent('content', HTMLContent);
-      // Return the projectName. Will be set as the document.title in router.js
+      // Return the project's name
+      // Will be set as the document.title
       return project.projectName;
     } catch (error) {
       console.error('Failed to load project details:', error);
       setContent('content', '<h1>Error Loading Project</h1>');
-      return 'Error';
+      return '404';
     }
   } else {
     setContent('content', '<h1>404 Not Found</h1>');
-    // Return a generic title for not found cases. Will be set as the document.title in router.js
-    return '404 Not Found';
+    return '404';
   }
 };
