@@ -1,8 +1,8 @@
 import { router } from './router';
 
 /* 
-Sets whatever content is passed as second parameter as innerHTML
-of the object with the id passed as first parameter.
+Gets the element by its id passed as the functions 1st parameter and
+sets its innerHTML to whatever content is passed as the 2nd parameter
 */
 export const setContent = function (id, content) {
   const HTMLelement = document.getElementById(id);
@@ -11,9 +11,8 @@ export const setContent = function (id, content) {
 };
 
 /* 
-Takes a path like "projectName" as parameter
-and sets this path as the new URL. Finally it
-calls the router() function.
+Updates the browser's history stack by adding a new entry. This sets the new URL path 
+without reloading the page. Then calls the router() function to handle the URL change.
 */
 export const pushURLAndCallRouter = function (URLpath) {
   // Update the URL

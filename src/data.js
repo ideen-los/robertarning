@@ -8,12 +8,12 @@ export const loadData = async function () {
   console.log('Initializing...');
   let data;
 
-  // Get data from sessionStorage if available
   if (isSessionStorageAvailable) {
     console.log('sessionStorage available...');
     const storedData = JSON.parse(sessionStorage.getItem('data'));
 
     if (storedData) {
+      // Gets the data from sessionStorage
       console.log('Loaded projects from sessionStorage');
       data = storedData;
       console.log(data);
@@ -21,7 +21,8 @@ export const loadData = async function () {
     }
   }
 
-  // If data is not available in sessionStorage, fetch the data from server
+  // No sessionStorage available or no data in sessionStorage:
+  // fetch the data.json from the server
   try {
     console.log('Getting data...');
     const response = await fetch('/data/data.json');
@@ -29,6 +30,7 @@ export const loadData = async function () {
       // Check if the HTTP status code is in the 200-299 range
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
+
     data = await response.json();
     console.log(data);
 
