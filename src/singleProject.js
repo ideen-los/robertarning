@@ -105,7 +105,6 @@ const generateProjectMediaElements = function (project) {
 export const loadSingleProject = async function (path) {
   const projectName = path.split('/')[1]; // Assuming paths like "/projectName"
   const data = await loadData();
-  // Find the project object that matches the projectName in the URL
   const project = data.projects.find(
     (project) => convertToURLSaveName(project.projectName) === projectName
   );
@@ -114,12 +113,16 @@ export const loadSingleProject = async function (path) {
     try {
       const HTMLContent = await showSingleProject(project);
       setContent('content', HTMLContent);
+      // Return the projectName. Will be set as the document.title in router.js
+      return project.projectName;
     } catch (error) {
       console.error('Failed to load project details:', error);
       setContent('content', '<h1>Error Loading Project</h1>');
+      return 'Error';
     }
   } else {
-    // No project found, display a generic 404 page
     setContent('content', '<h1>404 Not Found</h1>');
+    // Return a generic title for not found cases. Will be set as the document.title in router.js
+    return '404 Not Found';
   }
 };

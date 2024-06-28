@@ -19,7 +19,6 @@ project based on the pathname. If no project with that name is found, the functi
 404 page not found message.
 */
 export const router = function () {
-  // Get the part after the "/" in the current URL or default to "/"
   const urlPath = window.location.pathname || '/';
 
   // First, check for static routes
@@ -27,6 +26,7 @@ export const router = function () {
     routes[urlPath]()
       .then((handler) => {
         handler();
+        document.title = 'Your Static Route Title'; // Set static title here or modify handler to do it
         import('./helperFunctions.js').then((module) => {
           module.setupPage();
         });
@@ -39,12 +39,14 @@ export const router = function () {
     import('./singleProject.js').then((module) => {
       module
         .loadSingleProject(urlPath)
-        .then(() => {
+        .then((projectName) => {
+          // Ensure loadSingleProject returns projectName
+          document.title = `Robert Arning – ${projectName}` || 'Robert Arning – Page Not Found'; // Set dynamic title
           import('./helperFunctions.js').then((helperModule) => {
             helperModule.setupPage();
-            import('./moreProjects.js').then((moreProjectsModule) => {
-              moreProjectsModule.handleMoreProjectsLinks();
-            });
+          });
+          import('./moreProjects.js').then((moreProjectsModule) => {
+            moreProjectsModule.handleMoreProjectsLinks();
           });
         })
         .catch((error) => {
