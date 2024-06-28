@@ -1,4 +1,3 @@
-import './style.scss';
 import { route, router } from './router';
 import { handleMenuLinks } from './menu';
 

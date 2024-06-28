@@ -1,0 +1,32 @@
+@import 'general-styles';
+
+/* PROFILE PAGE
+=============================================================================================== */
+.profile-page {
+  .text {
+    p {
+      max-width: var(--homepage-description-text-width);
+    }
+  }
+
+  > .text:first-of-type {
+    margin: 0 0 var(--120px-to-60px);
+
+    p {
+      @include breakpoint-xxs() {
+        hyphens: auto;
+      }
+    }
+  }
+
+  .two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+
+    p {
+      max-width: var(--profile-skill-list-text-width);
+      font-weight: var(--font-weight-thin);
+    }
+  }
+}

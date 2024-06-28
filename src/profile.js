@@ -1,3 +1,4 @@
+import './scss/profile.scss';
 import { loadData } from './data';
 import { setContent } from './helperFunctions';
 

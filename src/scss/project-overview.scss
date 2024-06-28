@@ -1,0 +1,41 @@
+@import 'general-styles';
+
+/* Homepage
+=============================================================================================== */
+.homepage {
+  .description {
+    margin: 0 0 var(--70px-to-35px);
+
+    p {
+      max-width: var(--homepage-description-text-width);
+
+      @include breakpoint-xxs() {
+        hyphens: auto;
+      }
+    }
+  }
+}
+
+// Project overview
+.projects-overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--120px-to-60px);
+
+  margin: 0;
+
+  article {
+    p {
+      max-width: var(--single-project-text-width);
+      font-weight: var(--font-weight-thin);
+    }
+    figure {
+      @include breakpoint-sm() {
+        margin: 0 -28px;
+      }
+      @include breakpoint-xs() {
+        margin: 0 -20px;
+      }
+    }
+  }
+}

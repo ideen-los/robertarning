@@ -1,3 +1,4 @@
+import './scss/project-overview.scss';
 import { loadData } from './data';
 import { convertToURLSaveName, pushURLAndCallRouter, setContent } from './helperFunctions';
 

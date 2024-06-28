@@ -1,8 +1,9 @@
+import './scss/project-page.scss';
+import externalLinkIcon from './img/external-link.svg';
+import arrowLeft from './img/arrow-left.svg';
 import { loadData } from './data';
 import { convertToURLSaveName, pushURLAndCallRouter, setContent } from './helperFunctions';
 import { showMoreProjects } from './moreProjects';
-import externalLinkIcon from './img/external-link.svg';
-import arrowLeft from './img/arrow-left.svg';
 
 /* 
 Bundles and returns all of the HTML code for a single project.
