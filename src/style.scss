@@ -165,7 +165,8 @@ $default-max-bp: 1900px;
 
   --homepage-description-text-width: #{fluid(600px, 890px)};
 
-  --100px-to-50px: #{fluid(50px, 100px)};
+  --160px-to-80px: #{fluid(80px, 160px)};
+  --120px-to-60px: #{fluid(60px, 120px)};
   --80px-to-40px: #{fluid(40px, 80px)};
   --70px-to-35px: #{fluid(35px, 70px)};
   --65px-to-45px: #{fluid(45px, 65px)};
@@ -378,7 +379,12 @@ header {
 
   max-width: 1700px;
   margin: var(--80px-to-40px) auto 0;
-  padding: 0 0 100px;
+  padding: 0;
+
+  .homepage,
+  .profile-page {
+    padding: 0 0 var(--160px-to-80px);
+  }
 }
 
 /* Homepage
@@ -401,7 +407,7 @@ header {
 .projects-overview {
   display: flex;
   flex-direction: column;
-  gap: var(--100px-to-50px);
+  gap: var(--120px-to-60px);
 
   margin: 0;
 
@@ -538,7 +544,7 @@ header {
   .comment {
     p {
       font-size: var(--font-size-skills-and-tools);
-      padding: var(--100px-to-50px) 0 0;
+      padding: var(--120px-to-60px) 0 0;
     }
   }
 
@@ -549,7 +555,7 @@ header {
   }
 
   .text {
-    padding: var(--100px-to-50px) 0;
+    padding: var(--120px-to-60px) 0;
 
     p {
       max-width: var(--single-project-text-width);
@@ -569,15 +575,16 @@ header {
     @include breakpoint-xxs() {
       gap: 7.5px;
     }
-  }
 
-  .video,
-  .image {
-    @include breakpoint-sm() {
-      margin: 0 -28px;
-    }
-    @include breakpoint-xs() {
-      margin: 0 -20px;
+    > .video,
+    > .image,
+    > .two-column {
+      @include breakpoint-sm() {
+        margin: 0 -28px;
+      }
+      @include breakpoint-xs() {
+        margin: 0 -20px;
+      }
     }
   }
 
@@ -592,13 +599,13 @@ header {
     @include breakpoint-sm() {
       margin: 0 -28px;
     }
-    @include breakpoint-xxs() {
+    @include breakpoint-xs() {
       margin: 0 -20px;
     }
 
     h2 {
       font-weight: var(--font-weight-regular);
-      margin: var(--100px-to-50px) 0;
+      margin: var(--120px-to-60px) 0;
       text-align: center;
     }
     .more-projects-wrapper {
@@ -625,6 +632,32 @@ header {
       }
     }
   }
+
+  .all-projects-link {
+    padding: var(--160px-to-80px) 0;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+
+      padding: 0 0 20px;
+
+      h2 {
+        margin: 0;
+        font-weight: var(--font-weight-regular);
+      }
+
+      img {
+        width: var(--80px-to-40px);
+
+        @include breakpoint-xxs() {
+          width: 30px;
+        }
+      }
+    }
+  }
 }
 
 /* PROFILE PAGE
@@ -637,7 +670,7 @@ header {
   }
 
   > .text:first-of-type {
-    margin: 0 0 var(--100px-to-50px);
+    margin: 0 0 var(--120px-to-60px);
 
     p {
       @include breakpoint-xxs() {

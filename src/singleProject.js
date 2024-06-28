@@ -1,7 +1,8 @@
 import { loadData } from './data';
-import { convertToURLSaveName, setContent } from './helperFunctions';
+import { convertToURLSaveName, pushURLAndCallRouter, setContent } from './helperFunctions';
+import { showMoreProjects } from './moreProjects';
 import externalLinkIcon from './img/external-link.svg';
-import { handleMoreProjectsLinks, showMoreProjects } from './moreProjects';
+import arrowLeft from './img/arrow-left.svg';
 
 /* 
 Bundles and returns all of the HTML code for a single project.
@@ -19,8 +20,9 @@ export const showSingleProject = async function (project) {
   const usedSkills = generateUsedSkills(project);
   const projectMediaElements = generateProjectMediaElements(project);
   const moreProjects = await showMoreProjects(project);
+  const allProjectsLink = generateAllProjectsLink();
 
-  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><span>Skills:</span><ul>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}</div>`;
+  return `<div id="${project.id}" class="single-project"><div class="project-title-and-link"><h2>${project.projectName}</h2>${projectLink}</div><section class="skills-and-tools"><span>Skills:</span><ul>${usedSkills}</ul></section><section class="media-elements">${projectMediaElements}</section>${moreProjects}${allProjectsLink}</div>`;
 };
 
 /* 
@@ -113,6 +115,22 @@ const generateProjectMediaElements = function (project) {
   } else {
     return '';
   }
+};
+
+/* 
+Generates HTML for a section that displays a link back to the project overview page
+*/
+const generateAllProjectsLink = function () {
+  return `<section class="all-projects-link"><a href="/"><img src="${arrowLeft}"><h2>Alle Projekte</h2></a></section>`;
+};
+
+export const handleAllProjectsLink = function () {
+  const allProjectsLink = document.querySelector('.all-projects-link a');
+
+  allProjectsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    pushURLAndCallRouter('');
+  });
 };
 
 /* 

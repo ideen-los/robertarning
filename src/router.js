@@ -1,3 +1,5 @@
+import { handleAllProjectsLink } from './singleProject.js';
+
 /* 
 An object that contains static paths, as well as a handler and a title associated with it
 */
@@ -54,6 +56,7 @@ export const router = function () {
             });
             import('./moreProjects.js').then((moreProjectsModule) => {
               moreProjectsModule.handleMoreProjectsLinks();
+              module.handleAllProjectsLink();
             });
           } else {
             // If no project is found the function returns '404'
