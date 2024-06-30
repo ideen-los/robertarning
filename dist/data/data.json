@@ -293,8 +293,34 @@
       ]
     },
     {
-      "projectName": "Safak Tike",
+      "projectName": "UI Komponenten (Demo)",
       "id": 6,
+      "description": "Design & Entwicklung eines Dropdown und eines Hamburger Menüs mit HTML/CSS/JavaScript.",
+      "image": "media/ui-components/overview-ui-components.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
+      "elements": [
+        {
+          "type": "codepen",
+          "title": "Dropdown Menu",
+          "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
+          "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
+        },
+        {
+          "type": "text",
+          "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus.</p><p>Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig. Ich bin fast geneigt, es Choreografie zu nennen. Zum Beispiel werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star Wars erinnert.</p>"
+        },
+        {
+          "type": "codepen",
+          "title": "Hamburger Menu",
+          "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
+          "url": "https://codepen.io/ideen-los/pen/oNRraOG"
+        }
+      ]
+    },
+    {
+      "projectName": "Safak Tike",
+      "id": 7,
       "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
       "image": "media/stike/overview-stike.jpg",
       "live_site": "https://s-tike.de",
@@ -321,7 +347,7 @@
     },
     {
       "projectName": "For all People",
-      "id": 7,
+      "id": 8,
       "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
       "image": "media/forallpeople/overview-forallpeople.jpg",
       "live_site": "",

@@ -108,6 +108,12 @@ const generateProjectMediaElements = function (project) {
             return `<div class ="${element.type}">
             ${twoColumnElements}
             </div>`;
+          case 'codepen':
+            return `<div class="${element.type}"><iframe height="700" style="width: 100%;" scrolling="no" title="${element.title}" src="${element.embed_url}?default-tab=result&theme-id=dark&resizable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+            See the Pen <a href="${element.url}">
+            ${element.title}</a> by ideen-los (<a href="https://codepen.io/ideen-los">@ideen-los</a>)
+            on <a href="https://codepen.io">CodePen</a>.
+            </iframe><span>drag to resize</span></div>`;
         }
       })
       .join('');

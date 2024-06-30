@@ -145,10 +145,42 @@
 
     p {
       max-width: var(--single-project-text-width);
+      hyphens: auto;
 
-      @include breakpoint-xxs() {
+      /*       @include breakpoint-xxs() {
         hyphens: auto;
-      }
+      } */
+    }
+  }
+
+  // Display resizable handle on codepen iFrames
+  .codepen {
+    height: 700px;
+    max-width: 100%;
+    min-width: 320px;
+    padding-bottom: 26px;
+
+    overflow: hidden;
+    resize: horizontal;
+
+    text-align: right;
+    border-bottom: 2px solid #0d0d0d;
+
+    @include breakpoint-sm() {
+      margin: 0 -28px;
+      max-width: calc(100% + 56px);
+    }
+    @include breakpoint-xs() {
+      margin: 0 -20px;
+      max-width: calc(100% + 40px);
+    }
+
+    span {
+      margin-right: 15px;
+      font-size: 10px;
+      text-transform: uppercase;
+      font-weight: var(--font-weight-regular);
+      letter-spacing: 1px;
     }
   }
 

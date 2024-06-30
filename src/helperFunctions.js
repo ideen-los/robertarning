@@ -49,7 +49,6 @@ list of skills used and the wrapper for a project's elements.
 */
 export const handleAnimationOnPageTransition = function () {
   const siteTitle = document.querySelector('h1');
-  const description = document.querySelector('.homepage .description');
   const allMediaElements = document.querySelector('.single-project .media-elements');
   const projectTitleAndLink = document.querySelector('.single-project .project-title-and-link');
   const projectSkillsAndTools = document.querySelector('.single-project .skills-and-tools');
@@ -132,6 +131,13 @@ export const handleAnimationOnPageTransition = function () {
           console.log('Image!');
         });
       });
+    } else if (projectFirstMediaElement.tagName === 'IFRAME') {
+      projectFirstMediaElement.onload = () => {
+        requestAnimationFrame(() => {
+          addTransitionTriggers();
+          console.log('iframe!');
+        });
+      };
     }
   }
 };
