@@ -1,6 +1,11 @@
 import './scss/project-overview.scss';
 import { loadData } from './data';
-import { convertToURLSaveName, pushURLAndCallRouter, setContent } from './helperFunctions';
+import {
+  convertToURLSaveName,
+  pushURLAndCallRouter,
+  setBodyClass,
+  setContent,
+} from './helperFunctions';
 
 /*
 Generates the HTML code for a project overview page.
@@ -23,17 +28,20 @@ export const createProjectsOverview = function (projects) {
       // Encode the "projectName" value to safely include it in the URL path
       const urlSaveProjectName = convertToURLSaveName(project.projectName);
 
-      return `<a href="/${urlSaveProjectName}" id="${project.id}">
+      return `
       <article>
+      <a href="/${urlSaveProjectName}" data-id="${project.id}" class="project-link">
       <figure>
       <img ${project.id !== 1 ? 'data-src=' : 'src='} "${project.image}" alt="${
         project.projectName
       }" ${project.id !== 1 ? `class="media lazy-load"` : ''}>
       </figure>
+      </a>
+      <a href="/${urlSaveProjectName}" data-id="${project.id}" class="project-link">
       <h3>${project.projectName}</h3>
       <p>${project.description}</p>
-      </article>
-      </a>`;
+      </a>
+      </article>`;
     })
     .join('');
 
@@ -62,7 +70,7 @@ export const handleClickOnProjectTeasers = function (projects) {
   allProjectTeaser.forEach((teaser) =>
     teaser.addEventListener('click', (e) => {
       e.preventDefault();
-      const projectId = e.currentTarget.id;
+      const projectId = e.currentTarget.getAttribute('data-id');
       const projectData = findProjectById(projects, projectId);
       const urlSaveProjectName = convertToURLSaveName(projectData.projectName);
 
@@ -85,5 +93,6 @@ export const displayProjectOverview = async function () {
 
     setContent('content', projectsOverviewHTML);
     handleClickOnProjectTeasers(data.projects);
+    setBodyClass('homepage');
   }
 };

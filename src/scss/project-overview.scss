@@ -9,7 +9,7 @@
     p {
       max-width: var(--homepage-description-text-width);
 
-      @include breakpoint-xxs() {
+      @include breakpoint-xxs {
         hyphens: auto;
       }
     }
@@ -25,15 +25,20 @@
   margin: 0;
 
   article {
+    .project-link {
+      display: inline-block;
+      vertical-align: top;
+    }
+
     p {
       max-width: var(--single-project-text-width);
       font-weight: var(--font-weight-thin);
     }
     figure {
-      @include breakpoint-sm() {
+      @include breakpoint-sm {
         margin: 0 -28px;
       }
-      @include breakpoint-xs() {
+      @include breakpoint-xs {
         margin: 0 -15px;
       }
     }

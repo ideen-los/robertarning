@@ -56,14 +56,14 @@ $default-max-bp: 1900px;
 
   --logo-width: #{fluid(100px, 149px)};
 
-  @include breakpoint-xxs() {
+  @include breakpoint-xxs {
     --logo-width: 30px;
   }
 
   --font-size-nav: #{fluid(20px, 28px)};
   --font-size-text: #{fluid(22px, 34px)};
 
-  @include breakpoint-xxs() {
+  @include breakpoint-xxs {
     --font-size-nav: 18px;
     --font-size-text: 18px;
   }
@@ -75,7 +75,7 @@ $default-max-bp: 1900px;
   --font-size-visit-live-site: #{fluid(16px, 18px)};
   --font-size-version: #{fluid(12px, 20px)};
 
-  @include breakpoint-xxs() {
+  @include breakpoint-xxs {
     --font-size-h1: 60px;
     --font-size-h2: 30px;
     --font-size-skills-and-tools: 15px;
@@ -88,7 +88,7 @@ $default-max-bp: 1900px;
   --font-weight-medium: 510;
   --font-weight-semibold: 550;
 
-  --flex-gap-nav: #{fluid(7px, 50px)};
+  --flex-gap-nav: #{fluid(10px, 50px)};
 
   --homepage-description-text-width: #{fluid(600px, 890px)};
 
@@ -98,6 +98,7 @@ $default-max-bp: 1900px;
   --80px-to-40px: #{fluid(40px, 80px)};
   --70px-to-35px: #{fluid(35px, 70px)};
   --65px-to-45px: #{fluid(45px, 65px)};
+  --40px-to-25px: #{fluid(25px, 40px)};
   --30px-to-15px: #{fluid(15px, 30px)};
   --25px-to-10px: #{fluid(10px, 25px)};
   --20px-to-10px: #{fluid(10px, 20px)};
@@ -106,14 +107,15 @@ $default-max-bp: 1900px;
   --11px-to-5px: #{fluid(6px, 11px)};
   --7px-to-3px: #{fluid(3px, 7px)};
   --4px-to-2px: #{fluid(2px, 4px)};
+  --minus-10px-to-minus-5px: #{fluid(-5px, -10px)};
 
   --profile-skill-list-text-width: #{fluid(500px, 600px)};
 
-  --single-project-text-width: #{fluid(620px, 800px)};
+  --single-project-text-width: #{fluid(560px, 860px)};
   --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
   --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
 
-  @include breakpoint-xxs() {
+  @include breakpoint-xxs {
     --single-project-skills-tag-padding1: 3px;
     --single-project-skills-tag-padding2: 6px;
   }
@@ -124,16 +126,19 @@ $default-max-bp: 1900px;
 html {
   box-sizing: border-box;
   min-width: 300px;
+  min-height: 100vh;
 }
 
 body {
   margin: 0;
-  padding: 0 28px;
+  padding: 1px 28px 0;
+
+  min-height: 100vh;
 
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.3px;
 
-  @include breakpoint-xs() {
+  @include breakpoint-xs {
     padding: 0 15px;
   }
 }
@@ -149,14 +154,14 @@ h2 {
 }
 
 h1 {
-  max-width: 700px;
-  margin: 0 0 var(--70px-to-35px) -10px;
+  max-width: 500px;
+  margin: 0 0 var(--70px-to-35px) var(--minus-10px-to-minus-5px);
 
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-regular);
   line-height: 90%;
 
-  @include breakpoint-xxs() {
+  @include breakpoint-xxs {
     margin: 0 0 30px -5px;
   }
 }
@@ -174,11 +179,13 @@ p {
   margin: 0;
   padding: 0;
 
-  line-height: 140%;
+  line-height: 145%;
   font-size: var(--font-size-text);
 }
 
 h3 {
+  display: inline-block;
+  vertical-align: top;
   margin: var(--20px-to-10px) 0 0;
   font-weight: var(--font-weight-medium);
 }
@@ -208,7 +215,7 @@ video {
 }
 
 .hidden-xxs-half {
-  @include breakpoint-xxs-half() {
+  @include breakpoint-xxs-half {
     display: none;
   }
 }
@@ -221,7 +228,7 @@ video {
 
 .visible-xxs-half {
   display: none;
-  @include breakpoint-xxs-half() {
+  @include breakpoint-xxs-half {
     display: block;
   }
 }
@@ -278,7 +285,7 @@ header {
     max-width: var(--logo-width);
     min-width: 80px;
 
-    @include breakpoint-xxs-half() {
+    @include breakpoint-xxs-half {
       min-width: 31px;
     }
   }
@@ -290,14 +297,14 @@ header {
       display: flex;
       gap: var(--flex-gap-nav);
 
-      margin: 0 0 -5px;
+      margin: 0 -15px -5px 0;
       padding: 0 0 0 30px;
 
       list-style: none;
       font-size: var(--font-size-nav);
 
-      @include breakpoint-xxs() {
-        margin: 0 0 -2px;
+      @include breakpoint-xxs {
+        margin: 0 -9px -2px 0;
         padding: 0 0 0 10px;
       }
 
@@ -305,8 +312,8 @@ header {
         padding: 8px 15px;
         border-radius: 8px;
 
-        @include breakpoint-xxs() {
-          padding: 4px 7px;
+        @include breakpoint-xxs {
+          padding: 4px 9px;
         }
 
         &:active {
@@ -363,19 +370,19 @@ header {
 }
 
 #ball-1 {
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-duration: 1.4s;
-  -webkit-animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-delay: 0s;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
 }
 #ball-3 {
-  -webkit-animation-name: bounce;
-  -webkit-animation-delay: 0.1s;
-  -webkit-animation-duration: 1.4s;
-  -webkit-animation-iteration-count: infinite;
+  animation-name: bounce;
+  animation-delay: 0.1s;
+  animation-duration: 1.4s;
+  animation-iteration-count: infinite;
 }
 
-@-webkit-keyframes bounce {
+@keyframes bounce {
   0% {
     transform: translateY(0);
   }
@@ -390,6 +397,77 @@ header {
   }
 }
 
+/* 404 page
+=============================================================================================== */
+footer {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+
+  max-width: 1700px;
+  margin: 0 auto;
+  padding: var(--40px-to-25px) 0 var(--65px-to-45px);
+
+  border-top: 2px solid #000;
+
+  a {
+    padding: 8px 15px;
+    border-radius: 8px;
+    margin-right: -15px;
+
+    @include breakpoint-xxs {
+      padding: 4px 9px;
+      margin-right: -9px;
+    }
+
+    &:active {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  @include breakpoint-xxs {
+    padding: 15px 0 30px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+body.not-found {
+  footer {
+    display: none;
+  }
+}
+
+/* 404 page
+=============================================================================================== */
+.page-not-found {
+  h1 {
+    margin: 0 0 var(--70px-to-35px) 0;
+  }
+  .description {
+    max-width: var(--homepage-description-text-width);
+
+    span {
+      display: inline-flex;
+    }
+  }
+
+  .arrow-right {
+    display: inline;
+    width: var(--40px-to-25px);
+    margin: 0 0 -3px 10px;
+    transform: rotate(180deg);
+
+    @include breakpoint-xxs {
+      width: 20px;
+    }
+  }
+}
+
+/* Prevent flashes of unstyled content
+=============================================================================================== */
 // Try to hide the DOM as long as possible via inline styles
 // to prevent Flashes of unstyled text (FOUT). Then unhide the
 // DOM at the end of the CSS document:

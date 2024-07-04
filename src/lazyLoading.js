@@ -6,6 +6,8 @@ This way images and videos are only loaded, when they are needed.
 export const initializeLazyLoading = function () {
   const lazyMedia = document.querySelectorAll('.lazy-load');
 
+  console.log('initializing lazy loading');
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {

@@ -1,6 +1,13 @@
-import { handleAnimationOnPageTransition } from './animations';
+import { initializeAnimationsOnProjectPage, initializeAnimationsOnStaticPage } from './animations';
 import { initializeLazyLoading } from './lazyLoading';
 import { router } from './router';
+
+export const setBodyClass = function (className) {
+  const body = document.querySelector('body');
+
+  body.className = '';
+  body.classList.add(className);
+};
 
 /* 
 Gets the element by its id passed as the functions 1st parameter and
@@ -24,14 +31,18 @@ export const pushURLAndCallRouter = function (URLpath) {
 };
 
 /* 
-1. Adds lazy loading to a page
-2. Adds animations to the project title or site title
-3. Sets the scroll position to the top of the page
+1. Adds lazy loading to a page.
+2. Adds animations to the project title or page title.
+3. Sets the scroll position to the top of the page.
 */
-export const setupPage = function () {
+export const setupPage = function (pageType = 'projectPage') {
   initializeLazyLoading();
   requestAnimationFrame(() => {
-    handleAnimationOnPageTransition();
+    if (pageType === 'projectPage') {
+      initializeAnimationsOnProjectPage();
+    } else {
+      initializeAnimationsOnStaticPage();
+    }
   });
   // Set scroll position to the top of the browser window
   window.scroll(0, 0);
@@ -39,7 +50,9 @@ export const setupPage = function () {
 
 /*
 Encodes the "projectName" value to safely include it in the URL path.
-Replace spaces with hyphens, then encode URI components, and finally convert to lowercase
+Replace spaces with hyphens, replace german umlauts, remove paranthesis,
+collapse multiple hyphens into one, remove leading or trailing hyphens,
+then encode URI components, and finally convert to lowercase.
 */
 export const convertToURLSaveName = function (name) {
   return encodeURIComponent(
@@ -48,6 +61,9 @@ export const convertToURLSaveName = function (name) {
       .replace(/ä/g, 'ae')
       .replace(/ö/g, 'oe')
       .replace(/ü/g, 'ue')
-      .replace(/ß/g, 'ss')
+      .replace(/ß/g, 'ss') // replace "ß" with "ss"
+      .replace(/[()]/g, '') // Remove parenthesis
+      .replace(/-+/g, '-') // Collapse multiple hyphens into one
+      .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
   ).toLowerCase();
 };

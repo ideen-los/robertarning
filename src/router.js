@@ -18,58 +18,48 @@ If it is, then it calls the handler function associated with the registered path
 2. Is the current path is not a key in { routes }, it tries to call a function that loads a single
 project based on the path name. If no project with that name is found, the function returns '404'.
 */
-export const router = function () {
+export const router = async function () {
   const urlPath = window.location.pathname || '/';
 
-  if (routes[urlPath] && routes[urlPath].handler) {
-    // The path is in the { routes } object and has a handler
-    routes[urlPath]
-      .handler()
-      .then((handlerFunction) => {
-        // Execute the handler associated with the path
-        handlerFunction();
-        // Set the document title from the { route }'s title property
-        document.title = routes[urlPath].title;
-        // Load the page
-        import('./helperFunctions.js').then((helperModule) => {
-          helperModule.setupPage();
-        });
-      })
-      .catch((error) => {
-        console.error('Failed to load route handler', error);
-      });
-  } else {
-    // Path is not registered or has no handler
-    // Check whether the path corresponds to a project
-    import('./singleProject.js').then((module) => {
-      module
-        .loadSingleProject(urlPath)
-        .then((projectName) => {
-          // The function returns either the project's name or '404'
-          if (projectName !== '404') {
-            // If a project is found the functions returns the project's name
-            document.title = `Robert Arning – ${projectName}`;
-            import('./helperFunctions.js').then((helperModule) => {
-              helperModule.setupPage();
-            });
-            import('./moreProjects.js').then((moreProjectsModule) => {
-              moreProjectsModule.handleMoreProjectsLinks();
-              module.handleAllProjectsLink();
-            });
-          } else {
-            // If no project is found the function returns '404'
-            document.title = 'Robert Arning – Page not found';
-          }
-        })
-        .catch((error) => {
-          console.error('Failed to load dynamic content or fallback', error);
-        });
-    });
+  try {
+    if (routes[urlPath] && routes[urlPath].handler) {
+      // Generate HTML
+      const handlerFunction = await routes[urlPath].handler();
+      await handlerFunction();
+      // Set the document title
+      document.title = routes[urlPath].title;
+      // Initialize lazy loading, animations, etc.
+      const helperModule = await import('./helperFunctions.js');
+      helperModule.setupPage('staticPage');
+    } else {
+      // Path is not registered or has no handler
+      // Check whether the path corresponds to a project
+      const singleProjectModule = await import('./singleProject.js');
+      // Generate HTML for project page, returns a project name
+      const projectName = await singleProjectModule.loadSingleProject(urlPath);
+
+      if (projectName !== '404') {
+        // If a project is found the functions returns the project's name
+        // Set the title of the document
+        document.title = `Robert Arning – ${projectName}`;
+        // Initialize lazy loading, animations, etc.
+        const helperModule = await import('./helperFunctions.js');
+        helperModule.setupPage('projectPage');
+        // Add the more Projects component and initialize all projects link
+        const moreProjectsModule = await import('./moreProjects.js');
+        moreProjectsModule.handleMoreProjectsLinks();
+        singleProjectModule.handleAllProjectsLink();
+      } else {
+        // If no project is found the function returns '404'
+        document.title = 'Robert Arning – Page not found';
+      }
+    }
+  } catch (error) {
+    console.error('Failed to load handler', error);
   }
 };
 
 // Handle browser navigation events
 window.addEventListener('popstate', () => {
   router();
-  s;
 });

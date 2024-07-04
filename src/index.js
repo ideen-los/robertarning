@@ -1,6 +1,5 @@
 import { setRoute, router } from './router';
 import { handleMenuLinks } from './menu';
-import { initializeLazyLoading } from './lazyLoading.js';
 
 /* 
 Register static routes and load the corresponding route

@@ -1,6 +1,6 @@
 import './scss/profile.scss';
 import { loadData } from './data';
-import { setContent } from './helperFunctions';
+import { setBodyClass, setContent } from './helperFunctions';
 
 export const createProfile = function (profileData) {
   // Check whether profile data is available
@@ -50,5 +50,6 @@ export const displayProfile = async function () {
     console.log('Displaying profile...');
     const profileHTML = createProfile(data.profile);
     setContent('content', profileHTML);
+    setBodyClass('profile');
   }
 };
