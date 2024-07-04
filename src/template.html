@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html lang="de">
   <head>
+    <style>html{visibility: hidden; opacity: 0;}</style>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
+  <!--
+      )  (
+     (   ) )
+      ) ( (
+   _________
+   |       |___
+   |       |_  |
+   |  :-)  |_| |
+   |       |___|
+   |_______|
+    
+  Design & Entwicklung durch Robert. In langen, schlaflosen Nächten.
+  -->
   <body>
     <header>
       <a href="/" id="logo">
@@ -20,10 +34,17 @@
         <ul>
           <li><a href="/" id="home">Projekte</a></li>
           <li><a href="/profil" id="profile">Profil</a></li>
-          <li><a href="mailto:hello@robertarning.de" id="mail">Mail</a></li>
+          <li><a id="mail">Mail</a></li>
         </ul>
       </nav>
     </header>
     <div id="content"></div>
+    <div id="loading-wrapper" class="hidden">
+      <div class="circle-wrapper">
+        <div id="ball-1" class="circle"></div>
+        <div id="ball-3" class="circle"></div>
+      </div>
+      <span>Lade Projekt</span>
+    <div>
   </body>
 </html>

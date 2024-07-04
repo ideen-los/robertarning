@@ -1,5 +1,3 @@
-import { handleAllProjectsLink } from './singleProject.js';
-
 /* 
 An object that contains static paths, as well as a handler and a title associated with it
 */
@@ -9,7 +7,7 @@ const routes = {};
 Creates an object with the properties "handler" and "title" and
 assigns it as value to the key "path" in the { routes } object
 */
-export const route = function (path, handlerFunction, title) {
+export const setRoute = function (path, handlerFunction, title) {
   routes[path] = { handler: handlerFunction, title: title };
 };
 
@@ -33,8 +31,8 @@ export const router = function () {
         // Set the document title from the { route }'s title property
         document.title = routes[urlPath].title;
         // Load the page
-        import('./helperFunctions.js').then((module) => {
-          module.setupPage();
+        import('./helperFunctions.js').then((helperModule) => {
+          helperModule.setupPage();
         });
       })
       .catch((error) => {
@@ -71,4 +69,7 @@ export const router = function () {
 };
 
 // Handle browser navigation events
-window.addEventListener('popstate', router);
+window.addEventListener('popstate', () => {
+  router();
+  s;
+});

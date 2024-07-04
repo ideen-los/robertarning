@@ -26,7 +26,9 @@ export const createProjectsOverview = function (projects) {
       return `<a href="/${urlSaveProjectName}" id="${project.id}">
       <article>
       <figure>
-      <img src="${project.image}" alt="${project.projectName}">
+      <img ${project.id !== 1 ? 'data-src=' : 'src='} "${project.image}" alt="${
+        project.projectName
+      }" ${project.id !== 1 ? `class="media lazy-load"` : ''}>
       </figure>
       <h3>${project.projectName}</h3>
       <p>${project.description}</p>

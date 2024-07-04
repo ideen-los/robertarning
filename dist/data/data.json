@@ -63,7 +63,7 @@
         },
         {
           "type": "text",
-          "content": "<p>Die Progressive Web App marena begleitet Menschen  bei der Wiedereingliederung in den Arbeitsmarkt nach einem längeren Reha-Aufenthalt.</p><p>Das gesamte Interface, das sich am CD der Unimedizin Mainz und am Design System von Vue.js orientiert, als auch die Nutzererfahrung wurden von mir konzipiert. Das Design und die Nutzerpfade optimierte ich iterativ durch den Einsatz interaktiver Mockups.</p>"
+          "content": "<p>Die Progressive Web App marena begleitet Menschen  bei der Wiedereingliederung in den Arbeitsmarkt nach einem längeren Reha-Aufenthalt.</p><p>Das gesamte Interface, das sich am CD der Universitätsmedizin Mainz und am Design System von Vue.js orientiert, als auch die Nutzererfahrung wurden von mir konzipiert. Das Design und die Nutzerpfade optimierte ich iterativ durch den Einsatz interaktiver Mockups.</p>"
         },
         {
           "type": "two-column",
@@ -259,11 +259,72 @@
       ]
     },
     {
-      "projectName": "Datenbank-Infosystem (DBIS)",
+      "projectName": "UI Komponenten (Demo)",
       "id": 5,
+      "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
+      "image": "media/ui-components/overview-ui-components.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
+      "elements": [
+        {
+          "type": "codepen",
+          "title": "Dropdown Menu",
+          "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
+          "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
+        },
+        {
+          "type": "text",
+          "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus. Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig.</p><p>Beispielsweise werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star&nbsp;Wars erinnert.</p>"
+        },
+        {
+          "type": "codepen",
+          "title": "Hamburger Menu",
+          "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
+          "url": "https://codepen.io/ideen-los/pen/oNRraOG"
+        }
+      ]
+    },
+    {
+      "projectName": "Kontexte (Konzept)",
+      "id": 6,
+      "description": "Design eines One-Pager-Prototypen zur Präsentation geschichtlicher Themen mit Fokus auf eine spannungsreiche, asymmetrische Ästhetik.",
+      "image": "media/kontexte/overview-kontexte.jpg",
+      "live_site": "",
+      "skills": ["UI/UX Design", "Prototyping", "Figma"],
+      "elements": [
+        {
+          "type": "image",
+          "content": "media/kontexte/kontexte-start.jpg",
+          "above_fold": "true"
+        },
+        {
+          "type": "image",
+          "content": "media/kontexte/kontexte-screens.jpg"
+        },
+        {
+          "type": "text",
+          "content": "<p>\"Kontexte\" ist das Konzept eines Formats, das geschichtliche Ereignisse spannend und interaktiv darstellt. Kontexte beleuchtet verschiedene Aspekte eines Themas, wie z.B. verschiedene Aspekte des Themas \"Die Geschichte der Russlanddeutschen\".</p><p>Die Gestaltung folgt einer grafischen und asymmetrischen Ästhetik wodurch eine visuelle Dynamik entsteht. Historische Inhalte werden mit einer modernen  Präsentation kombiniert, um das Interesse der Besucher zu wecken und die Informationen leichter zu vermitteln.</p>"
+        },
+        {
+          "type": "image",
+          "content": "media/kontexte/kontexte-kolonistenbrief.jpg"
+        },
+        {
+          "type": "image",
+          "content": "media/kontexte/kontexte-inhalt.jpg"
+        },
+        {
+          "type": "image",
+          "content": "media/kontexte/kontexte-zitate.jpg"
+        }
+      ]
+    },
+    {
+      "projectName": "Datenbank-Infosystem (DBIS)",
+      "id": 7,
       "description": "Redesign des Portals für wissenschaftliche Datenbanken der Universitätsbibliothek Mainz.",
       "image": "media/dbis/overview-dbis.jpg",
-      "live_site": "",
+      "live_site": "https://dbis.ur.de/dbinfo/fachliste.php?bib_id=ub_mz&colors=15&ocolors=40&lett=l",
       "skills": ["UI Design", "HTML", "CSS"],
       "elements": [
         {
@@ -293,37 +354,11 @@
       ]
     },
     {
-      "projectName": "UI Komponenten (Demo)",
-      "id": 6,
-      "description": "Design & Entwicklung eines Dropdown und eines Hamburger Menüs mit HTML/CSS/JavaScript.",
-      "image": "media/ui-components/overview-ui-components.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
-      "elements": [
-        {
-          "type": "codepen",
-          "title": "Dropdown Menu",
-          "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
-          "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
-        },
-        {
-          "type": "text",
-          "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus.</p><p>Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig. Ich bin fast geneigt, es Choreografie zu nennen. Zum Beispiel werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star Wars erinnert.</p>"
-        },
-        {
-          "type": "codepen",
-          "title": "Hamburger Menu",
-          "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
-          "url": "https://codepen.io/ideen-los/pen/oNRraOG"
-        }
-      ]
-    },
-    {
       "projectName": "Safak Tike",
-      "id": 7,
+      "id": 8,
       "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
       "image": "media/stike/overview-stike.jpg",
-      "live_site": "https://s-tike.de",
+      "live_site": "http://s-tike.de",
       "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
       "elements": [
         {
@@ -347,7 +382,7 @@
     },
     {
       "projectName": "For all People",
-      "id": 8,
+      "id": 9,
       "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
       "image": "media/forallpeople/overview-forallpeople.jpg",
       "live_site": "",
@@ -391,7 +426,7 @@
     "elements": [
       {
         "type": "text",
-        "content": "<p>Design bedeutet Problemlösungen entwickeln, Fragen voraussehen und Zugänglichkeit schaffen – unabhängig vom Anwendungsbereich. In meinen Augen geht der Prozess des Designs über die reine Gestaltung von Interfaces hinaus.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+        "content": "<p>Design bedeutet für mich Problemlösungen entwickeln, Fragen voraussehen und Zugänglichkeit schaffen – unabhängig vom Anwendungsbereich. Der Prozess des Designs geht in meinen Augen weit über die reine Gestaltung von Interfaces hinaus.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
       },
       {
         "type": "two-column",

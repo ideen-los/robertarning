@@ -1,16 +1,18 @@
-import { route, router } from './router';
+import { setRoute, router } from './router';
 import { handleMenuLinks } from './menu';
+import { initializeLazyLoading } from './lazyLoading.js';
 
 /* 
-Registers a static route and loads the corresponding route
-handler functions asynchronously with the import statement
+Register static routes and load the corresponding route
+handler functions asynchronously with the import statement.
+Also set the document title with the 3rd parameter.
 */
-route(
+setRoute(
   '/',
   () => import('./projectsOverview.js').then((module) => module.displayProjectOverview),
   'Robert Arning – UI/UX Designer'
 ); // Homepage
-route(
+setRoute(
   '/profil',
   () => import('./profile.js').then((module) => module.displayProfile),
   'Robert Arning – Profil'

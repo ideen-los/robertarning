@@ -13,9 +13,9 @@
     margin: 0 0 var(--120px-to-60px);
 
     p {
-      @include breakpoint-xxs() {
+      /* @include breakpoint-xxs() {
         hyphens: auto;
-      }
+      } */
     }
   }
 

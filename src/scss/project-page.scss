@@ -53,7 +53,7 @@
     gap: 5px;
 
     margin: var(--15px-to-10px) 0 var(--65px-to-45px);
-    padding: var(--20px-to-12px) 0 0;
+    padding: var(--20px-to-10px) 0 0;
 
     border-top: 2px solid var(--primary-color);
 
@@ -99,13 +99,17 @@
     border: 4px solid var(--color-green);
     z-index: 0;
 
+    @include breakpoint-xs-half() {
+      border: 3px solid var(--color-green);
+    }
+
     &:before {
       content: 'Neues Design';
       position: absolute;
       top: 0;
       left: 0;
 
-      padding: 7px 16px 7px 13px;
+      padding: var(--4px-to-2px) var(--15px-to-8px) var(--7px-to-3px) var(--11px-to-5px);
 
       font-size: var(--font-size-version);
       font-weight: var(--font-weight-semibold);
@@ -115,6 +119,11 @@
 
       background-color: var(--color-green);
       z-index: 2;
+
+      @include breakpoint-xxs {
+        font-size: 10px;
+        font-weight: var(--font-weight-regular);
+      }
     }
   }
 
@@ -145,11 +154,7 @@
 
     p {
       max-width: var(--single-project-text-width);
-      hyphens: auto;
-
-      /*       @include breakpoint-xxs() {
-        hyphens: auto;
-      } */
+      /* hyphens: auto; */
     }
   }
 
@@ -171,8 +176,8 @@
       max-width: calc(100% + 56px);
     }
     @include breakpoint-xs() {
-      margin: 0 -20px;
-      max-width: calc(100% + 40px);
+      margin: 0 -15px;
+      max-width: calc(100% + 30px);
     }
 
     span {
@@ -191,7 +196,7 @@
     gap: 10px;
 
     @include breakpoint-xxs() {
-      gap: 7.5px;
+      gap: 5px;
     }
 
     > .video,
@@ -201,7 +206,7 @@
         margin: 0 -28px;
       }
       @include breakpoint-xs() {
-        margin: 0 -20px;
+        margin: 0 -15px;
       }
     }
   }
@@ -210,6 +215,14 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+
+    @include breakpoint-xs-half {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+    @include breakpoint-xxs() {
+      gap: 5px;
+    }
   }
 
   // Shows previous and next project
@@ -218,7 +231,7 @@
       margin: 0 -28px;
     }
     @include breakpoint-xs() {
-      margin: 0 -20px;
+      margin: 0 -15px;
     }
 
     h2 {
@@ -237,7 +250,7 @@
       aspect-ratio: 170/57;
 
       @include breakpoint-xxs() {
-        gap: 7.5px;
+        gap: 5px;
       }
 
       div {
@@ -252,15 +265,24 @@
   }
 
   .all-projects-link {
-    padding: var(--160px-to-80px) 0;
+    display: flex;
+    justify-content: center;
+    padding: var(--135px-to-70px) 0;
 
     a {
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
 
-      padding: 0 0 20px;
+      padding: 25px 30px;
+      margin: 0 0 30px;
+
+      border-radius: 20px;
+
+      &:active {
+        background-color: rgba(0, 0, 0, 0.04);
+      }
 
       h2 {
         margin: 0;
