@@ -71,7 +71,9 @@ const generateProjectMediaElements = function (project) {
         switch (element.type) {
           case 'video':
             return `<div class="${element.type} ${element.version || ''}">
-            <video class="${element.above_fold ? '' : 'media lazy-load'}" autoplay muted loop>
+            <video class="${
+              element.above_fold ? '' : 'media lazy-load'
+            }" autoplay muted loop playsinline>
               <source ${
                 element.above_fold ? `src="${element.content}"` : `data-src="${element.content}"`
               } type="video/mp4">
@@ -97,7 +99,7 @@ const generateProjectMediaElements = function (project) {
               .map((media) => {
                 if (media.type === 'video') {
                   return `<div class="${media.type} ${media.version || ''}">
-                  <video class="media lazy-load" autoplay muted loop>
+                  <video class="media lazy-load" autoplay muted loop playsinline>
                     <source data-src="${media.content}" type="video/mp4">
                   </video>
                   </div>`;

@@ -30,7 +30,7 @@ export const createProjectsOverview = function (projects) {
 
       return `
       <article>
-      <a href="/${urlSaveProjectName}" data-id="${project.id}" class="project-link">
+      <a href="/${urlSaveProjectName}" data-id="${project.id}" class="project-link figure-wrapper">
       <figure>
       <img ${project.id !== 1 ? 'data-src=' : 'src='} "${project.image}" alt="${
         project.projectName

@@ -28,6 +28,12 @@
     .project-link {
       display: inline-block;
       vertical-align: top;
+
+      &.figure-wrapper {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1700 / 621;
+      }
     }
 
     p {
@@ -40,6 +46,10 @@
       }
       @include breakpoint-xs {
         margin: 0 -15px;
+      }
+
+      img {
+        aspect-ratio: 1700 / 621;
       }
     }
   }

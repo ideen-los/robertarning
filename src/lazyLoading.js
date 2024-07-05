@@ -8,6 +8,12 @@ export const initializeLazyLoading = function () {
 
   console.log('initializing lazy loading');
 
+  // Define the options for the IntersectionObserver
+  const options = {
+    rootMargin: '200px', // Load images 100 pixels before they enter the viewport
+    threshold: 0, // Minimal amount of item shown to trigger loading
+  };
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -31,7 +37,7 @@ export const initializeLazyLoading = function () {
         observer.unobserve(media); // Stop observing once loaded
       }
     });
-  });
+  }, options);
 
   lazyMedia.forEach((media) => observer.observe(media));
 };

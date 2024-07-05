@@ -1,18 +1,5 @@
 @import 'general-styles';
 
-/* LAZY LOADING
-=============================================================================================== */
-// Initial state of media-items with opacity set to 0
-.media {
-  opacity: 0;
-  transition: opacity 0.5s ease-out;
-}
-
-// Class to be added once the media is loaded
-.media-loaded {
-  opacity: 1;
-}
-
 /* SINGLE PROJECT PAGE
 =============================================================================================== */
 .single-project {

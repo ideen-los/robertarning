@@ -233,6 +233,19 @@ video {
   }
 }
 
+/* LAZY LOADING
+=============================================================================================== */
+// Initial state of media-items with opacity set to 0
+.media {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+// Class to be added once the media is loaded
+.media-loaded {
+  opacity: 1;
+}
+
 /* TRANSITIONS
 =============================================================================================== */
 // Initial state of site title before transition
@@ -397,7 +410,7 @@ header {
   }
 }
 
-/* 404 page
+/* Footer
 =============================================================================================== */
 footer {
   display: flex;
@@ -408,7 +421,7 @@ footer {
   margin: 0 auto;
   padding: var(--40px-to-25px) 0 var(--65px-to-45px);
 
-  border-top: 2px solid #000;
+  border-top: 2px solid var(--primary-color);
 
   a {
     padding: 8px 15px;
