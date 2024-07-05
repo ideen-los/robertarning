@@ -65,7 +65,7 @@ export const initializeAnimationsOnProjectPage = function () {
       if (projectSkillsAndToolsList) {
         projectSkillsAndToolsList.classList.add('transition-in');
       }
-      projectFirstMediaElement.classList.add('transition-in');
+      allMediaElements.classList.add('transition-in');
     };
 
     prepareTransitionTriggers();
@@ -100,7 +100,7 @@ export const initializeAnimationsOnProjectPage = function () {
         });
       }
       requestAnimationFrame(() => {
-        projectFirstMediaElement.classList.add('transition-visible-delayed-more');
+        allMediaElements.classList.add('transition-visible-delayed-more');
       });
     };
 

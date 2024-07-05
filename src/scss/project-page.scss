@@ -6,15 +6,8 @@
   .project-title-and-link {
     h2 {
       display: inline;
-      margin-right: 30px;
+      margin-right: var(--30px-to-15px);
       margin-bottom: 0;
-
-      @include breakpoint-xs-half {
-        hyphens: auto;
-      }
-      @include breakpoint-xxs {
-        margin-right: 20px;
-      }
     }
 
     a {
@@ -159,8 +152,13 @@
     border-bottom: 2px solid #0d0d0d;
 
     @include breakpoint-sm {
-      margin: 0 -28px;
       max-width: calc(100% + 56px);
+
+      margin: 0 -28px;
+      padding-bottom: 0;
+
+      border: 0;
+      resize: none;
     }
     @include breakpoint-xs {
       margin: 0 -15px;
@@ -173,6 +171,10 @@
       text-transform: uppercase;
       font-weight: var(--font-weight-regular);
       letter-spacing: 1px;
+
+      @include breakpoint-sm {
+        display: none;
+      }
     }
   }
 
