@@ -3,16 +3,6 @@
 /* PROFILE PAGE
 =============================================================================================== */
 .profile-page {
-  .text {
-    p {
-      max-width: var(--homepage-description-text-width);
-    }
-  }
-
-  > .text:first-of-type {
-    margin: 0 0 var(--120px-to-60px);
-  }
-
   .two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -21,6 +11,34 @@
     p {
       max-width: var(--profile-skill-list-text-width);
       font-weight: var(--font-weight-thin);
+    }
+
+    img {
+      max-width: 440px;
+    }
+  }
+
+  .profile-description {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--40px-to-25px);
+    margin: 0 0 var(--120px-to-60px);
+
+    @include breakpoint-sm {
+      grid-template-columns: 1fr;
+    }
+
+    .text p {
+      font-weight: var(--font-weight-regular);
+      max-width: var(--homepage-description-text-width);
+    }
+
+    img {
+      margin-top: 10px;
+
+      @include breakpoint-sm {
+        max-width: 370px;
+        margin-top: 30px;
+      }
     }
   }
 }

@@ -34,7 +34,7 @@ export const initializeAnimationsOnProjectPage = function () {
     // Always remove the loading animation after a timeout to avoid it being stuck
     removeLoadingAnimation();
     console.log('Timeout reached, hiding loading animation.');
-  }, 10000); // 10 Seconds
+  }, 5000); // 5 Seconds
 
   const removeLoadingAnimation = function () {
     if (loadingAnimation && loadingAnimation.classList.contains('visible')) {
@@ -69,7 +69,7 @@ export const initializeAnimationsOnProjectPage = function () {
     };
 
     prepareTransitionTriggers();
-    const animationTimeout = setTimeout(showLoadingAnimation, 300);
+    const animationTimeout = setTimeout(showLoadingAnimation, 400);
 
     const addTransitionTriggers = function () {
       clearTimeout(animationTimeout);
@@ -110,8 +110,12 @@ export const initializeAnimationsOnProjectPage = function () {
       projectFirstMediaElement.addEventListener('canplay', addTransitionTriggers);
       projectFirstMediaElement.addEventListener('error', removeLoadingAnimation);
     } else if (projectFirstMediaElement.tagName === 'IMG') {
-      projectFirstMediaElement.addEventListener('load', addTransitionTriggers);
-      projectFirstMediaElement.addEventListener('error', removeLoadingAnimation);
+      if (projectFirstMediaElement.complete) {
+        addTransitionTriggers();
+      } else {
+        projectFirstMediaElement.addEventListener('load', addTransitionTriggers);
+        projectFirstMediaElement.addEventListener('error', removeLoadingAnimation);
+      }
     } else if (projectFirstMediaElement.tagName === 'IFRAME') {
       projectFirstMediaElement.onload = addTransitionTriggers;
       projectFirstMediaElement.onerror = removeLoadingAnimation;

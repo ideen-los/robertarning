@@ -425,8 +425,22 @@
     "title": "Profil",
     "elements": [
       {
-        "type": "text",
-        "content": "<p>Design bedeutet für mich Problemlösungen entwickeln, Fragen voraussehen und Zugänglichkeit schaffen – unabhängig vom Anwendungsbereich. Der Prozess des Designs geht in meinen Augen weit über die reine Gestaltung von Interfaces hinaus.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+        "type": "two-column",
+        "additional_class": "profile-description",
+        "content": [
+          {
+            "type": "text",
+            "content": "<p>Design bedeutet für mich Problemlösungen entwickeln, Fragen voraussehen und Zugänglichkeit schaffen – unabhängig vom Anwendungsbereich. Der Prozess des Designs geht in meinen Augen weit über die reine Gestaltung von Interfaces hinaus.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/profile/ra-portrait_final.jpg"
+          }
+        ]
+      },
+      {
+        "type": "h2",
+        "content": "Skills"
       },
       {
         "type": "two-column",

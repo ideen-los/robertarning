@@ -17,15 +17,24 @@ export const createProfile = function (profileData) {
           return `<div class="${element.type}">
               ${element.content}
               </div>`;
-
+        case 'image':
+          return `<div class="${element.type}">
+              <img src="${element.content}">
+              </div>`;
+        case 'h2':
+          return `<h2>${element.content}</h2>`;
         case 'two-column':
           // If the element type is "two-column" we need to iterate over the element's
-          // "content" property which holds an array of objects type "text"
+          // "content" property which holds an array of object s type "text"
           const textElements = element.content
             .map((el) => {
               if (el.type === 'text') {
                 return `<div class="${el.type}">
               ${el.content}
+              </div>`;
+              } else if (el.type === 'image') {
+                return `<div class="${el.type}">
+              <img src="${el.content}">
               </div>`;
               } else {
                 return `<p>Unsupported format.</p>`;
@@ -33,7 +42,9 @@ export const createProfile = function (profileData) {
             })
             .join('');
 
-          return `<h2>Skills</h2><div class ="${element.type}">
+          return `<div class ="${element.type} ${
+            element.additional_class ? element.additional_class : ''
+          }">
               ${textElements}
               </div>`;
       }
