@@ -256,7 +256,7 @@
   .all-projects-link {
     display: flex;
     justify-content: center;
-    padding: var(--135px-to-70px) 0;
+    padding: var(--120px-to-60px) 0;
 
     a {
       display: inline-flex;
@@ -267,7 +267,7 @@
       padding: var(--25px-to-10px) var(--30px-to-15px);
       margin: 0 0 var(--30px-to-15px);
 
-      border-radius: 20px;
+      border-radius: 14px;
 
       &:active {
         background-color: rgba(0, 0, 0, 0.04);

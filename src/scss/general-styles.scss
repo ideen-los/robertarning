@@ -92,6 +92,8 @@ $default-max-bp: 1900px;
 
   --homepage-description-text-width: #{fluid(600px, 890px)};
 
+  --page-not-found-width: #{fluid(550px, 820px)};
+
   --160px-to-80px: #{fluid(80px, 160px)};
   --135px-to-70px: #{fluid(70px, 135px)};
   --120px-to-60px: #{fluid(60px, 120px)};
@@ -191,7 +193,7 @@ h3 {
 }
 
 p + p {
-  margin-top: 40px;
+  margin-top: var(--40px-to-25px);
 }
 
 figure {
@@ -317,7 +319,7 @@ header {
       font-size: var(--font-size-nav);
 
       @include breakpoint-xxs {
-        margin: 0 -9px -2px 0;
+        margin: 0 -9px -3px 0;
         padding: 0 0 0 10px;
       }
 
@@ -456,12 +458,15 @@ body.not-found {
 /* 404 page
 =============================================================================================== */
 .page-not-found {
-  h1 {
-    margin: 0 0 var(--70px-to-35px) 0;
+  max-width: var(--page-not-found-width);
+
+  .page-not-found-h1 {
+    display: flex;
+    align-items: flex-end;
+
+    max-width: 100%;
   }
   .description {
-    max-width: var(--homepage-description-text-width);
-
     span {
       display: inline-flex;
     }
@@ -475,6 +480,20 @@ body.not-found {
 
     @include breakpoint-xxs {
       width: 20px;
+    }
+  }
+
+  .page-not-found-animation {
+    width: var(--120px-to-60px);
+
+    margin: 0 0 0 var(--30px-to-15px);
+    padding: 0 0 var(--7px-to-3px);
+
+    @include breakpoint-xxs {
+      width: 50px;
+
+      margin: 0 0 0 12px;
+      padding: 0 0 2px;
     }
   }
 }

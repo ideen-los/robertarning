@@ -158,7 +158,7 @@ and returns the project's name.
 export const loadSingleProject = async function (path) {
   const projectName = path.split('/')[1]; // Assuming paths like "/path"
   const data = await loadData();
-  const project = data.projects.find(
+  const project = data.projects.elements.find(
     (project) => convertToURLSaveName(project.projectName) === projectName
   );
 

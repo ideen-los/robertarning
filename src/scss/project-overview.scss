@@ -8,10 +8,6 @@
 
     p {
       max-width: var(--homepage-description-text-width);
-
-      @include breakpoint-xxs {
-        hyphens: auto;
-      }
     }
   }
 }

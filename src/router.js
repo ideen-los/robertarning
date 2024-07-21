@@ -51,7 +51,7 @@ export const router = async function () {
         singleProjectModule.handleAllProjectsLink();
       } else {
         // If no project is found the function returns '404'
-        document.title = 'Robert Arning – Page not found';
+        document.title = 'Robert Arning – Seite nicht gefunden';
       }
     }
   } catch (error) {

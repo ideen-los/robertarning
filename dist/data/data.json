@@ -1,426 +1,430 @@
 {
-  "projects": [
-    {
-      "projectName": "REMIX",
-      "id": 1,
-      "description": "Design, UX und Entwicklung eines Portals für Wissenschaftsvermittlung auf der Drupal-Webseite der Universitätsbibliothek Mainz.",
-      "image": "media/remix/overview-remix.jpg",
-      "live_site": "https://ub.uni-mainz.de/remix",
-      "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
-      "elements": [
-        {
-          "type": "video",
-          "content": "media/remix/video-remix-startseite.mp4",
-          "above_fold": "true"
-        },
-        {
-          "type": "image",
-          "content": "media/remix/remix-screens.jpg"
-        },
-        {
-          "type": "text",
-          "content": "<p>REMIX ist eine innovative Plattform, auf der sich eine Vielfalt von Geschichten, Interviews und virtuellen Ausstellungen findet, inspiriert durch Forschungs- und Lehraktivitäten an der Universität Mainz.</p><p>Ich war verantwortlich für die Konzeption und Gestaltung von Interface, Benutzerführung und -&nbsp;erfahrung sowie die Etwicklung der Plattform innerhalb des CMS Drupal.</p>"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "video",
-              "content": "media/remix/video-remix-inpage-nav.mp4"
-            },
-            {
-              "type": "image",
-              "content": "media/remix/remix-cv-mobile.jpg"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "content": "media/remix/remix-screens-mobile.jpg"
-        },
-        {
-          "type": "video",
-          "content": "media/remix/video-remix-virtuelle-ausstellungen.mp4"
-        }
-      ]
-    },
-    {
-      "projectName": "marena",
-      "id": 2,
-      "description": "UI/UX Design für eine Progressive Web App zur Unterstützung und Begleitung von Personen nach einem Reha-Aufenthalt.",
-      "image": "media/marena/overview-marena.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "Prototyping", "Figma"],
-      "elements": [
-        {
-          "type": "video",
-          "content": "media/marena/video-marena-mobile-full.mp4",
-          "above_fold": "true"
-        },
-        {
-          "type": "image",
-          "content": "media/marena/marena-screens.jpg"
-        },
-        {
-          "type": "text",
-          "content": "<p>Die Progressive Web App marena begleitet Menschen  bei der Wiedereingliederung in den Arbeitsmarkt nach einem längeren Reha-Aufenthalt.</p><p>Das gesamte Interface, das sich am CD der Universitätsmedizin Mainz und am Design System von Vue.js orientiert, als auch die Nutzererfahrung wurden von mir konzipiert. Das Design und die Nutzerpfade optimierte ich iterativ durch den Einsatz interaktiver Mockups.</p>"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "video",
-              "content": "media/marena/video-marena-strategien-clickthrough.mp4"
-            },
-            {
-              "type": "image",
-              "content": "media/marena/marena-strategien.jpg"
-            }
-          ]
-        },
-        {
-          "type": "image",
-          "content": "media/marena/marena-screens2.jpg"
-        },
-        {
-          "type": "image",
-          "content": "media/marena/marena-logo.jpg"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "image",
-              "content": "media/marena/marena-aufgaben.jpg"
-            },
-            {
-              "type": "video",
-              "content": "media/marena/video-marena-add-task.mp4"
-            }
-          ]
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "video",
-              "content": "media/marena/video-marena-umfrage-start.mp4"
-            },
-            {
-              "type": "image",
-              "content": "media/marena/marena-auswertung.jpg"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "projectName": "AMA-Lounge Audioplayer",
-      "id": 3,
-      "description": "Design und Entwicklung eines intuitiven Interfaces für den Audioplayer des Archivs für die Musik Afrikas (AMA) an der Universitätsbibliothek Mainz.",
-      "image": "media/ama-player/overview-ama-player.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "PowerPoint"],
-      "elements": [
-        {
-          "type": "video",
-          "content": "media/ama-player/ama-player-video.mp4",
-          "above_fold": "true"
-        },
-        {
-          "type": "image",
-          "content": "media/ama-player/ama-player-photo.jpg"
-        },
-        {
-          "type": "text",
-          "content": "<p>Für das „Archiv für die Musik Afrikas“ habe ich einen Audioplayer entwickelt, der es Besuchern ermöglicht, ausgewählte Stücke mit dem traditionellen Musikinstrument Kora zu erleben - bequem vom Sofa aus, in einer entspannten Atmosphäre.</p><p>Das Design ist klar und effektiv. Es bietet eine intuitive Navigation mit einem einfachen Zugang zu den wichtigsten Steuerelementen, die über Tippen auf SHOW CONTROLS ein- und ausgeblendet werden können. Angesichts der kurzen Vorlaufzeit bis zum Projektstart entschieden wir uns aus Gründen der Flexibilität für PowerPoint als pragmatische Lösung zur Visualisierung des Players.</p>"
-        },
-        {
-          "type": "image",
-          "content": "media/ama-player/ama-player-start.jpg"
-        },
-        {
-          "type": "image",
-          "content": "media/ama-player/ama-player-track.jpg"
-        }
-      ]
-    },
-    {
-      "projectName": "Universitätsbibliothek Mainz",
-      "id": 4,
-      "description": "Optimierung der Webseite der Universitätsbibliothek Mainz durch Weiterentwicklung, Polishing und Animation bestehender Interface-Elemente.",
-      "image": "media/ub/overview-ub.jpg",
-      "live_site": "https://ub.uni-mainz.de",
-      "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
-      "elements": [
-        {
-          "type": "image",
-          "content": "media/ub/ub-start.jpg",
-          "above_fold": "true"
-        },
-        {
-          "type": "text",
-          "content": "<p>Die Webseite der Universitätsbibliothek Mainz, insbesondere die Startseite, optimierte ich hinsichtlich Nutzererfahrung und Interfacedesign.</p><p>Da das aktuelle Design insgesamt als passend und effektiv erachtet wurde, beschränkten sich meine Aufgaben auf Polishing und dezente Weiterentwicklung von Animationen und Interfacekomponenten.</p>"
-        },
-        {
-          "type": "comment",
-          "content": "Polishing der Menü Scroll-Animation"
-        },
-        {
-          "type": "video",
-          "version": "new",
-          "content": "media/ub/video-ub-nav-animation-redesign.mp4"
-        },
-        {
-          "type": "video",
-          "version": "old",
-          "content": "media/ub/video-ub-nav-animation-original.mp4"
-        },
-        {
-          "type": "comment",
-          "content": "Redesign der Hauptnavigation"
-        },
-        {
-          "type": "image",
-          "version": "new",
-          "content": "media/ub/ub-nav-new.jpg"
-        },
-        {
-          "type": "image",
-          "version": "old",
-          "content": "media/ub/ub-nav-old.jpg"
-        },
-        {
-          "type": "comment",
-          "content": "Animation der mobilen Navigation"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "video",
-              "version": "new",
-              "content": "media/ub/video-ub-mobile-nav-redesign.mp4"
-            },
-            {
-              "type": "video",
-              "version": "old",
-              "content": "media/ub/video-ub-mobile-nav-original.mp4"
-            }
-          ]
-        },
-        {
-          "type": "comment",
-          "content": "Polishing der Suchbox"
-        },
-        {
-          "type": "image",
-          "version": "new",
-          "content": "media/ub/ub-searchbox-new.jpg"
-        },
-        {
-          "type": "image",
-          "version": "old",
-          "content": "media/ub/ub-searchbox-old.jpg"
-        },
-        {
-          "type": "comment",
-          "content": "Redesign der Akkordeons"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "video",
-              "version": "new",
-              "content": "media/ub/video-ub-accordion-redesign.mp4"
-            },
-            {
-              "type": "video",
-              "version": "old",
-              "content": "media/ub/video-ub-accordion-original.mp4"
-            }
-          ]
-        },
-        {
-          "type": "comment",
-          "content": "Restrukturierung der Standort-Seite und Implementierung einer Filterfunktion"
-        },
-        {
-          "type": "image",
-          "version": "new",
-          "content": "media/ub/ub-standorte-new.jpg"
-        },
-        {
-          "type": "image",
-          "version": "old",
-          "content": "media/ub/ub-standorte-old.jpg"
-        }
-      ]
-    },
-    {
-      "projectName": "UI Komponenten (Demo)",
-      "id": 5,
-      "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
-      "image": "media/ui-components/overview-ui-components.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
-      "elements": [
-        {
-          "type": "codepen",
-          "title": "Dropdown Menu",
-          "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
-          "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
-        },
-        {
-          "type": "text",
-          "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus. Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig.</p><p>Beispielsweise werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star&nbsp;Wars erinnert.</p>"
-        },
-        {
-          "type": "codepen",
-          "title": "Hamburger Menu",
-          "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
-          "url": "https://codepen.io/ideen-los/pen/oNRraOG"
-        }
-      ]
-    },
-    {
-      "projectName": "Kontexte (Konzept)",
-      "id": 6,
-      "description": "Design eines One-Pager-Prototypen zur Präsentation geschichtlicher Themen mit Fokus auf eine spannungsreiche, asymmetrische Ästhetik.",
-      "image": "media/kontexte/overview-kontexte.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "Prototyping", "Figma"],
-      "elements": [
-        {
-          "type": "image",
-          "content": "media/kontexte/kontexte-start.jpg",
-          "above_fold": "true"
-        },
-        {
-          "type": "image",
-          "content": "media/kontexte/kontexte-screens.jpg"
-        },
-        {
-          "type": "text",
-          "content": "<p>\"Kontexte\" ist das Konzept eines Formats, das geschichtliche Ereignisse spannend und interaktiv darstellt. Kontexte beleuchtet verschiedene Aspekte eines Themas, wie z.B. verschiedene Aspekte des Themas \"Die Geschichte der Russlanddeutschen\".</p><p>Die Gestaltung folgt einer grafischen und asymmetrischen Ästhetik wodurch eine visuelle Dynamik entsteht. Historische Inhalte werden mit einer modernen  Präsentation kombiniert, um das Interesse der Besucher zu wecken und die Informationen leichter zu vermitteln.</p>"
-        },
-        {
-          "type": "image",
-          "content": "media/kontexte/kontexte-kolonistenbrief.jpg"
-        },
-        {
-          "type": "image",
-          "content": "media/kontexte/kontexte-inhalt.jpg"
-        },
-        {
-          "type": "image",
-          "content": "media/kontexte/kontexte-zitate.jpg"
-        }
-      ]
-    },
-    {
-      "projectName": "Datenbank-Infosystem (DBIS)",
-      "id": 7,
-      "description": "Redesign des Portals für wissenschaftliche Datenbanken der Universitätsbibliothek Mainz.",
-      "image": "media/dbis/overview-dbis.jpg",
-      "live_site": "https://dbis.ur.de/dbinfo/fachliste.php?bib_id=ub_mz&colors=15&ocolors=40&lett=l",
-      "skills": ["UI Design", "HTML", "CSS"],
-      "elements": [
-        {
-          "type": "image",
-          "content": "media/dbis/dbis-start.jpg",
-          "above_fold": "true"
-        },
-        {
-          "type": "text",
-          "content": "<p>DBIS ist ein Rechercheportal für wissenschaftliche Datenbanken im Bibliothekswesen. Bibliotheksangestellte verwenden das Toll täglich. Das Design stammte aus dem Beginn der 2000er.</p><p>Meine Aufgabe bestand darin, im Rahmen des existierenden HTML-Gerüsts auf Basis von CSS ein modernes und benutzerfreundliches Interface zu implementieren, das sich an die Gestaltung der Webseite der Universitätsbibliothek anlehnt.</p>"
-        },
-        {
-          "type": "image",
-          "content": "media/dbis/dbis-al-new.jpg",
-          "version": "new"
-        },
-        {
-          "type": "image",
-          "content": "media/dbis/dbis-al-old.jpg",
-          "version": "old"
-        },
-        {
-          "type": "image",
-          "content": "media/dbis/dbis-screens.jpg",
-          "version": "new"
-        }
-      ]
-    },
-    {
-      "projectName": "Safak Tike",
-      "id": 8,
-      "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
-      "image": "media/stike/overview-stike.jpg",
-      "live_site": "http://s-tike.de",
-      "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
-      "elements": [
-        {
-          "type": "video",
-          "content": "media/stike/video-stike-startseite.mp4",
-          "above_fold": "true"
-        },
-        {
-          "type": "text",
-          "content": "<p>Safak Tike ist ein Fachmann im Bereich Vertrieb und Kommunikation.</p><p>Die statischen Webseite habe ich mit HTML, CSS und JavaScript umgesetzt. Sie ist darauf ausgelegt, Professionalität auszustrahlen und Benutzerfreundlichkeit auf allen Geräten sicherzustellen.</p>"
-        },
-        {
-          "type": "image",
-          "content": "media/stike/stike-screens.jpg"
-        },
-        {
-          "type": "video",
-          "content": "media/stike/video-stike-clickthrough.mp4"
-        }
-      ]
-    },
-    {
-      "projectName": "For all People",
-      "id": 9,
-      "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
-      "image": "media/forallpeople/overview-forallpeople.jpg",
-      "live_site": "",
-      "skills": ["UI/UX Design", "HTML", "CSS", "WordPress"],
-      "elements": [
-        {
-          "type": "image",
-          "content": "media/forallpeople/forallpeople-start.jpg",
-          "above_fold": "true"
-        },
-        {
-          "type": "image",
-          "content": "media/forallpeople/forallpeople-screens.jpg"
-        },
-        {
-          "type": "text",
-          "content": "<p>For all People ist eine gemeinnützige Initiative, die es sich zur Aufgabe gemacht hat, Kindern und Jugendlichen die Welt der klassischen Musik näherzubringen.</p><p>Als Teil des Teams war ich für das Design und die Entwicklung eines simplen One-Pagers für WordPress verantwortlich. Bei der Gestaltung habe ich besonderen Wert gelegt auf ein asymmetrisches, grafisches, klares und spielerisches Design.</p>"
-        },
-        {
-          "type": "image",
-          "content": "media/forallpeople/forallpeople-subscribe.jpg"
-        },
-        {
-          "type": "two-column",
-          "content": [
-            {
-              "type": "image",
-              "content": "media/forallpeople/forallpeople-header-mobile.jpg"
-            },
-            {
-              "type": "image",
-              "content": "media/forallpeople/forallpeople-subscribe-mobile.jpg"
-            }
-          ]
-        }
-      ]
-    }
-  ],
+  "projects": {
+    "title": "UI/UX Designer",
+    "description": "Ich bin Robert Arning, ein UI/UX Designer mit 6 Jahren Erfahrung und umfassender Expertise in HTML/CSS sowie soliden Grundkenntnissen in JavaScript.",
+    "elements": [
+      {
+        "projectName": "REMIX",
+        "id": 1,
+        "description": "Design, UX und Entwicklung eines Portals für Wissenschaftsvermittlung auf der Drupal-Webseite der Universitätsbibliothek Mainz.",
+        "image": "media/remix/overview-remix.jpg",
+        "live_site": "https://ub.uni-mainz.de/remix",
+        "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
+        "elements": [
+          {
+            "type": "video",
+            "content": "media/remix/video-remix-startseite.mp4",
+            "above_fold": "true"
+          },
+          {
+            "type": "image",
+            "content": "media/remix/remix-screens.jpg"
+          },
+          {
+            "type": "text",
+            "content": "<p>REMIX ist eine innovative Plattform, auf der sich eine Vielfalt von Geschichten, Interviews und virtuellen Ausstellungen findet, inspiriert durch Forschungs- und Lehraktivitäten an der Universität Mainz.</p><p>Ich war verantwortlich für die Konzeption und Gestaltung von Interface, Benutzerführung und &#x2011;erfahrung sowie die Etwicklung der Plattform innerhalb des CMS Drupal.</p>"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "video",
+                "content": "media/remix/video-remix-inpage-nav.mp4"
+              },
+              {
+                "type": "image",
+                "content": "media/remix/remix-cv-mobile.jpg"
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "content": "media/remix/remix-screens-mobile.jpg"
+          },
+          {
+            "type": "video",
+            "content": "media/remix/video-remix-virtuelle-ausstellungen.mp4"
+          }
+        ]
+      },
+      {
+        "projectName": "marena",
+        "id": 2,
+        "description": "UI/UX Design für eine Progressive Web App zur Unterstützung und Begleitung von Personen nach einem Reha-Aufenthalt.",
+        "image": "media/marena/overview-marena.jpg",
+        "live_site": "",
+        "skills": ["UI/UX Design", "Prototyping", "Figma"],
+        "elements": [
+          {
+            "type": "video",
+            "content": "media/marena/video-marena-mobile-full.mp4",
+            "above_fold": "true"
+          },
+          {
+            "type": "image",
+            "content": "media/marena/marena-screens.jpg"
+          },
+          {
+            "type": "text",
+            "content": "<p>Die Progressive Web App marena begleitet Menschen  bei der Wiedereingliederung in den Arbeitsmarkt nach einem längeren Reha-Aufenthalt.</p><p>Das gesamte Interface, das sich am CD der Universitätsmedizin Mainz und am Design System von Vue.js orientiert, als auch die Nutzererfahrung wurden von mir konzipiert. Das Design und die Nutzerpfade optimierte ich iterativ durch den Einsatz interaktiver Mockups.</p>"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "video",
+                "content": "media/marena/video-marena-strategien-clickthrough.mp4"
+              },
+              {
+                "type": "image",
+                "content": "media/marena/marena-strategien.jpg"
+              }
+            ]
+          },
+          {
+            "type": "image",
+            "content": "media/marena/marena-screens2.jpg"
+          },
+          {
+            "type": "image",
+            "content": "media/marena/marena-logo.jpg"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "image",
+                "content": "media/marena/marena-aufgaben.jpg"
+              },
+              {
+                "type": "video",
+                "content": "media/marena/video-marena-add-task.mp4"
+              }
+            ]
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "video",
+                "content": "media/marena/video-marena-umfrage-start.mp4"
+              },
+              {
+                "type": "image",
+                "content": "media/marena/marena-auswertung.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "projectName": "AMA-Lounge Audioplayer",
+        "id": 3,
+        "description": "Design und Entwicklung eines intuitiven Interfaces für den Audioplayer des Archivs für die Musik Afrikas (AMA) an der Universitätsbibliothek Mainz.",
+        "image": "media/ama-player/overview-ama-player.jpg",
+        "live_site": "",
+        "skills": ["UI/UX Design", "PowerPoint"],
+        "elements": [
+          {
+            "type": "video",
+            "content": "media/ama-player/ama-player-video.mp4",
+            "above_fold": "true"
+          },
+          {
+            "type": "image",
+            "content": "media/ama-player/ama-player-photo.jpg"
+          },
+          {
+            "type": "text",
+            "content": "<p>Für das „Archiv für die Musik Afrikas“ habe ich einen Audioplayer entwickelt, der es Besuchern ermöglicht, ausgewählte Stücke mit dem traditionellen Musikinstrument Kora zu erleben - bequem vom Sofa aus, in einer entspannten Atmosphäre.</p><p>Das Design ist klar und effektiv. Es bietet eine intuitive Navigation mit einem einfachen Zugang zu den wichtigsten Steuerelementen, die über Tippen auf SHOW CONTROLS ein- und ausgeblendet werden können. Angesichts der kurzen Vorlaufzeit bis zum Projektstart entschieden wir uns aus Gründen der Flexibilität für PowerPoint als pragmatische Lösung zur Visualisierung des Players.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/ama-player/ama-player-start.jpg"
+          },
+          {
+            "type": "image",
+            "content": "media/ama-player/ama-player-track.jpg"
+          }
+        ]
+      },
+      {
+        "projectName": "Universitätsbibliothek Mainz",
+        "id": 4,
+        "description": "Optimierung der Webseite der Universitätsbibliothek Mainz durch Weiterentwicklung, Polishing und Animation bestehender Interface-Elemente.",
+        "image": "media/ub/overview-ub.jpg",
+        "live_site": "https://ub.uni-mainz.de",
+        "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
+        "elements": [
+          {
+            "type": "image",
+            "content": "media/ub/ub-start.jpg",
+            "above_fold": "true"
+          },
+          {
+            "type": "text",
+            "content": "<p>Die Webseite der Universitätsbibliothek Mainz, insbesondere die Startseite, optimierte ich hinsichtlich Nutzererfahrung und Interfacedesign.</p><p>Da das aktuelle Design insgesamt als passend und effektiv erachtet wurde, beschränkten sich meine Aufgaben auf Polishing und dezente Weiterentwicklung von Animationen und Interfacekomponenten.</p>"
+          },
+          {
+            "type": "comment",
+            "content": "Polishing der Menü Scroll-Animation"
+          },
+          {
+            "type": "video",
+            "version": "new",
+            "content": "media/ub/video-ub-nav-animation-redesign.mp4"
+          },
+          {
+            "type": "video",
+            "version": "old",
+            "content": "media/ub/video-ub-nav-animation-original.mp4"
+          },
+          {
+            "type": "comment",
+            "content": "Redesign der Hauptnavigation"
+          },
+          {
+            "type": "image",
+            "version": "new",
+            "content": "media/ub/ub-nav-new.jpg"
+          },
+          {
+            "type": "image",
+            "version": "old",
+            "content": "media/ub/ub-nav-old.jpg"
+          },
+          {
+            "type": "comment",
+            "content": "Animation der mobilen Navigation"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "video",
+                "version": "new",
+                "content": "media/ub/video-ub-mobile-nav-redesign.mp4"
+              },
+              {
+                "type": "video",
+                "version": "old",
+                "content": "media/ub/video-ub-mobile-nav-original.mp4"
+              }
+            ]
+          },
+          {
+            "type": "comment",
+            "content": "Polishing der Suchbox"
+          },
+          {
+            "type": "image",
+            "version": "new",
+            "content": "media/ub/ub-searchbox-new.jpg"
+          },
+          {
+            "type": "image",
+            "version": "old",
+            "content": "media/ub/ub-searchbox-old.jpg"
+          },
+          {
+            "type": "comment",
+            "content": "Redesign der Akkordeons"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "video",
+                "version": "new",
+                "content": "media/ub/video-ub-accordion-redesign.mp4"
+              },
+              {
+                "type": "video",
+                "version": "old",
+                "content": "media/ub/video-ub-accordion-original.mp4"
+              }
+            ]
+          },
+          {
+            "type": "comment",
+            "content": "Restrukturierung der Standort-Seite und Implementierung einer Filterfunktion"
+          },
+          {
+            "type": "image",
+            "version": "new",
+            "content": "media/ub/ub-standorte-new.jpg"
+          },
+          {
+            "type": "image",
+            "version": "old",
+            "content": "media/ub/ub-standorte-old.jpg"
+          }
+        ]
+      },
+      {
+        "projectName": "UI Komponenten (Demo)",
+        "id": 5,
+        "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
+        "image": "media/ui-components/overview-ui-components.jpg",
+        "live_site": "",
+        "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
+        "elements": [
+          {
+            "type": "codepen",
+            "title": "Dropdown Menu",
+            "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
+            "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
+          },
+          {
+            "type": "text",
+            "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus. Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig.</p><p>Beispielsweise werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star&nbsp;Wars erinnert.</p>"
+          },
+          {
+            "type": "codepen",
+            "title": "Hamburger Menu",
+            "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
+            "url": "https://codepen.io/ideen-los/pen/oNRraOG"
+          }
+        ]
+      },
+      {
+        "projectName": "Kontexte (Konzept)",
+        "id": 6,
+        "description": "Design eines One-Pager-Prototypen zur Präsentation geschichtlicher Themen mit Fokus auf eine spannungsreiche, asymmetrische Ästhetik.",
+        "image": "media/kontexte/overview-kontexte.jpg",
+        "live_site": "",
+        "skills": ["UI/UX Design", "Prototyping", "Figma"],
+        "elements": [
+          {
+            "type": "image",
+            "content": "media/kontexte/kontexte-start.jpg",
+            "above_fold": "true"
+          },
+          {
+            "type": "image",
+            "content": "media/kontexte/kontexte-screens.jpg"
+          },
+          {
+            "type": "text",
+            "content": "<p>\"Kontexte\" ist das Konzept eines Formats, das geschichtliche Ereignisse spannend und interaktiv darstellt. Kontexte beleuchtet verschiedene Aspekte eines Themas, wie z.B. verschiedene Aspekte des Themas \"Die Geschichte der Russlanddeutschen\".</p><p>Die Gestaltung folgt einer grafischen und asymmetrischen Ästhetik wodurch eine visuelle Dynamik entsteht. Historische Inhalte werden mit einer modernen  Präsentation kombiniert, um das Interesse der Besucher zu wecken und die Informationen leichter zu vermitteln.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/kontexte/kontexte-kolonistenbrief.jpg"
+          },
+          {
+            "type": "image",
+            "content": "media/kontexte/kontexte-inhalt.jpg"
+          },
+          {
+            "type": "image",
+            "content": "media/kontexte/kontexte-zitate.jpg"
+          }
+        ]
+      },
+      {
+        "projectName": "Datenbank-Infosystem (DBIS)",
+        "id": 7,
+        "description": "Redesign des Portals für wissenschaftliche Datenbanken der Universitätsbibliothek Mainz.",
+        "image": "media/dbis/overview-dbis.jpg",
+        "live_site": "https://dbis.ur.de/dbinfo/fachliste.php?bib_id=ub_mz&colors=15&ocolors=40&lett=l",
+        "skills": ["UI Design", "HTML", "CSS"],
+        "elements": [
+          {
+            "type": "image",
+            "content": "media/dbis/dbis-start.jpg",
+            "above_fold": "true"
+          },
+          {
+            "type": "text",
+            "content": "<p>DBIS ist ein Rechercheportal für wissenschaftliche Datenbanken im Bibliothekswesen. Bibliotheksangestellte verwenden das Toll täglich. Das Design stammte aus dem Beginn der 2000er.</p><p>Meine Aufgabe bestand darin, im Rahmen des existierenden HTML-Gerüsts auf Basis von CSS ein modernes und benutzerfreundliches Interface zu implementieren, das sich an die Gestaltung der Webseite der Universitätsbibliothek anlehnt.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/dbis/dbis-al-new.jpg",
+            "version": "new"
+          },
+          {
+            "type": "image",
+            "content": "media/dbis/dbis-al-old.jpg",
+            "version": "old"
+          },
+          {
+            "type": "image",
+            "content": "media/dbis/dbis-screens.jpg",
+            "version": "new"
+          }
+        ]
+      },
+      {
+        "projectName": "Safak Tike",
+        "id": 8,
+        "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
+        "image": "media/stike/overview-stike.jpg",
+        "live_site": "http://s-tike.de",
+        "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
+        "elements": [
+          {
+            "type": "video",
+            "content": "media/stike/video-stike-startseite.mp4",
+            "above_fold": "true"
+          },
+          {
+            "type": "text",
+            "content": "<p>Safak Tike ist ein Fachmann im Bereich Vertrieb und Kommunikation.</p><p>Die statischen Webseite habe ich mit HTML, CSS und JavaScript umgesetzt. Sie ist darauf ausgelegt, Professionalität auszustrahlen und Benutzerfreundlichkeit auf allen Geräten sicherzustellen.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/stike/stike-screens.jpg"
+          },
+          {
+            "type": "video",
+            "content": "media/stike/video-stike-clickthrough.mp4"
+          }
+        ]
+      },
+      {
+        "projectName": "For all People",
+        "id": 9,
+        "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
+        "image": "media/forallpeople/overview-forallpeople.jpg",
+        "live_site": "",
+        "skills": ["UI/UX Design", "HTML", "CSS", "WordPress"],
+        "elements": [
+          {
+            "type": "image",
+            "content": "media/forallpeople/forallpeople-start.jpg",
+            "above_fold": "true"
+          },
+          {
+            "type": "image",
+            "content": "media/forallpeople/forallpeople-screens.jpg"
+          },
+          {
+            "type": "text",
+            "content": "<p>For all People ist eine gemeinnützige Initiative, die es sich zur Aufgabe gemacht hat, Kindern und Jugendlichen die Welt der klassischen Musik näherzubringen.</p><p>Als Teil des Teams war ich für das Design und die Entwicklung eines simplen One-Pagers für WordPress verantwortlich. Bei der Gestaltung habe ich besonderen Wert gelegt auf ein asymmetrisches, grafisches, klares und spielerisches Design.</p>"
+          },
+          {
+            "type": "image",
+            "content": "media/forallpeople/forallpeople-subscribe.jpg"
+          },
+          {
+            "type": "two-column",
+            "content": [
+              {
+                "type": "image",
+                "content": "media/forallpeople/forallpeople-header-mobile.jpg"
+              },
+              {
+                "type": "image",
+                "content": "media/forallpeople/forallpeople-subscribe-mobile.jpg"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
   "profile": {
     "title": "Profil",
     "elements": [
@@ -451,7 +455,7 @@
           },
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON)</p><h3>Tools</h3><p>Git<br>NPM<br>Lando<br>Webpack<br>Gulp</p>"
+            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON)</p><h3>Tools</h3><p>Git<br>Webpack<br>Lando<br>Gulp</p>"
           }
         ]
       }

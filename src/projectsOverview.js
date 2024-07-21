@@ -20,10 +20,10 @@ export const createProjectsOverview = function (projects) {
   }
 
   // Generate HTML code for the description text of the homepage title
-  const descriptionText = `<div class="description"><p>Ich bin Robert Arning, ein UI/UX Designer mit 10 Jahren Erfahrung und umfassender Expertise in HTML/CSS sowie soliden Grundkenntnissen in JavaScript.</p></div>`;
+  const descriptionText = `<div class="description"><p>${projects.description}</p></div>`;
 
   // Generate HTML code for displaying each project underneath each other
-  const overviewHTML = projects
+  const overviewHTML = projects.elements
     .map((project) => {
       // Encode the "projectName" value to safely include it in the URL path
       const urlSaveProjectName = convertToURLSaveName(project.projectName);
@@ -45,7 +45,7 @@ export const createProjectsOverview = function (projects) {
     })
     .join('');
 
-  return `<div class="homepage"><h1 class="site-title">UI/UX Designer</h1>${descriptionText}<div class="projects-overview">${overviewHTML}</div></div>`;
+  return `<div class="homepage"><h1 class="site-title">${projects.title}</h1>${descriptionText}<div class="projects-overview">${overviewHTML}</div></div>`;
 };
 
 /*
@@ -92,7 +92,7 @@ export const displayProjectOverview = async function () {
     const projectsOverviewHTML = createProjectsOverview(data.projects);
 
     setContent('content', projectsOverviewHTML);
-    handleClickOnProjectTeasers(data.projects);
+    handleClickOnProjectTeasers(data.projects.elements);
     setBodyClass('homepage');
   }
 };

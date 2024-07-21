@@ -10,7 +10,7 @@ const findPreviousAndNextProject = async function (project) {
       return '';
     }
 
-    const allProjects = data.projects;
+    const allProjects = data.projects.elements;
     const currentProjectIndex = Number(project.id) - 1;
 
     const nextProjectIndex = (currentProjectIndex + 1) % allProjects.length;

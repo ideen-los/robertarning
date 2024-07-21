@@ -24,9 +24,13 @@ Updates the browser's history stack by adding a new entry. This sets the new URL
 without reloading the page. Then calls the router() function to handle the URL change.
 */
 export const pushURLAndCallRouter = function (URLpath) {
-  // Update the URL
-  history.pushState({}, '', `/${URLpath}`);
-  // Call the router
+  // Check if the new URL is different from the current URL
+  const fullPath = `/${URLpath}`;
+  if (window.location.pathname !== fullPath) {
+    // Update the URL only if it's different
+    history.pushState({}, '', fullPath);
+  }
+  // Call the router whether or not the URL was updated
   router();
 };
 
