@@ -26,12 +26,15 @@ without reloading the page. Then calls the router() function to handle the URL c
 export const pushURLAndCallRouter = function (URLpath) {
   // Check if the new URL is different from the current URL
   const fullPath = `/${URLpath}`;
+  let urlChanged = false;
+
   if (window.location.pathname !== fullPath) {
     // Update the URL only if it's different
     history.pushState({}, '', fullPath);
+    urlChanged = true;
   }
   // Call the router whether or not the URL was updated
-  router();
+  router(urlChanged);
 };
 
 /* 
@@ -39,13 +42,17 @@ export const pushURLAndCallRouter = function (URLpath) {
 2. Adds animations to the project title or page title.
 3. Sets the scroll position to the top of the page.
 */
-export const setupPage = function (pageType = 'projectPage') {
+export const setupPage = function (pageType = 'projectPage', urlChanged = false) {
   initializeLazyLoading();
   requestAnimationFrame(() => {
     if (pageType === 'projectPage') {
-      initializeAnimationsOnProjectPage();
+      if (urlChanged) {
+        initializeAnimationsOnProjectPage();
+      }
     } else {
-      initializeAnimationsOnStaticPage();
+      if (urlChanged) {
+        initializeAnimationsOnStaticPage();
+      }
     }
   });
   // Set scroll position to the top of the browser window

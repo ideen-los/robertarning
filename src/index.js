@@ -19,6 +19,6 @@ setRoute(
 
 // Call the router() and initialize the navigation
 document.addEventListener('DOMContentLoaded', function () {
-  router();
+  router(true);
   handleMenuLinks();
 });

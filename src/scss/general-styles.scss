@@ -49,17 +49,38 @@ $default-max-bp: 1900px;
 /* CUSTOM PROPERTIES
 =============================================================================================== */
 :root {
+  // Colors
   --primary-color: #0d0d0d;
   --color-white: #ffffff;
   --color-green: #22b06c;
   --color-grey: #a5a5a5;
 
-  --logo-width: #{fluid(100px, 149px)};
+  // Spacing
+  --160px-to-80px: #{fluid(80px, 160px)};
+  --135px-to-70px: #{fluid(70px, 135px)};
+  --120px-to-60px: #{fluid(60px, 120px)};
+  --80px-to-40px: #{fluid(40px, 80px)};
+  --70px-to-35px: #{fluid(35px, 70px)};
+  --65px-to-45px: #{fluid(45px, 65px)};
+  --40px-to-25px: #{fluid(25px, 40px)};
+  --30px-to-15px: #{fluid(15px, 30px)};
+  --25px-to-10px: #{fluid(10px, 25px)};
+  --20px-to-10px: #{fluid(10px, 20px)};
+  --15px-to-10px: #{fluid(10px, 15px)};
+  --15px-to-8px: #{fluid(8px, 15px)};
+  --12px-to-5px: #{fluid(5px, 12px)};
+  --11px-to-6px: #{fluid(6px, 11px)};
+  --7px-to-3px: #{fluid(3px, 7px)};
+  --4px-to-2px: #{fluid(2px, 4px)};
+  --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
+  --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
 
   @include breakpoint-xxs {
-    --logo-width: 30px;
+    --single-project-skills-tag-padding1: 3px;
+    --single-project-skills-tag-padding2: 6px;
   }
 
+  // Font sizes
   --font-size-nav: #{fluid(20px, 28px)};
   --font-size-text: #{fluid(22px, 34px)};
 
@@ -83,6 +104,7 @@ $default-max-bp: 1900px;
     --font-size-visit-live-site: 14px;
   }
 
+  // Font weights
   --font-weight-thin: 300;
   --font-weight-regular: 400;
   --font-weight-medium: 510;
@@ -90,37 +112,19 @@ $default-max-bp: 1900px;
 
   --flex-gap-nav: #{fluid(10px, 50px)};
 
-  --homepage-description-text-width: #{fluid(600px, 890px)};
-
-  --page-not-found-width: #{fluid(550px, 820px)};
-
-  --160px-to-80px: #{fluid(80px, 160px)};
-  --135px-to-70px: #{fluid(70px, 135px)};
-  --120px-to-60px: #{fluid(60px, 120px)};
-  --80px-to-40px: #{fluid(40px, 80px)};
-  --70px-to-35px: #{fluid(35px, 70px)};
-  --65px-to-45px: #{fluid(45px, 65px)};
-  --40px-to-25px: #{fluid(25px, 40px)};
-  --30px-to-15px: #{fluid(15px, 30px)};
-  --25px-to-10px: #{fluid(10px, 25px)};
-  --20px-to-10px: #{fluid(10px, 20px)};
-  --15px-to-10px: #{fluid(10px, 15px)};
-  --15px-to-8px: #{fluid(8px, 15px)};
-  --11px-to-5px: #{fluid(6px, 11px)};
-  --7px-to-3px: #{fluid(3px, 7px)};
-  --4px-to-2px: #{fluid(2px, 4px)};
-  --minus-10px-to-minus-5px: #{fluid(-5px, -10px)};
-
-  --profile-skill-list-text-width: #{fluid(500px, 600px)};
-
-  --single-project-text-width: #{fluid(560px, 860px)};
-  --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
-  --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
+  // Element widths
+  --logo-width: #{fluid(100px, 149px)};
 
   @include breakpoint-xxs {
-    --single-project-skills-tag-padding1: 3px;
-    --single-project-skills-tag-padding2: 6px;
+    --logo-width: 30px;
   }
+
+  --homepage-description-text-width: #{fluid(600px, 890px)};
+  --homepage-project-description-text-width: #{fluid(560px, 860px)};
+  --page-not-found-width: #{fluid(550px, 820px)};
+  --profile-skill-list-text-width: #{fluid(500px, 600px)};
+  --single-project-text-width: #{fluid(560px, 960px)};
+  --h1-headline-width: #{fluid(400px, 800px)};
 }
 
 /* GENERAL STYLES
@@ -156,15 +160,16 @@ h2 {
 }
 
 h1 {
-  max-width: 500px;
-  margin: 0 0 var(--70px-to-35px) var(--minus-10px-to-minus-5px);
+  max-width: var(--h1-headline-width);
+  margin: 0 0 var(--70px-to-35px) calc(var(--12px-to-5px) * -1);
 
   font-size: var(--font-size-h1);
   font-weight: var(--font-weight-regular);
   line-height: 90%;
 
   @include breakpoint-xxs {
-    margin: 0 0 30px -5px;
+    max-width: 300px;
+    margin: 0 0 30px -4px;
   }
 }
 
@@ -265,7 +270,7 @@ video {
 .transition-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.5s ease-out 0.05s, transform 0.5s ease-out 0.05s;
+  transition: opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s;
 }
 
 // Transition of skills list on project pages

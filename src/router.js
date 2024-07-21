@@ -18,7 +18,7 @@ If it is, then it calls the handler function associated with the registered path
 2. Is the current path is not a key in { routes }, it tries to call a function that loads a single
 project based on the path name. If no project with that name is found, the function returns '404'.
 */
-export const router = async function () {
+export const router = async function (urlChanged) {
   const urlPath = window.location.pathname || '/';
 
   try {
@@ -30,7 +30,7 @@ export const router = async function () {
       document.title = routes[urlPath].title;
       // Initialize lazy loading, animations, etc.
       const helperModule = await import('./helperFunctions.js');
-      helperModule.setupPage('staticPage');
+      helperModule.setupPage('staticPage', urlChanged);
     } else {
       // Path is not registered or has no handler
       // Check whether the path corresponds to a project
@@ -44,7 +44,7 @@ export const router = async function () {
         document.title = `Robert Arning – ${projectName}`;
         // Initialize lazy loading, animations, etc.
         const helperModule = await import('./helperFunctions.js');
-        helperModule.setupPage('projectPage');
+        helperModule.setupPage('projectPage', urlChanged);
         // Add the more Projects component and initialize all projects link
         const moreProjectsModule = await import('./moreProjects.js');
         moreProjectsModule.handleMoreProjectsLinks();
