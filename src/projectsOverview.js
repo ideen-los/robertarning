@@ -6,6 +6,7 @@ import {
   setBodyClass,
   setContent,
 } from './helperFunctions';
+import { initializeSlider } from './slideshow';
 
 /*
 Generates the HTML code for a project overview page.
@@ -94,5 +95,6 @@ export const displayProjectOverview = async function () {
     setContent('content', projectsOverviewHTML);
     handleClickOnProjectTeasers(data.projects.elements);
     setBodyClass('homepage');
+    initializeSlider();
   }
 };

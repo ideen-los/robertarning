@@ -460,5 +460,24 @@
         ]
       }
     ]
+  },
+  "slideshow": {
+    "elements": [
+      {
+        "id": 1,
+        "title": "Space Woman",
+        "url": "media/slideshow/space-woman.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Sleeping Guard",
+        "url": "media/slideshow/sleeping-guard.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Broadwalk",
+        "url": "media/slideshow/broadwalk.jpg"
+      }
+    ]
   }
 }

@@ -78,3 +78,15 @@ export const convertToURLSaveName = function (name) {
       .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
   ).toLowerCase();
 };
+
+export const createDiv = function (...elements) {
+  const divElements = [];
+
+  elements.forEach((element) => {
+    let divElement = document.createElement('div');
+    divElement.className = element;
+    divElements.push(divElement);
+  });
+
+  return divElements;
+};
