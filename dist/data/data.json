@@ -263,7 +263,7 @@
       },
       {
         "projectName": "UI Komponenten (Demo)",
-        "id": 5,
+        "id": 6,
         "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
         "image": "media/ui-components/overview-ui-components.jpg",
         "live_site": "",
@@ -289,7 +289,7 @@
       },
       {
         "projectName": "Kontexte (Konzept)",
-        "id": 6,
+        "id": 5,
         "description": "Design eines One-Pager-Prototypen zur Präsentation geschichtlicher Themen mit Fokus auf eine spannungsreiche, asymmetrische Ästhetik.",
         "image": "media/kontexte/overview-kontexte.jpg",
         "live_site": "",

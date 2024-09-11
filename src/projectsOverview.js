@@ -23,8 +23,11 @@ export const createProjectsOverview = function (projects) {
   // Generate HTML code for the description text of the homepage title
   const descriptionText = `<div class="description"><p>${projects.description}</p></div>`;
 
+  // Sort the projects by their id in ascending order
+  const sortedProjects = projects.elements.sort((a, b) => a.id - b.id);
+
   // Generate HTML code for displaying each project underneath each other
-  const overviewHTML = projects.elements
+  const overviewHTML = sortedProjects
     .map((project) => {
       // Encode the "projectName" value to safely include it in the URL path
       const urlSaveProjectName = convertToURLSaveName(project.projectName);
