@@ -13,7 +13,9 @@ const slider = {
   slideshowWidth: 0,
   sliderTrackWidth: 0,
   offset: 0,
-  gap: 20, // Set to .slider-track gap value
+  gap: 60, // Set to .slider-track gap value
+  transitionTime: '0.6s',
+  transitionEase: 'cubic-bezier(0.65,0.05,0.36,1)',
 };
 
 const createSlider = function () {
@@ -108,60 +110,33 @@ const loadSlideshowImages = async function () {
   return Promise.all(imagePromises);
 };
 
-/* 
-Moves the slider track to the right by centering the next image
-*/
-const moveSliderRight = function () {
-  // Calculate slideshow and slider-track width
-  slider.slideshowWidth = slider.slideshow.offsetWidth;
-  slider.sliderTrackWidth = slider.slideshow.scrollWidth;
-
-  // Reset offset before recalculating
-  slider.offset = 0;
-
-  // When the slider is moved one step, set prevIndex = currentIndex
-  slider.prevIndex = slider.currentIndex;
-
-  // Calculate which image should be in focus in relation to the total number of images
-  slider.currentIndex = (slider.currentIndex + 1) % slider.totalImages;
-  console.log('currentIndex:', slider.currentIndex);
-  console.log('Image in focus:', slider.images[slider.currentIndex]);
-
-  // Get the width of the image in focus
-  let imageInFocusWidth = slider.images[slider.currentIndex].offsetWidth;
-  console.log('image in focus width:', imageInFocusWidth);
-
-  // Get the images that precede the image in focus
-  let precedingImages = Array.from(slider.images).slice(0, slider.currentIndex);
-  console.log('preceding images', precedingImages);
-
-  // Calculate the total width of preceding images plus flex gap
-  precedingImages.forEach((image) => {
-    slider.offset += image.offsetWidth + slider.gap;
+const highlightImage = function (index) {
+  Array.from(slider.images).forEach((image) => {
+    if (image.classList.contains('in-focus')) {
+      image.classList.remove('in-focus');
+    }
   });
 
-  // Calculate the translateX value to center the current image
-  let translateXValue = slider.offset - slider.slideshowWidth / 2 + imageInFocusWidth / 2;
+  let focusedImageAttribute = slider.images[index].getAttribute('data-id');
 
-  // Update currentTranslateX by subtracting the calculated translateXValue
-  slider.currentTranslateX = -translateXValue;
-
-  // Reset offset and currentTranslateX values when we jump back to the first image
-  if (slider.currentIndex === slider.images.length - 2) {
-    slider.sliderTrack.style.transition = 'none';
-    focusImage(1);
-    requestAnimationFrame(() => {
-      slider.sliderTrack.style.transition = 'transform 0.3s';
-      focusImage(2);
-    });
-  } else if (slider.currentIndex === 0) {
-    focusImage(2);
-  }
-
-  // Set the sliderTrack to the new translateX value
-  slider.sliderTrack.style.transform = `translateX(${slider.currentTranslateX}px)`;
+  // Add .in-focus class to all images with the same data-id attribute
+  Array.from(slider.images).forEach((image) => {
+    if (image.getAttribute('data-id') === focusedImageAttribute) {
+      image.classList.add('in-focus');
+    }
+  });
 };
 
+/* 
+1. Determindes which image should be in focus by the argument provided and
+calculates its width.
+2. Calculates the width of the slider container and the slider track. Also 
+calculates the width of the slider elements that precede the image in focus.
+3. Calculates the value by which the slider track needs to be moved to bring
+the image in focus determined at the beginning.
+
+@param {number} index of the image that should be in focus
+*/
 const focusImage = async function (index) {
   // Calculate slideshow and slider-track width
   slider.slideshowWidth = slider.slideshow.offsetWidth;
@@ -172,11 +147,13 @@ const focusImage = async function (index) {
 
   // Set preIndex to currentIndex
   slider.prevIndex = slider.currentIndex;
-  // Set currentIndex to the image we want to show initially (= 1)
+  // Set currentIndex to the image we want to show initially
   slider.currentIndex = index;
   let imageInFocusWidth = slider.images[slider.currentIndex].offsetWidth;
-  // Get the preceding image
+  // Get the preceding images
   let precedingImages = Array.from(slider.images).slice(0, slider.currentIndex);
+
+  let translateXValue;
 
   // Calculate the total width of preceding images plus flex gap
   precedingImages.forEach((image) => {
@@ -184,15 +161,71 @@ const focusImage = async function (index) {
   });
 
   // Calculate the translateX value to center the image
-  let translateXValue = slider.offset - slider.slideshowWidth / 2 + imageInFocusWidth / 2;
+  translateXValue = slider.offset - slider.slideshowWidth / 2 + imageInFocusWidth / 2;
 
-  console.log(slider);
-
-  // Update currentTranslateX by subtracting the calculated translateXValue
+  // Update currentTranslateX value
   slider.currentTranslateX = -translateXValue;
-  console.log('transform value:', slider.currentTranslateX);
 
-  // Set the sliderTracks translateX value to focus the first image
+  // Set the sliderTracks translateX value to focus the correct image
+  slider.sliderTrack.style.transform = `translateX(${slider.currentTranslateX}px)`;
+
+  highlightImage(index);
+};
+
+/* 
+Moves the slider track to the right and centers the next image
+*/
+const moveSliderRight = function () {
+  // Calculate which image should be in focus in relation to the total number of images
+  slider.currentIndex = (slider.currentIndex + 1) % slider.totalImages;
+
+  // Move the slider
+  focusImage(slider.currentIndex);
+
+  // Reset offset and currentTranslateX values when we jump back to the first image
+  if (slider.currentIndex === slider.totalImages - 2) {
+    slider.sliderTrack.style.transition = 'none';
+    focusImage(1);
+    requestAnimationFrame(() => {
+      slider.sliderTrack.style.transition = `transform ${slider.transitionTime} ${slider.transitionEase}`;
+      focusImage(2);
+    });
+  }
+
+  // Set the sliderTrack to the new translateX value
+  slider.sliderTrack.style.transform = `translateX(${slider.currentTranslateX}px)`;
+};
+
+/* 
+Moves the slider track to the left and centers the next image
+*/
+const moveSliderLeft = function () {
+  // Calculate which image should be in focus in relation to the total number of images
+  slider.currentIndex = (slider.currentIndex - 1 + slider.totalImages) % slider.totalImages;
+  console.log('current focused image:', slider.currentIndex);
+
+  // Move the slider
+  focusImage(slider.currentIndex);
+
+  // Reset offset and currentTranslateX values when we jump back to the first image
+
+  if (slider.currentIndex === 1) {
+    slider.sliderTrack.style.transition = 'none';
+    focusImage(slider.totalImages - 2);
+    requestAnimationFrame(() => {
+      slider.sliderTrack.style.transition = `transform ${slider.transitionTime} ${slider.transitionEase}`;
+      focusImage(slider.totalImages - 3);
+    });
+  } /*  else if (slider.currentIndex === slider.images.length - 2) {
+    slider.sliderTrack.style.transition = 'none';
+    focusImage(slider.totalImages.length - 2);
+    requestAnimationFrame(() => {
+      slider.sliderTrack.style.transition = `transform ${slider.transitionTime}`;
+      focusImage(slider.totalImages.length - 2);
+    });
+  } */
+
+  // Set the sliderTrack to the new translateX value
   slider.sliderTrack.style.transform = `translateX(${slider.currentTranslateX}px)`;
 };
 
@@ -205,6 +238,9 @@ const handleSlideshowNavigation = function () {
   controls.addEventListener('click', (event) => {
     if (event.target.classList.contains('nav-right')) {
       moveSliderRight();
+    }
+    if (event.target.classList.contains('nav-left')) {
+      moveSliderLeft();
     }
   });
 };
