@@ -455,9 +455,50 @@
           },
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON)</p><h3>Tools</h3><p>Git<br>Webpack<br>Lando<br>Gulp</p>"
+            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON, async/await)</p><h3>Tools</h3><p>Git<br>Webpack<br>Lando<br>Gulp</p>"
           }
         ]
+      }
+    ]
+  },
+  "slideshow": {
+    "title": "Archiv (Slideshow)",
+    "description": "Illustrationen aus dem Zeitraum 2012&#8288;&#8211;&#8288;2022",
+    "elements": [
+      {
+        "id": 1,
+        "title": "Outer Space",
+        "url": "media/slideshow/space-woman.jpg"
+      },
+      {
+        "id": 2,
+        "title": "Schlafende Wache",
+        "url": "media/slideshow/sleeping-guard.jpg"
+      },
+      {
+        "id": 3,
+        "title": "Broadwalk",
+        "url": "media/slideshow/broadwalk.jpg"
+      },
+      {
+        "id": 4,
+        "title": "Stilleben",
+        "url": "media/slideshow/still-life.jpg"
+      },
+      {
+        "id": 5,
+        "title": "Kohlezeichnung",
+        "url": "media/slideshow/kohlezeichnung.jpg"
+      },
+      {
+        "id": 6,
+        "title": "Selbstportrait",
+        "url": "media/slideshow/selfportrait.jpg"
+      },
+      {
+        "id": 7,
+        "title": "Snowy day",
+        "url": "media/slideshow/eskimo.jpg"
       }
     ]
   }
