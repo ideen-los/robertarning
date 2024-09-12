@@ -304,9 +304,9 @@ const handleSlideshowNavigation = function () {
     }
   };
 
-  // Listen for both click and touchstart events
+  // Listen for both click and touchend events
   controls.addEventListener('click', handleNav);
-  controls.addEventListener('touchstart', handleNav);
+  controls.addEventListener('touchend', handleNav);
 };
 
 /* 
