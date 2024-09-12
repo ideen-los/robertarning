@@ -96,9 +96,9 @@ const getSlideshowImagesAndText = async function (imageContainer) {
     // Create image tags and append them to the slider track
     imageData.forEach((image) => {
       let img = document.createElement('img');
-      img.classList.add('slider-item', 'lazy-load');
+      img.classList.add('slider-item');
       img.alt = image.title;
-      img.setAttribute('data-src', image.url);
+      img.src = image.url;
       img.setAttribute('data-id', image.id);
 
       imageContainer.appendChild(img);
@@ -294,14 +294,19 @@ Implements event handlers that execute the slider navigation on click
 const handleSlideshowNavigation = function () {
   const controls = document.querySelector('.slideshow .controls');
 
-  controls.addEventListener('click', (event) => {
+  // Function to handle navigation
+  const handleNav = (event) => {
     if (event.target.classList.contains('nav-right')) {
       moveSliderRight();
     }
     if (event.target.classList.contains('nav-left')) {
       moveSliderLeft();
     }
-  });
+  };
+
+  // Listen for both click and touchstart events
+  controls.addEventListener('click', handleNav);
+  controls.addEventListener('touchstart', handleNav);
 };
 
 /* 
