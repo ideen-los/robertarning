@@ -41,12 +41,19 @@ module.exports = {
   module: {
     rules: [
       {
-        // Rule for SCSS files
+        // Rule for SCSS file
         test: /\.scss$/,
         use: [
-          'style-loader', // Injects CSS into the DOM
-          'css-loader', // Turns CSS into commonjs
-          'sass-loader', // Turns SCSS into CSS
+          'style-loader',
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sassOptions: {
+                includePaths: [path.resolve(__dirname, 'src', 'scss')],
+              },
+            },
+          },
         ],
       },
       {

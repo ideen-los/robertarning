@@ -1,5 +1,5 @@
 @use 'sass:math';
-@import 'breakpoints';
+@use 'breakpoints';
 
 /* FONT FACE
 =============================================================================================== */
@@ -75,20 +75,9 @@ $default-max-bp: 1900px;
   --single-project-skills-tag-padding1: #{fluid(5px, 15px)};
   --single-project-skills-tag-padding2: #{fluid(10px, 25px)};
 
-  @include breakpoint-xxs {
-    --single-project-skills-tag-padding1: 3px;
-    --single-project-skills-tag-padding2: 6px;
-  }
-
   // Font sizes
   --font-size-nav: #{fluid(20px, 28px)};
   --font-size-text: #{fluid(22px, 34px)};
-
-  @include breakpoint-xxs {
-    --font-size-nav: 18px;
-    --font-size-text: 18px;
-  }
-
   --font-size-h1: #{fluid(80px, 170px)};
   --font-size-h2: #{fluid(36.5px, 90px)};
   --font-size-skills-and-tools: #{fluid(20px, 24px)};
@@ -96,7 +85,36 @@ $default-max-bp: 1900px;
   --font-size-visit-live-site: #{fluid(16px, 18px)};
   --font-size-version: #{fluid(12px, 20px)};
 
-  @include breakpoint-xxs {
+  // Font weights
+  --font-weight-thin: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 510;
+  --font-weight-semibold: 550;
+
+  // Gaps
+  --flex-gap-nav: #{fluid(10px, 50px)};
+
+  // Element widths
+  --logo-width: #{fluid(100px, 149px)};
+  --homepage-description-text-width: #{fluid(600px, 890px)};
+  --homepage-project-description-text-width: #{fluid(560px, 860px)};
+  --page-not-found-width: #{fluid(550px, 820px)};
+  --profile-skill-list-text-width: #{fluid(500px, 600px)};
+  --single-project-text-width: #{fluid(560px, 960px)};
+  --h1-headline-width: #{fluid(400px, 800px)};
+
+  // Change values of variables on certain breakpoints
+  @include breakpoints.breakpoint-xxs {
+    --single-project-skills-tag-padding1: 3px;
+    --single-project-skills-tag-padding2: 6px;
+  }
+
+  @include breakpoints.breakpoint-xxs {
+    --font-size-nav: 18px;
+    --font-size-text: 18px;
+  }
+
+  @include breakpoints.breakpoint-xxs {
     --font-size-h1: 60px;
     --font-size-h2: 30px;
     --font-size-skills-and-tools: 15px;
@@ -104,27 +122,9 @@ $default-max-bp: 1900px;
     --font-size-visit-live-site: 14px;
   }
 
-  // Font weights
-  --font-weight-thin: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 510;
-  --font-weight-semibold: 550;
-
-  --flex-gap-nav: #{fluid(10px, 50px)};
-
-  // Element widths
-  --logo-width: #{fluid(100px, 149px)};
-
-  @include breakpoint-xxs {
+  @include breakpoints.breakpoint-xxs {
     --logo-width: 30px;
   }
-
-  --homepage-description-text-width: #{fluid(600px, 890px)};
-  --homepage-project-description-text-width: #{fluid(560px, 860px)};
-  --page-not-found-width: #{fluid(550px, 820px)};
-  --profile-skill-list-text-width: #{fluid(500px, 600px)};
-  --single-project-text-width: #{fluid(560px, 960px)};
-  --h1-headline-width: #{fluid(400px, 800px)};
 }
 
 /* GENERAL STYLES
@@ -144,7 +144,7 @@ body {
   font-family: 'Inter', sans-serif;
   letter-spacing: -0.3px;
 
-  @include breakpoint-xs {
+  @include breakpoints.breakpoint-xs {
     padding: 0 15px;
   }
 }
@@ -167,7 +167,7 @@ h1 {
   font-weight: var(--font-weight-regular);
   line-height: 90%;
 
-  @include breakpoint-xxs {
+  @include breakpoints.breakpoint-xxs {
     max-width: 300px;
     margin: 0 0 30px -4px;
   }
@@ -222,7 +222,7 @@ video {
 }
 
 .hidden-xxs-half {
-  @include breakpoint-xxs-half {
+  @include breakpoints.breakpoint-xxs-half {
     display: none;
   }
 }
@@ -235,7 +235,7 @@ video {
 
 .visible-xxs-half {
   display: none;
-  @include breakpoint-xxs-half {
+  @include breakpoints.breakpoint-xxs-half {
     display: block;
   }
 }
@@ -297,7 +297,7 @@ header {
   max-width: 1700px;
   margin: 20px auto 0;
 
-  @include breakpoint-xs {
+  @include breakpoints.breakpoint-xs {
     margin: 10px auto 0;
   }
 
@@ -305,7 +305,7 @@ header {
     max-width: var(--logo-width);
     min-width: 80px;
 
-    @include breakpoint-xxs-half {
+    @include breakpoints.breakpoint-xxs-half {
       min-width: 31px;
     }
   }
@@ -323,7 +323,7 @@ header {
       list-style: none;
       font-size: var(--font-size-nav);
 
-      @include breakpoint-xxs {
+      @include breakpoints.breakpoint-xxs {
         margin: 0 -9px -3px 0;
         padding: 0 0 0 10px;
       }
@@ -332,7 +332,7 @@ header {
         padding: 8px 15px;
         border-radius: 8px;
 
-        @include breakpoint-xxs {
+        @include breakpoints.breakpoint-xxs {
           padding: 4px 9px;
         }
 
@@ -435,7 +435,7 @@ footer {
     border-radius: 8px;
     margin-right: -15px;
 
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       padding: 4px 9px;
       margin-right: -9px;
     }
@@ -445,7 +445,7 @@ footer {
     }
   }
 
-  @include breakpoint-xxs {
+  @include breakpoints.breakpoint-xxs {
     padding: 15px 0 30px;
   }
 
@@ -483,7 +483,7 @@ body.not-found {
     margin: 0 0 -3px 10px;
     transform: rotate(180deg);
 
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       width: 20px;
     }
   }
@@ -494,7 +494,7 @@ body.not-found {
     margin: 0 0 0 var(--30px-to-15px);
     padding: 0 0 var(--7px-to-3px);
 
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       width: 50px;
 
       margin: 0 0 0 12px;

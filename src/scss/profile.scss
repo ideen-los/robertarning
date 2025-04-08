@@ -1,4 +1,5 @@
-@import 'general-styles';
+@use 'breakpoints';
+@use 'general-styles';
 
 /* PROFILE PAGE
 =============================================================================================== */
@@ -8,7 +9,7 @@
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 
-    @include breakpoint-xs {
+    @include breakpoints.breakpoint-xs {
       display: flex;
       flex-direction: column;
       gap: 0;
@@ -29,7 +30,7 @@
     gap: var(--40px-to-25px);
     margin: 0 0 var(--120px-to-60px);
 
-    @include breakpoint-sm {
+    @include breakpoints.breakpoint-sm {
       grid-template-columns: 1fr;
     }
 
@@ -41,7 +42,7 @@
     img {
       margin-top: 10px;
 
-      @include breakpoint-sm {
+      @include breakpoints.breakpoint-sm {
         max-width: 370px;
         margin-top: 30px;
       }

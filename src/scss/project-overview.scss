@@ -1,4 +1,5 @@
-@import 'general-styles';
+@use 'breakpoints';
+@use 'general-styles';
 
 /* Homepage
 =============================================================================================== */
@@ -37,10 +38,10 @@
       font-weight: var(--font-weight-thin);
     }
     figure {
-      @include breakpoint-sm {
+      @include breakpoints.breakpoint-sm {
         margin: 0 -28px;
       }
-      @include breakpoint-xs {
+      @include breakpoints.breakpoint-xs {
         margin: 0 -15px;
       }
 

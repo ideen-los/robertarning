@@ -1,4 +1,5 @@
-@import 'general-styles';
+@use 'breakpoints';
+@use 'general-styles';
 
 /* SINGLE PROJECT PAGE
 =============================================================================================== */
@@ -37,7 +38,7 @@
 
     border-top: 2px solid var(--primary-color);
 
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       margin: 11px 0 30px;
     }
 
@@ -66,7 +67,7 @@
         border: 2px solid var(--primary-color);
         border-radius: 50px;
 
-        @include breakpoint-xxs {
+        @include breakpoints.breakpoint-xxs {
           border-width: 1px;
         }
       }
@@ -79,7 +80,7 @@
     border: 4px solid var(--color-green);
     z-index: 0;
 
-    @include breakpoint-xs-half {
+    @include breakpoints.breakpoint-xs-half {
       border: 3px solid var(--color-green);
     }
 
@@ -100,7 +101,7 @@
       background-color: var(--color-green);
       z-index: 2;
 
-      @include breakpoint-xxs {
+      @include breakpoints.breakpoint-xxs {
         font-size: 10px;
         font-weight: var(--font-weight-regular);
       }
@@ -151,7 +152,7 @@
     text-align: right;
     border-bottom: 2px solid #0d0d0d;
 
-    @include breakpoint-sm {
+    @include breakpoints.breakpoint-sm {
       max-width: calc(100% + 56px);
 
       margin: 0 -28px;
@@ -160,7 +161,7 @@
       border: 0;
       resize: none;
     }
-    @include breakpoint-xs {
+    @include breakpoints.breakpoint-xs {
       margin: 0 -15px;
       max-width: calc(100% + 30px);
     }
@@ -172,7 +173,7 @@
       font-weight: var(--font-weight-regular);
       letter-spacing: 1px;
 
-      @include breakpoint-sm {
+      @include breakpoints.breakpoint-sm {
         display: none;
       }
     }
@@ -184,17 +185,17 @@
     flex-direction: column;
     gap: 10px;
 
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       gap: 5px;
     }
 
     > .video,
     > .image,
     > .two-column {
-      @include breakpoint-sm {
+      @include breakpoints.breakpoint-sm {
         margin: 0 -28px;
       }
-      @include breakpoint-xs {
+      @include breakpoints.breakpoint-xs {
         margin: 0 -15px;
       }
     }
@@ -205,21 +206,21 @@
     grid-template-columns: 1fr 1fr;
     gap: 10px;
 
-    @include breakpoint-xs-half {
+    @include breakpoints.breakpoint-xs-half {
       grid-template-columns: 1fr;
       grid-template-rows: 1fr 1fr;
     }
-    @include breakpoint-xxs {
+    @include breakpoints.breakpoint-xxs {
       gap: 5px;
     }
   }
 
   // Shows previous and next project
   .more-projects {
-    @include breakpoint-sm {
+    @include breakpoints.breakpoint-sm {
       margin: 0 -28px;
     }
-    @include breakpoint-xs {
+    @include breakpoints.breakpoint-xs {
       margin: 0 -15px;
     }
 
@@ -238,7 +239,7 @@
       width: 100%;
       aspect-ratio: 170/57;
 
-      @include breakpoint-xxs {
+      @include breakpoints.breakpoint-xxs {
         gap: 5px;
       }
 
@@ -281,7 +282,7 @@
       img {
         width: var(--80px-to-40px);
 
-        @include breakpoint-xxs {
+        @include breakpoints.breakpoint-xxs {
           width: 30px;
         }
       }
