@@ -1,7 +1,7 @@
 {
   "projects": {
     "title": "UI/UX Designer",
-    "description": "Ich bin Robert Arning, ein UI/UX Designer mit 6 Jahren Erfahrung und umfassender Expertise in HTML/CSS sowie soliden Grundkenntnissen in JavaScript.",
+    "description": "Hey✋ ich arbeite seit 10 Jahren im Bereich UI/UX sowie in der Entwicklung mit HTML/CSS. 2024 sind zusätzlich JavaScript ES6 und React hinzugekommen.",
     "elements": [
       {
         "projectName": "REMIX",
@@ -261,32 +261,7 @@
           }
         ]
       },
-      {
-        "projectName": "UI Komponenten (Demo)",
-        "id": 6,
-        "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
-        "image": "media/ui-components/overview-ui-components.jpg",
-        "live_site": "",
-        "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
-        "elements": [
-          {
-            "type": "codepen",
-            "title": "Dropdown Menu",
-            "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
-            "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
-          },
-          {
-            "type": "text",
-            "content": "<p>Die beiden Interface-Komponenten sind Teil einer Übung zur DOM-Manipulation mit JavaScript. Während der Entwicklung stellte sich allerdings insbesondere die Auswahl und Feinabstimmung der CSS Animationen als herausfordernd heraus. Es ist eine präzise Abstimmung aller Einzelelemente aufeinander nötig.</p><p>Beispielsweise werden die Elemente des Dropdown-Menüs nacheinander mit einer leichten Verzögerung und einer Verschiebung entlang der Y-Achse eingeblendet, was mich an die Ankunft der Schiffe aus dem Hyperraum bei Star&nbsp;Wars erinnert.</p>"
-          },
-          {
-            "type": "codepen",
-            "title": "Hamburger Menu",
-            "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
-            "url": "https://codepen.io/ideen-los/pen/oNRraOG"
-          }
-        ]
-      },
+
       {
         "projectName": "Kontexte (Konzept)",
         "id": 5,
@@ -323,103 +298,24 @@
         ]
       },
       {
-        "projectName": "Datenbank-Infosystem (DBIS)",
-        "id": 7,
-        "description": "Redesign des Portals für wissenschaftliche Datenbanken der Universitätsbibliothek Mainz.",
-        "image": "media/dbis/overview-dbis.jpg",
-        "live_site": "https://dbis.ur.de/dbinfo/fachliste.php?bib_id=ub_mz&colors=15&ocolors=40&lett=l",
-        "skills": ["UI Design", "HTML", "CSS"],
-        "elements": [
-          {
-            "type": "image",
-            "content": "media/dbis/dbis-start.jpg",
-            "above_fold": "true"
-          },
-          {
-            "type": "text",
-            "content": "<p>DBIS ist ein Rechercheportal für wissenschaftliche Datenbanken im Bibliothekswesen. Bibliotheksangestellte verwenden das Toll täglich. Das Design stammte aus dem Beginn der 2000er.</p><p>Meine Aufgabe bestand darin, im Rahmen des existierenden HTML-Gerüsts auf Basis von CSS ein modernes und benutzerfreundliches Interface zu implementieren, das sich an die Gestaltung der Webseite der Universitätsbibliothek anlehnt.</p>"
-          },
-          {
-            "type": "image",
-            "content": "media/dbis/dbis-al-new.jpg",
-            "version": "new"
-          },
-          {
-            "type": "image",
-            "content": "media/dbis/dbis-al-old.jpg",
-            "version": "old"
-          },
-          {
-            "type": "image",
-            "content": "media/dbis/dbis-screens.jpg",
-            "version": "new"
-          }
-        ]
-      },
-      {
-        "projectName": "Safak Tike",
-        "id": 8,
-        "description": "UI/UX-Design und Entwicklung einer informativen Profil-Webseite eines Personal Coach.",
-        "image": "media/stike/overview-stike.jpg",
-        "live_site": "http://s-tike.de",
+        "projectName": "UI Komponenten Demo",
+        "id": 6,
+        "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
+        "image": "media/ui-components/overview-ui-components.jpg",
+        "live_site": "",
         "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
         "elements": [
           {
-            "type": "video",
-            "content": "media/stike/video-stike-startseite.mp4",
-            "above_fold": "true"
+            "type": "codepen",
+            "title": "Dropdown Menu",
+            "embed_url": "https://codepen.io/ideen-los/embed/XWwLqpx",
+            "url": "https://codepen.io/ideen-los/pen/XWwLqpx"
           },
           {
-            "type": "text",
-            "content": "<p>Safak Tike ist ein Fachmann im Bereich Vertrieb und Kommunikation.</p><p>Die statischen Webseite habe ich mit HTML, CSS und JavaScript umgesetzt. Sie ist darauf ausgelegt, Professionalität auszustrahlen und Benutzerfreundlichkeit auf allen Geräten sicherzustellen.</p>"
-          },
-          {
-            "type": "image",
-            "content": "media/stike/stike-screens.jpg"
-          },
-          {
-            "type": "video",
-            "content": "media/stike/video-stike-clickthrough.mp4"
-          }
-        ]
-      },
-      {
-        "projectName": "For all People",
-        "id": 9,
-        "description": "Design und Entwicklung eines One-Pagers in WordPress für eine gemeinnützige Initiative zur Förderung klassischer Musik.",
-        "image": "media/forallpeople/overview-forallpeople.jpg",
-        "live_site": "",
-        "skills": ["UI/UX Design", "HTML", "CSS", "WordPress"],
-        "elements": [
-          {
-            "type": "image",
-            "content": "media/forallpeople/forallpeople-start.jpg",
-            "above_fold": "true"
-          },
-          {
-            "type": "image",
-            "content": "media/forallpeople/forallpeople-screens.jpg"
-          },
-          {
-            "type": "text",
-            "content": "<p>For all People ist eine gemeinnützige Initiative, die es sich zur Aufgabe gemacht hat, Kindern und Jugendlichen die Welt der klassischen Musik näherzubringen.</p><p>Als Teil des Teams war ich für das Design und die Entwicklung eines simplen One-Pagers für WordPress verantwortlich. Bei der Gestaltung habe ich besonderen Wert gelegt auf ein asymmetrisches, grafisches, klares und spielerisches Design.</p>"
-          },
-          {
-            "type": "image",
-            "content": "media/forallpeople/forallpeople-subscribe.jpg"
-          },
-          {
-            "type": "two-column",
-            "content": [
-              {
-                "type": "image",
-                "content": "media/forallpeople/forallpeople-header-mobile.jpg"
-              },
-              {
-                "type": "image",
-                "content": "media/forallpeople/forallpeople-subscribe-mobile.jpg"
-              }
-            ]
+            "type": "codepen",
+            "title": "Hamburger Menu",
+            "embed_url": "https://codepen.io/ideen-los/embed/oNRraOG",
+            "url": "https://codepen.io/ideen-los/pen/oNRraOG"
           }
         ]
       }
@@ -434,7 +330,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<p>Gutes Design ist schön, ja, aber vor allem klar strukturiert, barrierefrei und dadurch für jeden intuitiv zugänglich.</p><p>Da ich bisher immer an Produkten gearbeitet habe, für die keine genauen Daten zum Nutzerverhalten vorlagen, basieren meine Designentscheidungen auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+            "content": "<p>Gutes Design ist schön, ja, aber vor allem sollte es klar strukturiert, barrierefrei und dadurch für jeden intuitiv zugänglich sein. Mein Stil ist klassisch und nüchtern.</p><p>Da ich bisher immer an Produkten gearbeitet habe, für die keine genauen Daten zum Nutzerverhalten vorlagen, basieren meine Designentscheidungen auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
           },
           {
             "type": "image",
@@ -451,11 +347,11 @@
         "content": [
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript ES6<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
+            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript ES6<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
           },
           {
             "type": "text",
-            "content": "<h3>Design</h3><p>UI/UX Design<br>Prototyping<br>Figma<br>Adobe Photoshop<br>Adobe Illustrator</p>"
+            "content": "<h3>Design</h3><br><br><p>UI/UX Design<br>Prototyping<br>Figma<br>Adobe Photoshop<br>Adobe Illustrator</p>"
           }
         ]
       }

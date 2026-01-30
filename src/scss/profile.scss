@@ -6,7 +6,7 @@
 .profile-page {
   .two-column {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     gap: 15px;
 
     @include breakpoints.breakpoint-xs {
@@ -35,7 +35,7 @@
     }
 
     .text p {
-      font-weight: var(--font-weight-regular);
+      font-weight: var(--font-weight-thin);
       max-width: var(--homepage-description-text-width);
     }
 
