@@ -218,7 +218,9 @@ video {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity 0.2s, visibility 0.2s;
+  transition:
+    opacity 0.2s,
+    visibility 0.2s;
 }
 
 .hidden-xxs-half {
@@ -270,21 +272,27 @@ video {
 .transition-visible {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.5s ease-out 0s, transform 0.5s ease-out 0s;
+  transition:
+    opacity 0.5s ease-out 0s,
+    transform 0.5s ease-out 0s;
 }
 
 // Transition of skills list on project pages
 .transition-visible-delayed {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.5s ease-out 0.25s, transform 0.5s ease-out 0.25s;
+  transition:
+    opacity 0.5s ease-out 0.25s,
+    transform 0.5s ease-out 0.25s;
 }
 
 // Transition of first media element on project pages
 .transition-visible-delayed-more {
   opacity: 1;
   transform: translate3d(0, 0, 0);
-  transition: opacity 0.5s ease-out 0.45s, transform 0.5s ease-out 0.45s;
+  transition:
+    opacity 0.5s ease-out 0.45s,
+    transform 0.5s ease-out 0.45s;
 }
 
 /* LOGO + NAVIGATION

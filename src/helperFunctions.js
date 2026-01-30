@@ -24,16 +24,19 @@ Updates the browser's history stack by adding a new entry. This sets the new URL
 without reloading the page. Then calls the router() function to handle the URL change.
 */
 export const pushURLAndCallRouter = function (URLpath) {
-  // Check if the new URL is different from the current URL
-  const fullPath = `/${URLpath}`;
-  let urlChanged = false;
+  // URLpath kann z.B. "profil#skills" sein
+  const hasLeadingSlash = URLpath.startsWith('/');
+  const fullPath = hasLeadingSlash ? URLpath : `/${URLpath}`;
 
-  if (window.location.pathname !== fullPath) {
-    // Update the URL only if it's different
-    history.pushState({}, '', fullPath);
-    urlChanged = true;
+  const current = window.location.pathname + window.location.hash;
+  const next = fullPath;
+
+  const urlChanged = current !== next;
+
+  if (urlChanged) {
+    history.pushState({}, '', next);
   }
-  // Call the router whether or not the URL was updated
+
   router(urlChanged);
 };
 
@@ -75,7 +78,7 @@ export const convertToURLSaveName = function (name) {
       .replace(/ß/g, 'ss') // replace "ß" with "ss"
       .replace(/[()]/g, '') // Remove parenthesis
       .replace(/-+/g, '-') // Collapse multiple hyphens into one
-      .replace(/^-+|-+$/g, '') // Remove leading or trailing hyphens
+      .replace(/^-+|-+$/g, ''), // Remove leading or trailing hyphens
   ).toLowerCase();
 };
 

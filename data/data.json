@@ -1,7 +1,7 @@
 {
   "projects": {
     "title": "UI/UX Designer",
-    "description": "Hey✋ ich arbeite seit 10 Jahren im Bereich UI/UX sowie in der Entwicklung mit HTML/CSS. 2024 sind zusätzlich JavaScript ES6 und React hinzugekommen.",
+    "description": "Hi✌seit über zehn Jahren gestalte ich digitale Oberflächen und übersetze sie in Code. (<a href='/profil#skills'>Techstack</a>). Aktuell arbeite ich mit Drupal und React.",
     "elements": [
       {
         "projectName": "REMIX",
@@ -330,7 +330,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<p>Gutes Design ist schön, ja, aber vor allem sollte es klar strukturiert, barrierefrei und dadurch für jeden intuitiv zugänglich sein. Mein Stil ist klassisch und nüchtern.</p><p>Ich habe bisher immer an Produkten gearbeitet, für die keine genauen Daten zum Nutzerverhalten vorlagen. Meine Designentscheidungen basieren daher auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+            "content": "<p>Gutes Design ist selbsterklärend. Es funktioniert, ist barrierefrei und intuitiv bedienbar. Mein Stil ist klassisch, ruhig und präzise.</p><p>Ich habe häufig an Projekten ohne belastbare Nutzerdaten gearbeitet. Das hat meinen gestalterischen Ansatz geprägt: Designentscheidungen entstehen bei mir aus Erfahrung und einem guten Verständnis dafür, wie Menschen mit Technologie interagieren.</p>"
           },
           {
             "type": "image",
@@ -340,6 +340,7 @@
       },
       {
         "type": "h2",
+        "id": "skills",
         "content": "Skills"
       },
       {
@@ -347,7 +348,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript ES6<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
+            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript (ES6)<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
           },
           {
             "type": "text",

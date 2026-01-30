@@ -79,8 +79,21 @@ export const handleClickOnProjectTeasers = function (projects) {
       const urlSaveProjectName = convertToURLSaveName(projectData.projectName);
 
       pushURLAndCallRouter(urlSaveProjectName);
-    })
+    }),
   );
+};
+
+export const handleClickOnTechstack = () => {
+  const techStackLink = document.querySelector('.description a');
+  console.log('techstacklink: ', techStackLink);
+
+  if (techStackLink) {
+    techStackLink.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      pushURLAndCallRouter('profil#skills');
+    });
+  }
 };
 
 /* 
@@ -97,6 +110,7 @@ export const displayProjectOverview = async function () {
 
     setContent('content', projectsOverviewHTML);
     handleClickOnProjectTeasers(data.projects.elements);
+    handleClickOnTechstack();
     setBodyClass('homepage');
     initializeSlider();
   }

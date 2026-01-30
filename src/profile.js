@@ -22,7 +22,7 @@ export const createProfile = function (profileData) {
               <img src="${element.content}">
               </div>`;
         case 'h2':
-          return `<h2>${element.content}</h2>`;
+          return `<h2 ${element.id ? `id="${element.id}"` : ''}>${element.content}</h2>`;
         case 'two-column':
           // If the element type is "two-column" we need to iterate over the element's
           // "content" property which holds an array of object s type "text"
@@ -62,5 +62,11 @@ export const displayProfile = async function () {
     const profileHTML = createProfile(data.profile);
     setContent('content', profileHTML);
     setBodyClass('profile');
+
+    const hash = window.location.hash;
+    if (hash) {
+      const element = document.querySelector(hash);
+      requestAnimationFrame(() => element?.scrollIntoView({ behavior: 'smooth' }));
+    }
   }
 };

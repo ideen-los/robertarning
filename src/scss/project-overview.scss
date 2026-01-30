@@ -7,6 +7,16 @@
   .description {
     margin: 0 0 var(--70px-to-35px);
 
+    a {
+      text-decoration: underline;
+      text-underline-offset: 5px;
+      transition: all 0.2s ease;
+
+      &:hover {
+        transform: translateY(-4px);
+      }
+    }
+
     p {
       max-width: var(--homepage-description-text-width);
       font-weight: var(--font-weight-thin);
