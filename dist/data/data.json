@@ -434,7 +434,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<p>Design bedeutet für mich Problemlösungen entwickeln, Fragen voraussehen und Zugänglichkeit schaffen – unabhängig vom Anwendungsbereich. Der Prozess des Designs geht in meinen Augen weit über die reine Gestaltung von Interfaces hinaus.</p><p>Ich wende bewährte UX-Prinzipien praktisch an, verzichte aber auf klassische Methoden wie Personas oder A/B-Tests. Meine Designentscheidungen basieren auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
+            "content": "<p>Gutes Design ist schön, ja, aber vor allem klar strukturiert, barrierefrei und dadurch für jeden intuitiv zugänglich.</p><p>Da ich bisher immer an Produkten gearbeitet habe, für die keine genauen Daten zum Nutzerverhalten vorlagen, basieren meine Designentscheidungen auf langjähriger Erfahrung und einem guten Verständnis davon, wie Menschen mit Technologie interagieren.</p>"
           },
           {
             "type": "image",
@@ -451,11 +451,11 @@
         "content": [
           {
             "type": "text",
-            "content": "<h3>Design</h3><p>UI/UX Design<br>Prototyping</p><h3>Software</h3><p>Figma<br>Adobe XD<br>Adobe Photoshop<br>Adobe Illustrator</p><h3>CMS</h3><p>Drupal<br>WordPress</p>"
+            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript ES6<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
           },
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><p>HTML<br>CSS<br>JavaScript Basics (Objekte, DOM-Manipulation, Events, JSON, async/await)</p><h3>Tools</h3><p>Git<br>Webpack<br>Lando<br>Gulp</p>"
+            "content": "<h3>Design</h3><p>UI/UX Design<br>Prototyping<br>Figma<br>Adobe Photoshop<br>Adobe Illustrator</p>"
           }
         ]
       }
