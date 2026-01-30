@@ -6,7 +6,7 @@
       {
         "projectName": "REMIX",
         "id": 1,
-        "description": "Design, UX und Entwicklung eines Portals für Wissenschaftsvermittlung auf der Drupal-Webseite der Universitätsbibliothek Mainz.",
+        "description": "Design und Entwicklung eines Portals für Wissenschaftsvermittlung auf der Drupal-Webseite der Universitätsbibliothek Mainz.",
         "image": "media/remix/overview-remix.jpg",
         "live_site": "https://ub.uni-mainz.de/remix",
         "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
@@ -50,7 +50,7 @@
       {
         "projectName": "marena",
         "id": 2,
-        "description": "UI/UX Design für eine Progressive Web App zur Unterstützung und Begleitung von Personen nach einem Reha-Aufenthalt.",
+        "description": "Design einer PWA zur Unterstützung und Begleitung von Personen zurück in Arbeit nach längerer Krankheit.",
         "image": "media/marena/overview-marena.jpg",
         "live_site": "",
         "skills": ["UI/UX Design", "Prototyping", "Figma"],
@@ -151,7 +151,7 @@
       {
         "projectName": "Universitätsbibliothek Mainz",
         "id": 4,
-        "description": "Optimierung der Webseite der Universitätsbibliothek Mainz durch Weiterentwicklung, Polishing und Animation bestehender Interface-Elemente.",
+        "description": "Weiterentwicklung und Polishing bestehender Interface-Elemente auf der Webseite der Universitätsbibliothek Mainz.",
         "image": "media/ub/overview-ub.jpg",
         "live_site": "https://ub.uni-mainz.de",
         "skills": ["UI/UX Design", "Prototyping", "HTML", "CSS", "JavaScript", "Figma", "Drupal"],
@@ -298,9 +298,9 @@
         ]
       },
       {
-        "projectName": "UI Komponenten Demo",
+        "projectName": "UI-Komponenten Demo",
         "id": 6,
-        "description": "Design und Entwicklung eines Dropdown- und eines Hamburger-Menüs mit HTML, CSS und JavaScript.",
+        "description": "Design und Entwicklung eines Dropdowns und eines Hamburger-Menüs.",
         "image": "media/ui-components/overview-ui-components.jpg",
         "live_site": "",
         "skills": ["UI/UX Design", "HTML", "CSS", "JavaScript"],
