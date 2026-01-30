@@ -50,7 +50,7 @@
       {
         "projectName": "marena",
         "id": 2,
-        "description": "Design einer PWA zur Unterstützung und Begleitung von Personen zurück in Arbeit nach längerer Krankheit.",
+        "description": "Design einer App zur Unterstützung und Begleitung von Personen zurück in Arbeit nach längerer Krankheit.",
         "image": "media/marena/overview-marena.jpg",
         "live_site": "",
         "skills": ["UI/UX Design", "Prototyping", "Figma"],
