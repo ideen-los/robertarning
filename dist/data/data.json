@@ -348,7 +348,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript (ES6)<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress</p>"
+            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript (ES6)<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress<br><br></p>"
           },
           {
             "type": "text",
