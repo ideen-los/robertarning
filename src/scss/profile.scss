@@ -19,33 +19,38 @@
       max-width: var(--profile-skill-list-text-width);
       font-weight: var(--font-weight-thin);
     }
-
-    img {
-      max-width: 440px;
-    }
   }
 
   .profile-description {
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 5fr 3fr;
     gap: var(--40px-to-25px);
     margin: 0 0 var(--120px-to-60px);
 
+    @include breakpoints.breakpoint-md {
+      grid-template-columns: 1fr 1fr;
+    }
     @include breakpoints.breakpoint-sm {
       grid-template-columns: 1fr;
     }
 
-    .text p {
-      font-weight: var(--font-weight-thin);
-      max-width: var(--homepage-description-text-width);
+    .text {
+      margin-top: 2rem;
+
+      @include breakpoints.breakpoint-lg {
+        margin-top: 1rem;
+      }
+      @include breakpoints.breakpoint-md {
+        margin-top: 0;
+      }
+
+      p {
+        font-weight: var(--font-weight-thin);
+        max-width: var(--homepage-description-text-width);
+      }
     }
 
     img {
-      margin-top: 10px;
-
-      @include breakpoints.breakpoint-sm {
-        max-width: 370px;
-        margin-top: 30px;
-      }
+      max-width: 100%;
     }
   }
 }

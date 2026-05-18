@@ -9,12 +9,12 @@ Also set the document title with the 3rd parameter.
 setRoute(
   '/',
   () => import('./projectsOverview.js').then((module) => module.displayProjectOverview),
-  'Robert Arning – UI/UX Designer'
+  'Robert Arning – UI/UX-Engineer',
 ); // Homepage
 setRoute(
   '/profil',
   () => import('./profile.js').then((module) => module.displayProfile),
-  'Robert Arning – Profil'
+  'Robert Arning – Profil',
 ); // Profile page
 
 // Call the router() and initialize the navigation

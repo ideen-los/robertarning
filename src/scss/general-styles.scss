@@ -101,7 +101,7 @@ $default-max-bp: 1900px;
   --page-not-found-width: #{fluid(550px, 820px)};
   --profile-skill-list-text-width: #{fluid(500px, 600px)};
   --single-project-text-width: #{fluid(560px, 960px)};
-  --h1-headline-width: #{fluid(400px, 800px)};
+  --h1-headline-width: #{fluid(440px, 840px)};
 
   // Change values of variables on certain breakpoints
   @include breakpoints.breakpoint-xxs {

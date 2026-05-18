@@ -2,7 +2,6 @@ import './scss/slideshow.scss';
 import arrowLeftImage from './img/arrow-left.svg';
 import { loadData } from './data';
 import { createDiv } from './helperFunctions';
-import { initSwipeDetection } from './swipeDetection';
 
 const slider = {
   slideshow: null,
@@ -17,6 +16,13 @@ const slider = {
   gap: 20, // Set to .slider-track gap value
   transitionTime: '0.6s',
   transitionEase: 'cubic-bezier(0.65,0.05,0.36,1)',
+  isDragging: false,
+  hasDragged: false,
+  dragStartX: 0,
+  dragCurrentX: 0,
+  dragStartTranslateX: 0,
+  dragThreshold: 50,
+  lastDragEndTime: 0,
 };
 
 // Change gap size on smaller screens
@@ -57,8 +63,7 @@ const createSlider = function () {
 
   // Add CSS styles to elements
   sliderTrack.style.gap = `${slider.gap}px`;
-  sliderTrack.style.transitionDuration = `${slider.transitionTime}`;
-  sliderTrack.style.transitionTimingFunction = `${slider.transitionEase}`;
+  sliderTrack.style.transition = `transform ${slider.transitionTime} ${slider.transitionEase}`;
 
   // Add elements to the DOM
   arrowLeft.appendChild(arrowImageRight);
@@ -226,6 +231,17 @@ const focusImage = async function (index) {
   highlightFocusedImage(index);
 };
 
+const setSliderTransition = function (isEnabled) {
+  slider.sliderTrack.style.transition = isEnabled
+    ? `transform ${slider.transitionTime} ${slider.transitionEase}`
+    : 'none';
+};
+
+const setSliderTranslateX = function (translateX) {
+  slider.currentTranslateX = translateX;
+  slider.sliderTrack.style.transform = `translateX(${slider.currentTranslateX}px)`;
+};
+
 /* 
 Moves the slider track to the right and centers the next image
 */
@@ -238,7 +254,7 @@ const moveSliderRight = function () {
 
   // When sliding past the actual last image, jump to the first one
   if (slider.currentIndex === slider.totalImages - 2) {
-    slider.sliderTrack.style.transition = 'none';
+    setSliderTransition(false);
 
     // Force reflow here to apply the transition style change immediately
     slider.sliderTrack.offsetHeight; // Reading offsetHeight forces a reflow
@@ -248,7 +264,7 @@ const moveSliderRight = function () {
 
     // Animate transition to the first image
     setTimeout(() => {
-      slider.sliderTrack.style.transition = `transform ${slider.transitionTime} ${slider.transitionEase}`;
+      setSliderTransition(true);
       focusImage(2);
     }, 50);
   }
@@ -269,7 +285,7 @@ const moveSliderLeft = function () {
 
   // When sliding past the actual first image, jump to the last one
   if (slider.currentIndex === 1) {
-    slider.sliderTrack.style.transition = 'none';
+    setSliderTransition(false);
 
     // Force reflow here to apply the transition style change immediately
     slider.sliderTrack.offsetHeight; // Reading offsetHeight forces a reflow
@@ -279,7 +295,7 @@ const moveSliderLeft = function () {
 
     // Animate transition to the last image
     setTimeout(() => {
-      slider.sliderTrack.style.transition = `transform ${slider.transitionTime} ${slider.transitionEase}`;
+      setSliderTransition(true);
       focusImage(slider.totalImages - 3);
     }, 50);
   }
@@ -296,6 +312,11 @@ const handleSlideshowNavigation = function () {
 
   // Function to handle navigation
   const handleNav = (event) => {
+    if (Date.now() - slider.lastDragEndTime < 100) {
+      event.preventDefault();
+      return;
+    }
+
     if (event.target.classList.contains('nav-right')) {
       moveSliderRight();
     }
@@ -308,15 +329,81 @@ const handleSlideshowNavigation = function () {
   controls.addEventListener('click', handleNav);
 };
 
-/* 
-Handles swipes left & right via mobile
-*/
-const handleSwipeRight = function () {
-  moveSliderLeft();
+const handleDragStart = function (event) {
+  if (event.pointerType === 'mouse' && event.button !== 0) return;
+  if (event.target.closest('.nav-left, .nav-right')) return;
+
+  slider.isDragging = true;
+  slider.hasDragged = false;
+  slider.dragStartX = event.clientX;
+  slider.dragCurrentX = event.clientX;
+  slider.dragStartTranslateX = slider.currentTranslateX;
+
+  setSliderTransition(false);
+  slider.slideshow.classList.add('is-dragging');
+  slider.slideshow.setPointerCapture(event.pointerId);
 };
 
-const handleSwipeLeft = function () {
-  moveSliderRight();
+const handleDragMove = function (event) {
+  if (!slider.isDragging) return;
+
+  slider.dragCurrentX = event.clientX;
+  const dragDistance = slider.dragCurrentX - slider.dragStartX;
+
+  if (Math.abs(dragDistance) > 5) {
+    slider.hasDragged = true;
+  }
+
+  setSliderTranslateX(slider.dragStartTranslateX + dragDistance);
+};
+
+const handleDragEnd = function (event) {
+  if (!slider.isDragging) return;
+
+  slider.isDragging = false;
+  slider.slideshow.classList.remove('is-dragging');
+
+  if (slider.slideshow.hasPointerCapture(event.pointerId)) {
+    slider.slideshow.releasePointerCapture(event.pointerId);
+  }
+
+  const dragDistance = slider.dragCurrentX - slider.dragStartX;
+  setSliderTransition(true);
+
+  if (Math.abs(dragDistance) >= slider.dragThreshold) {
+    if (dragDistance < 0) {
+      moveSliderRight();
+    } else {
+      moveSliderLeft();
+    }
+  } else {
+    focusImage(slider.currentIndex);
+  }
+
+  if (slider.hasDragged) {
+    slider.lastDragEndTime = Date.now();
+  }
+};
+
+const handleDragCancel = function (event) {
+  if (!slider.isDragging) return;
+
+  slider.isDragging = false;
+  slider.slideshow.classList.remove('is-dragging');
+
+  if (slider.slideshow.hasPointerCapture(event.pointerId)) {
+    slider.slideshow.releasePointerCapture(event.pointerId);
+  }
+
+  setSliderTransition(true);
+  focusImage(slider.currentIndex);
+};
+
+const handleSlideshowDrag = function () {
+  slider.slideshow.addEventListener('pointerdown', handleDragStart);
+  slider.slideshow.addEventListener('pointermove', handleDragMove);
+  slider.slideshow.addEventListener('pointerup', handleDragEnd);
+  slider.slideshow.addEventListener('pointercancel', handleDragCancel);
 };
 
 /* 
@@ -339,7 +426,7 @@ export const initializeSlider = async function () {
   await getSlideshowImagesAndText(slider.sliderTrack);
   await loadSlideshowImages();
   await handleSlideshowNavigation();
-  await initSwipeDetection(slider.slideshow, handleSwipeLeft, handleSwipeRight);
+  await handleSlideshowDrag();
   await focusImage(2);
   await focusImageonWindowResize();
 };

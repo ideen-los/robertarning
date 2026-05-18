@@ -1,6 +1,6 @@
 {
   "projects": {
-    "title": "UI/UX Designer",
+    "title": "UI/UX Engineer",
     "description": "Hi✌seit über zehn Jahren gestalte ich digitale Oberflächen und übersetze sie in Code (→ <a href='/profil#skills'>Techstack</a>). Aktuell arbeite ich mit Drupal und React.",
     "elements": [
       {
@@ -330,11 +330,11 @@
         "content": [
           {
             "type": "text",
-            "content": "<p>Gutes Design ist selbsterklärend. Es funktioniert, ist barrierefrei und intuitiv bedienbar. Mein Stil ist klassisch, ruhig und präzise.</p><p>Ich habe häufig an Projekten ohne belastbare Nutzerdaten gearbeitet. Das hat meinen gestalterischen Ansatz geprägt: Designentscheidungen entstehen bei mir aus Erfahrung und einem guten Verständnis dafür, wie Menschen mit Technologie interagieren.</p>"
+            "content": "<p>Gutes Design ist selbsterklärend. Es funktioniert, ist barrierefrei und intuitiv bedienbar.</p><p>Ich habe häufig an Projekten ohne belastbare Nutzerdaten gearbeitet. Das hat meinen gestalterischen Ansatz geprägt.</p><p>Designentscheidungen treffe ich ...</p><p>→ anhand bewährter Best Practices<br>→ auf Basis von über 10 Jahren Erfahrung<br>→ mit Blick darauf, wie Menschen digitale Produkte verstehen und nutzen</p>"
           },
           {
             "type": "image",
-            "content": "media/profile/ra-portrait_final.jpg"
+            "content": "media/profile/ra-portrait_2026.jpg"
           }
         ]
       },
@@ -348,7 +348,7 @@
         "content": [
           {
             "type": "text",
-            "content": "<h3>Entwicklung</h3><br><br><p>HTML<br>CSS<br>JavaScript (ES6)<br>React<br>Motion<br>Git<br>Vite<br>Webpack<br>Lando<br>Drupal<br>WordPress<br><br></p>"
+            "content": "<h3>Entwicklung</h3><br><br><p>JavaScript (ES6)<br>HTML<br>CSS<br>React<br>Motion<br>Git<br>Lando<br>Drupal<br>WordPress<br><br></p>"
           },
           {
             "type": "text",
@@ -360,7 +360,7 @@
   },
   "slideshow": {
     "title": "Illustrationen",
-    "description": "Entstanden im Zeitraum zwischen 2012&#8288;&#8211;&#8288;2022",
+    "description": "Zwischen 2012&#8288;&#8211;&#8288;2022.",
     "elements": [
       {
         "id": 1,
